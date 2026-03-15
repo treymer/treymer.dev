@@ -132,3 +132,54 @@ treymer.dev/
 ├── public/                   # Static assets
 └── README.md
 ```
+
+## Infrastructure Details
+
+### Resources Managed by Terraform
+All resources below are defined in `/infra` and managed via Terraform.
+
+| Resource | Name | Purpose |
+|---|---|---|
+| S3 Bucket | `treymer-dev` | Stores static website files |
+| CloudFront Distribution | `treymer.dev` | CDN, HTTPS, caching |
+| ACM Certificate | `*.treymer.dev` | SSL cert (us-east-1) |
+| CloudFront Function | `treymer-dev-url-rewrite` | Next.js URL rewriting |
+| IAM OIDC Provider | GitHub Actions | Keyless AWS auth |
+| IAM Role | `treymer-dev-github-actions` | Least privilege deploy role |
+
+### Terraform Commands
+```bash
+cd infra
+
+# First time setup
+terraform init
+
+# Preview changes
+terraform plan
+
+# Apply changes
+terraform apply
+
+# Tear down (careful!)
+terraform destroy
+```
+
+### Terraform State
+State is stored remotely in S3 with DynamoDB locking:
+- **State bucket:** `treymer-dev-terraform-state`
+- **Lock table:** `treymer-dev-terraform-locks`
+- **Region:** `us-west-2`
+
+### GitHub Actions IAM Role
+GitHub Actions authenticates to AWS via OIDC — no long-lived access keys.
+The role ARN is output after `terraform apply` and must be added to GitHub secrets as `AWS_ROLE_ARN`.
+
+### ACM Certificate Note
+The SSL certificate is provisioned in `us-east-1` regardless of the primary region.
+This is an AWS requirement for certificates used with CloudFront distributions.
+
+### CloudFront Caching Strategy
+| Content Type | Cache TTL | Reason |
+|---|---|---|
+| HTML pages | None | Blog posts update immediately after deploy |
+| `/_next/static/*` | Long term | Content-hashed, safe to cache aggressively |
