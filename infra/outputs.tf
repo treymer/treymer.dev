@@ -27,3 +27,8 @@ output "cloudfront_domain_name" {
   description = "CloudFront domain name"
   value       = aws_cloudfront_distribution.website.domain_name
 }
+
+output "github_actions_role_arn" {
+  description = "IAM role ARN for GitHub Actions - add to GitHub secrets"
+  value       = aws_iam_role.github_actions.arn
+}
