@@ -87,7 +87,7 @@ resource "aws_acm_certificate_validation" "website" {
   provider = aws.us_east_1
 
   certificate_arn         = aws_acm_certificate.website.arn
-  validation_record_fqdns = [for record in aws_acm_certificate_validation_records.website : record.fqdn]
+  validation_record_fqdns = [for dvo in aws_acm_certificate.website.domain_validation_options : dvo.resource_record_name]
 }
 
 # -----------------------------------------------
