@@ -51,15 +51,15 @@ export default function KonamiCode() {
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm"
       onClick={() => setShowAchievement(false)}
     >
-      <div className="animate-bounce-in mx-4 rounded-2xl border-2 border-[#D4A017]/50 bg-gradient-to-br from-[#3D2314] to-[#2C1810] p-8 text-center shadow-2xl shadow-[#D4A017]/20">
+      <div className="animate-bounce-in mx-4 rounded-2xl border-2 border-[#8B6914] bg-[#F4E4C1] p-8 text-center shadow-2xl shadow-[#6D28D9]/30">
         <div className="mb-4 text-6xl">🐉</div>
-        <h2 className="font-display text-2xl font-bold text-[#D4A017]">
+        <h2 className="font-display text-2xl font-bold text-[#6D28D9]">
           Achievement Unlocked!
         </h2>
-        <p className="mt-2 text-lg font-semibold text-[#F4E4C1]">
+        <p className="mt-2 text-lg font-semibold text-[#2D1B0E]">
           Dragon Tamer
         </p>
-        <p className="mt-1 text-sm text-[#C4A882]">
+        <p className="mt-1 text-sm text-[#5C3D2E]">
           You found the secret code! +1000 XP
         </p>
         <div className="mt-4 text-xs text-[#8B7355]">

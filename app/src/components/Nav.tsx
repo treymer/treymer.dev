@@ -17,7 +17,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#5C3D2E] bg-[#2C1810]/95 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#5C3D2E] bg-[#3D2314]/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
         <Link
@@ -45,15 +45,19 @@ export default function Nav() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`relative font-medium transition-colors ${
+                  className={`relative font-medium transition-all ${
                     isActive
                       ? "text-[#991B1B]"
                       : "text-[#C4A882] hover:text-[#D4A017]"
                   }`}
+                  style={isActive ? { textShadow: "0 0 12px rgba(109, 40, 217, 0.5)" } : undefined}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#991B1B]" />
+                    <span
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#991B1B]"
+                      style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.6)" }}
+                    />
                   )}
                 </Link>
               </li>
@@ -65,7 +69,7 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-[#5C3D2E] bg-[#3D2314] transition-colors hover:border-[#7A5040] hover:bg-[#4a2d1a] md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-[#5C3D2E] bg-[#2D1B0E] transition-colors hover:border-[#D4A017] hover:bg-[#3D2314] md:hidden"
           aria-expanded={mobileOpen}
           aria-label="Toggle menu"
         >
@@ -89,7 +93,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-[#5C3D2E] bg-[#2C1810] transition-all duration-300 ease-out md:hidden ${
+        className={`overflow-hidden border-t border-[#5C3D2E] bg-[#3D2314] transition-all duration-300 ease-out md:hidden ${
           mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -103,11 +107,12 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`block border-l-2 py-3 pl-4 font-medium transition-colors ${
+                  className={`block border-l-2 py-3 pl-4 font-medium transition-all ${
                     isActive
                       ? "border-[#991B1B] text-[#991B1B]"
                       : "border-transparent text-[#C4A882] hover:border-[#D4A017] hover:text-[#D4A017]"
                   }`}
+                  style={isActive ? { textShadow: "0 0 12px rgba(109, 40, 217, 0.5)" } : undefined}
                 >
                   {link.label}
                 </Link>

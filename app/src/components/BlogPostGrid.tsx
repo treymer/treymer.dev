@@ -8,8 +8,8 @@ type Filter = "All" | "Engineering" | "Personal";
 
 const categoryLabels: Record<string, string> = {
   All: "All Quests",
-  Engineering: "⚙️ Technomancer",
-  Personal: "🎲 Side Quest",
+  Engineering: "Technomancer",
+  Personal: "Side Quest",
 };
 
 function formatDate(dateStr: string) {
@@ -43,7 +43,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
               filter === f
                 ? "bg-[#991B1B] text-white shadow-md shadow-[#991B1B]/20"
-                : "border border-[#5C3D2E] bg-[#3D2314] text-[#C4A882] hover:border-[#7A5040] hover:bg-[#4a2d1a] hover:text-[#F4E4C1]"
+                : "border border-[#8B6914] bg-[#F4E4C1] text-[#5C3D2E] hover:border-[#D4A017] hover:bg-[#F4E4C1] hover:text-[#2D1B0E]"
             }`}
           >
             {categoryLabels[f]}
@@ -57,14 +57,14 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group block rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017]/40 hover:shadow-lg"
+              className="group block rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]"
             >
               <div className="mb-3 flex flex-wrap items-center gap-3">
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                     post.category === "Engineering"
                       ? "bg-[#0D9488]/15 text-[#0D9488]"
-                      : "bg-[#D4A017]/15 text-[#D4A017]"
+                      : "bg-[#6D28D9]/15 text-[#6D28D9]"
                   }`}
                 >
                   {categoryLabels[post.category]}
@@ -72,13 +72,13 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
                 <span className="text-sm text-[#8B7355]">
                   {formatDate(post.date)}
                 </span>
-                <span className="text-sm text-[#5C3D2E]">·</span>
+                <span className="text-sm text-[#8B7355]">·</span>
                 <span className="text-sm text-[#8B7355]">{post.readingTime}</span>
               </div>
-              <h2 className="font-display text-lg font-semibold text-[#F4E4C1] transition-colors group-hover:text-[#D4A017]">
+              <h2 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#991B1B]">
                 {post.title}
               </h2>
-              <p className="mt-2 line-clamp-2 text-sm text-[#C4A882]">
+              <p className="mt-2 line-clamp-2 text-sm text-[#5C3D2E]">
                 {post.description}
               </p>
               <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
@@ -101,8 +101,8 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
           ))}
         </div>
       ) : (
-        <div className="rounded-xl border border-dashed border-[#5C3D2E] bg-[#3D2314] p-12 text-center shadow-sm">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A017]/15 text-[#D4A017]">
+        <div className="rounded-xl border border-dashed border-[#8B6914] bg-[#F4E4C1] p-12 text-center shadow-lg">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#6D28D9]/15 text-[#6D28D9]">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -117,7 +117,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
               />
             </svg>
           </div>
-          <p className="text-[#C4A882]">
+          <p className="text-[#5C3D2E]">
             {filter === "All"
               ? "No posts yet. Check back soon."
               : `No ${filter} posts yet. Try another category.`}

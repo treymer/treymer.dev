@@ -2,13 +2,14 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Fantasy Tavern dark theme palette */
-  --background: #1A0F0A;
-  --background-mid: #2C1810;
-  --background-card: #3D2314;
+  /* Refined Tavern palette - warmer, more inviting */
+  --background: #2D1B0E;
+  --background-mid: #3D2314;
+  --background-card: #F4E4C1;
   --foreground: #F4E4C1;
   --border: #5C3D2E;
-  --border-hover: #7A5040;
+  --border-card: #8B6914;
+  --border-hover: #D4A017;
 
   /* Crimson red accent */
   --accent-primary: #991B1B;
@@ -21,26 +22,34 @@
   --accent-secondary-hover: #0F766E;
   --accent-secondary-muted: rgba(13, 148, 136, 0.15);
 
-  /* Gold accent */
+  /* Gold accent - ONLY for hover states, dots, ornaments, borders */
   --accent-gold: #D4A017;
   --accent-gold-hover: #B8860B;
   --accent-gold-muted: rgba(212, 160, 23, 0.15);
 
-  /* Purple accent */
-  --accent-tertiary: #6D28D9;
-  --accent-tertiary-hover: #5B21B6;
-  --accent-tertiary-muted: rgba(109, 40, 217, 0.15);
+  /* Purple magical accent */
+  --accent-purple: #6D28D9;
+  --accent-purple-hover: #5B21B6;
+  --accent-purple-muted: rgba(109, 40, 217, 0.15);
+  --accent-purple-glow: rgba(109, 40, 217, 0.25);
+  --accent-purple-ambient: rgba(109, 40, 217, 0.08);
 
-  /* Text hierarchy - warm cream tones */
+  /* Text hierarchy - warm cream tones on dark backgrounds */
   --text-primary: #F4E4C1;
   --text-secondary: #C4A882;
   --text-muted: #8B7355;
 
-  /* Dark warm shadows */
+  /* Text for parchment cards - dark warm tones */
+  --text-on-parchment: #2D1B0E;
+  --text-on-parchment-secondary: #5C3D2E;
+  --text-on-parchment-muted: #8B7355;
+
+  /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(212, 160, 23, 0.15);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-purple-muted);
 }
 
 @theme inline {
@@ -57,7 +66,7 @@ body {
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Subtle wood grain texture overlay */
+/* Subtle arcane rune pattern overlay - very light */
 body::before {
   content: "";
   position: fixed;
@@ -67,12 +76,11 @@ body::before {
   bottom: 0;
   pointer-events: none;
   z-index: -2;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 8 50 10 T100 10' stroke='%234a3728' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Cpath d='M0 5 Q30 3 60 5 T100 5' stroke='%234a3728' stroke-width='0.3' fill='none' opacity='0.2'/%3E%3Cpath d='M0 15 Q20 17 50 15 T100 15' stroke='%234a3728' stroke-width='0.4' fill='none' opacity='0.25'/%3E%3C/svg%3E");
-  background-size: 100px 20px;
-  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%236D28D9' stroke-width='0.5' opacity='0.03'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Cpath d='M40 20 L40 60 M20 40 L60 40'/%3E%3Cpath d='M28 28 L52 52 M52 28 L28 52'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3Cpath d='M40 12 L44 20 L40 16 L36 20 Z'/%3E%3Cpath d='M40 68 L44 60 L40 64 L36 60 Z'/%3E%3Cpath d='M12 40 L20 44 L16 40 L20 36 Z'/%3E%3Cpath d='M68 40 L60 44 L64 40 L60 36 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
 }
 
-/* Warm candlelight vignette effect */
+/* Purple magical vignette in corners */
 body::after {
   content: "";
   position: fixed;
@@ -82,25 +90,22 @@ body::after {
   bottom: 0;
   pointer-events: none;
   z-index: -1;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    transparent 50%,
-    rgba(26, 15, 10, 0.3) 80%,
-    rgba(26, 15, 10, 0.6) 100%
-  );
+  background:
+    radial-gradient(ellipse at top left, var(--accent-purple-ambient) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, var(--accent-purple-ambient) 0%, transparent 50%),
+    radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(45, 27, 14, 0.4) 100%);
 }
 
-/* Display font utility for headings and nav */
+/* Display font utility for headings */
 .font-display {
   font-family: var(--font-cinzel), Georgia, serif;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Selection styling */
 ::selection {
-  background-color: var(--accent-gold-muted);
-  color: var(--accent-gold);
+  background-color: var(--accent-purple-muted);
+  color: var(--accent-purple);
 }
 
 /* Smooth scrolling */
@@ -108,17 +113,18 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Card base styles - dark tavern cards */
+/* Parchment card base styles */
 .card {
   background: var(--background-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-card);
   border-radius: 0.75rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-card);
+  color: var(--text-on-parchment);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-card-hover);
   transform: translateY(-2px);
   border-color: var(--accent-gold);
 }
@@ -149,7 +155,7 @@ html {
   box-shadow: 0 0 16px var(--accent-gold-muted);
 }
 
-/* Section divider with crossed lines and diamond */
+/* Section divider with crossed lines and glowing purple diamond */
 .section-divider {
   position: relative;
   display: flex;
@@ -164,7 +170,7 @@ html {
   content: "";
   position: absolute;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .section-divider::before {
@@ -181,14 +187,14 @@ html {
   transform: rotate(1deg);
 }
 
-/* Diamond center decoration */
+/* Diamond center decoration with purple glow */
 .section-divider-diamond {
   position: relative;
   width: 12px;
   height: 12px;
   background: var(--accent-gold);
   transform: rotate(45deg);
-  box-shadow: 0 0 8px var(--accent-gold-muted);
+  box-shadow: 0 0 12px var(--accent-purple-glow), 0 0 4px var(--accent-gold-muted);
 }
 
 .section-divider-diamond::before {
@@ -201,34 +207,70 @@ html {
   background: var(--background);
 }
 
-/* Decorative geometric pattern - darker version */
-.geo-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+/* Hero section with purple magical ambient */
+.hero-section {
+  position: relative;
 }
 
-/* Hero warm glow effect */
-.hero-glow {
+.hero-purple-glow {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 500px;
   height: 400px;
   background: radial-gradient(
     ellipse at center,
-    rgba(212, 160, 23, 0.15) 0%,
-    rgba(153, 27, 27, 0.08) 40%,
+    rgba(109, 40, 217, 0.15) 0%,
+    rgba(109, 40, 217, 0.05) 50%,
     transparent 70%
   );
   pointer-events: none;
   z-index: 0;
 }
 
-/* Code block syntax highlighting - very dark */
+/* Moonlight corner effect for hero */
+.hero-moonlight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(244, 228, 193, 0.08) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Purple glow utility for titles */
+.title-purple-glow {
+  position: relative;
+}
+
+.title-purple-glow::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  right: -40px;
+  bottom: -20px;
+  background: radial-gradient(
+    ellipse at center,
+    var(--accent-purple-muted) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Code block syntax highlighting */
 .prose pre.hljs,
 .prose pre code.hljs,
 .prose pre {
-  background: #0D0805 !important;
+  background: #1A0F0A !important;
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border);
@@ -263,7 +305,7 @@ html {
   width: 100%;
 }
 
-/* Badge styles - dark theme */
+/* Badge styles for parchment cards */
 .badge-engineering {
   background: var(--accent-secondary-muted);
   color: var(--accent-secondary);
@@ -271,39 +313,39 @@ html {
 }
 
 .badge-personal {
-  background: var(--accent-gold-muted);
-  color: var(--accent-gold);
-  border: 1px solid rgba(212, 160, 23, 0.3);
+  background: var(--accent-purple-muted);
+  color: var(--accent-purple);
+  border: 1px solid rgba(109, 40, 217, 0.3);
 }
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-gold);
+  outline: 2px solid var(--accent-purple);
   outline-offset: 2px;
 }
 
-/* Prose customization for blog posts - dark tavern tome */
+/* Prose customization for blog posts */
 .prose {
-  --tw-prose-body: var(--text-primary);
-  --tw-prose-headings: var(--accent-gold);
+  --tw-prose-body: var(--text-on-parchment);
+  --tw-prose-headings: var(--text-on-parchment);
   --tw-prose-links: var(--accent-secondary);
-  --tw-prose-bold: var(--text-primary);
-  --tw-prose-quotes: var(--text-secondary);
-  --tw-prose-quote-borders: var(--accent-gold);
+  --tw-prose-bold: var(--text-on-parchment);
+  --tw-prose-quotes: var(--text-on-parchment-secondary);
+  --tw-prose-quote-borders: var(--accent-purple);
   --tw-prose-code: var(--accent-secondary);
-  --tw-prose-pre-bg: #0D0805;
+  --tw-prose-pre-bg: #1A0F0A;
   --tw-prose-pre-code: var(--text-primary);
-  --tw-prose-hr: var(--border);
-  --tw-prose-th-borders: var(--border);
-  --tw-prose-td-borders: var(--border);
+  --tw-prose-hr: var(--border-card);
+  --tw-prose-th-borders: var(--border-card);
+  --tw-prose-td-borders: var(--border-card);
 }
 
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
-  color: var(--accent-gold);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--text-on-parchment);
+  text-shadow: none;
 }
 
 .prose a {
@@ -319,17 +361,18 @@ html {
 }
 
 .prose blockquote {
-  border-left-color: var(--accent-gold);
-  background: var(--background-card);
+  border-left-color: var(--accent-purple);
+  background: rgba(109, 40, 217, 0.05);
   padding: 1rem 1.5rem;
   border-radius: 0 0.5rem 0.5rem 0;
+  color: var(--text-on-parchment-secondary);
 }
 
 .prose hr {
-  border-color: var(--border);
+  border-color: var(--border-card);
 }
 
-/* Scrollbar styling for dark theme */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -345,5 +388,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--border-hover);
+  background: var(--accent-purple);
 }

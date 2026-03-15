@@ -95,7 +95,7 @@ export default async function BlogPostPage({
         </Link>
 
         {/* Title */}
-        <h1 className="font-display text-4xl font-bold tracking-tight text-[#D4A017] sm:text-5xl">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-[#F4E4C1] sm:text-5xl">
           {post.title}
         </h1>
 
@@ -105,7 +105,7 @@ export default async function BlogPostPage({
             className={`rounded-full px-2.5 py-0.5 font-medium ${
               post.category === "Engineering"
                 ? "bg-[#0D9488]/15 text-[#0D9488]"
-                : "bg-[#D4A017]/15 text-[#D4A017]"
+                : "bg-[#6D28D9]/15 text-[#6D28D9]"
             }`}
           >
             {post.category === "Engineering" ? "⚙️ Technomancer" : "🎲 Side Quest"}
@@ -115,9 +115,9 @@ export default async function BlogPostPage({
           <span className="text-[#8B7355]">{post.readingTime}</span>
         </div>
 
-        {/* MDX content with prose - dark tavern tome styling */}
-        <div className="mt-12 rounded-xl border border-[#5C3D2E] bg-[#2C1810] p-8 shadow-lg md:p-10">
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-[#D4A017] prose-p:text-[#F4E4C1] prose-a:text-[#0D9488] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#F4E4C1] prose-code:rounded prose-code:bg-[#0D0805] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[#0D9488] prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-[#5C3D2E] prose-pre:bg-[#0D0805] prose-blockquote:border-l-[#D4A017] prose-blockquote:bg-[#3D2314] prose-blockquote:text-[#C4A882] prose-li:text-[#F4E4C1] prose-ul:text-[#F4E4C1] prose-ol:text-[#F4E4C1] prose-hr:border-[#5C3D2E]">
+        {/* MDX content with prose - parchment scroll styling */}
+        <div className="mt-12 rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-8 shadow-lg md:p-10">
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-[#2D1B0E] prose-p:text-[#5C3D2E] prose-a:text-[#0D9488] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#2D1B0E] prose-code:rounded prose-code:bg-[#2D1B0E]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[#0D9488] prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-[#8B6914] prose-pre:bg-[#2D1B0E] prose-blockquote:border-l-[#6D28D9] prose-blockquote:bg-[#6D28D9]/5 prose-blockquote:text-[#5C3D2E] prose-li:text-[#5C3D2E] prose-ul:text-[#5C3D2E] prose-ol:text-[#5C3D2E] prose-hr:border-[#8B6914]">
             {content}
           </div>
         </div>

@@ -46,7 +46,7 @@ const aboutCards = [
         <path d="m16 9 5-5" />
       </svg>
     ),
-    accent: "gold",
+    accent: "purple",
   },
   {
     title: "Mountain biker",
@@ -95,25 +95,28 @@ const aboutCards = [
 
 const accentStyles = {
   teal: {
-    iconBg: "bg-[#0D9488]/15",
+    iconBg: "bg-[#0D9488]/20",
     iconColor: "text-[#0D9488]",
-    hoverBorder: "group-hover:border-[#0D9488]/40",
+    hoverBorder: "group-hover:border-[#0D9488]",
+    hoverShadow: "group-hover:shadow-[0_0_20px_rgba(13,148,136,0.2)]",
   },
-  gold: {
-    iconBg: "bg-[#D4A017]/15",
-    iconColor: "text-[#D4A017]",
-    hoverBorder: "group-hover:border-[#D4A017]/40",
+  purple: {
+    iconBg: "bg-[#6D28D9]/20",
+    iconColor: "text-[#6D28D9]",
+    hoverBorder: "group-hover:border-[#6D28D9]",
+    hoverShadow: "group-hover:shadow-[0_0_20px_rgba(109,40,217,0.2)]",
   },
   crimson: {
-    iconBg: "bg-[#991B1B]/15",
+    iconBg: "bg-[#991B1B]/20",
     iconColor: "text-[#991B1B]",
-    hoverBorder: "group-hover:border-[#991B1B]/40",
+    hoverBorder: "group-hover:border-[#991B1B]",
+    hoverShadow: "group-hover:shadow-[0_0_20px_rgba(153,27,27,0.2)]",
   },
 };
 
 const categoryLabels: Record<string, string> = {
-  Engineering: "⚙️ Technomancer",
-  Personal: "🎲 Side Quest",
+  Engineering: "Technomancer",
+  Personal: "Side Quest",
 };
 
 function formatDate(dateStr: string) {
@@ -140,17 +143,17 @@ export default function Home() {
   return (
     <div className="scroll-smooth">
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
-        {/* Subtle geometric pattern background */}
-        <div className="geo-pattern absolute inset-0" />
-        {/* Warm candlelight glow behind title */}
-        <div className="hero-glow" />
+      <section className="hero-section relative overflow-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
+        {/* Purple magical ambient glow */}
+        <div className="hero-purple-glow" />
+        {/* Moonlight corner effect */}
+        <div className="hero-moonlight" />
 
         <div className="relative mx-auto max-w-4xl">
           {/* Decorative top element */}
           <div className="mb-6 flex items-center gap-4">
-            <div className="h-px w-12 bg-gradient-to-r from-[#D4A017] to-transparent" />
-            <span className="rounded-full border border-[#D4A017]/30 bg-[#D4A017]/10 px-4 py-1.5 text-sm font-medium text-[#D4A017]">
+            <div className="h-px w-12 bg-gradient-to-r from-[#6D28D9] to-transparent" />
+            <span className="rounded-full border border-[#6D28D9]/30 bg-[#6D28D9]/10 px-4 py-1.5 text-sm font-medium text-[#C4A882]">
               SRE · Leadership · Systems
             </span>
           </div>
@@ -170,13 +173,13 @@ export default function Home() {
 
           {/* RPG stat line */}
           <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#8B7355]">
-            <span>⚔️ Lv.12 Engineer</span>
+            <span>Lv.12 Engineer</span>
             <span className="hidden sm:inline">•</span>
-            <span>🎸 Bard Multiclass</span>
+            <span>Bard Multiclass</span>
             <span className="hidden sm:inline">•</span>
-            <span>🚵 Ranger Subclass</span>
+            <span>Ranger Subclass</span>
             <span className="hidden sm:inline">•</span>
-            <span>🎲 Forever DM</span>
+            <span>Forever DM</span>
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -195,7 +198,7 @@ export default function Home() {
           </div>
 
           {/* Decorative accent line */}
-          <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#D4A017]/60 to-transparent" />
+          <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#6D28D9]/60 to-transparent" />
         </div>
       </section>
 
@@ -209,9 +212,11 @@ export default function Home() {
       {/* About snapshot */}
       <section id="about" className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl font-semibold text-[#D4A017] sm:text-4xl">
-            Who I am
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-3xl font-semibold text-[#F4E4C1] sm:text-4xl">
+              Who I am
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">
             A few things that define me beyond the title
           </p>
@@ -222,17 +227,17 @@ export default function Home() {
               return (
                 <div
                   key={card.title}
-                  className={`group relative rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${styles.hoverBorder}`}
+                  className={`group relative rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 ${styles.hoverBorder} ${styles.hoverShadow}`}
                 >
                   <div
                     className={`mb-4 inline-flex rounded-lg p-2.5 ${styles.iconBg} ${styles.iconColor}`}
                   >
                     {card.icon}
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-[#F4E4C1]">
+                  <h3 className="font-display text-lg font-semibold text-[#2D1B0E]">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#C4A882]">
+                  <p className="mt-2 text-sm leading-relaxed text-[#5C3D2E]">
                     {card.description}
                   </p>
                   {/* RPG stats badge */}
@@ -251,9 +256,11 @@ export default function Home() {
       {/* Recent posts */}
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl font-semibold text-[#D4A017] sm:text-4xl">
-            Latest Posts
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-3xl font-semibold text-[#F4E4C1] sm:text-4xl">
+              Latest Posts
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">
             Recent thoughts on engineering, leadership, and life
           </p>
@@ -264,14 +271,14 @@ export default function Home() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017]/40 hover:shadow-lg"
+                  className="group block rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     <span
                       className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                         post.category === "Engineering"
                           ? "bg-[#0D9488]/15 text-[#0D9488]"
-                          : "bg-[#D4A017]/15 text-[#D4A017]"
+                          : "bg-[#6D28D9]/15 text-[#6D28D9]"
                       }`}
                     >
                       {categoryLabels[post.category]}
@@ -280,10 +287,10 @@ export default function Home() {
                       {formatDate(post.date)}
                     </span>
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-[#F4E4C1] transition-colors group-hover:text-[#D4A017]">
+                  <h3 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#991B1B]">
                     {post.title}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-[#C4A882]">
+                  <p className="mt-2 line-clamp-2 text-sm text-[#5C3D2E]">
                     {post.description}
                   </p>
                   <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
@@ -306,8 +313,8 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="mt-10 rounded-xl border border-dashed border-[#5C3D2E] bg-[#3D2314] p-12 text-center shadow-sm">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A017]/15 text-[#D4A017]">
+            <div className="mt-10 rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-12 text-center shadow-lg">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#6D28D9]/15 text-[#6D28D9]">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -322,14 +329,14 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <p className="text-[#C4A882]">
+              <p className="text-[#5C3D2E]">
                 No posts yet. Check back soon — I&apos;m cooking something up.
               </p>
               <Link
                 href="/blog"
-                className="mt-4 inline-block text-sm font-medium text-[#D4A017] hover:underline"
+                className="mt-4 inline-block text-sm font-medium text-[#991B1B] hover:underline"
               >
-                View blog →
+                View blog
               </Link>
             </div>
           )}

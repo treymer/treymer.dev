@@ -19,7 +19,7 @@ const skillCategories = [
   },
   {
     label: "Containers",
-    color: "gold",
+    color: "purple",
     skills: ["Docker", "Kubernetes", "OpenShift", "ECS", "EKS", "GKE"],
   },
   {
@@ -29,7 +29,7 @@ const skillCategories = [
   },
   {
     label: "AI",
-    color: "gold",
+    color: "purple",
     skills: ["Prompt Engineering", "Claude", "ChatGPT", "Cloud AI Services"],
   },
   {
@@ -42,7 +42,13 @@ const skillCategories = [
 const badgeColors: Record<string, string> = {
   teal: "bg-[#0D9488]/15 text-[#0D9488] border-[#0D9488]/30",
   crimson: "bg-[#991B1B]/15 text-[#991B1B] border-[#991B1B]/30",
-  gold: "bg-[#D4A017]/15 text-[#D4A017] border-[#D4A017]/30",
+  purple: "bg-[#6D28D9]/15 text-[#6D28D9] border-[#6D28D9]/30",
+};
+
+const labelColors: Record<string, string> = {
+  teal: "text-[#0D9488]",
+  crimson: "text-[#991B1B]",
+  purple: "text-[#6D28D9]",
 };
 
 const workHistory = [
@@ -157,15 +163,16 @@ export default function PortfolioPage() {
   return (
     <div className="scroll-smooth">
       {/* Page header */}
-      <section className="px-6 pb-12 pt-8 md:pb-16 md:pt-12">
-        <div className="mx-auto max-w-4xl">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#D4A017] sm:text-5xl md:text-6xl">
+      <section className="hero-section relative px-6 pb-12 pt-8 md:pb-16 md:pt-12">
+        <div className="hero-purple-glow" />
+        <div className="mx-auto max-w-4xl relative">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#F4E4C1] sm:text-5xl md:text-6xl">
             Portfolio
           </h1>
           <p className="mt-3 text-lg text-[#C4A882] sm:text-xl">
             A summary of my experience, skills, and work
           </p>
-          <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#D4A017]/60 to-transparent" />
+          <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#6D28D9]/60 to-transparent" />
         </div>
       </section>
 
@@ -174,9 +181,11 @@ export default function PortfolioPage() {
       {/* Experience timeline */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
-            📜 Adventure Log
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Adventure Log
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">Quests completed and dungeons cleared</p>
 
           <div className="mt-8">
@@ -187,20 +196,21 @@ export default function PortfolioPage() {
                   <div
                     className={`absolute -left-[29px] top-2 h-3 w-3 rounded-full sm:-left-[33px] ${
                       job.current
-                        ? "bg-[#D4A017] ring-4 ring-[#D4A017]/20"
-                        : "border-2 border-[#D4A017]/40 bg-[#1A0F0A]"
+                        ? "bg-[#D4A017]"
+                        : "border-2 border-[#D4A017] bg-[#2D1B0E]"
                     }`}
+                    style={{ boxShadow: job.current ? "0 0 12px rgba(109, 40, 217, 0.5), 0 0 4px rgba(212, 160, 23, 0.5)" : "0 0 8px rgba(109, 40, 217, 0.3)" }}
                   />
-                  <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md">
+                  <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
                     <div className="flex flex-wrap items-baseline gap-2">
                       {job.current && (
-                        <span className="rounded-full bg-[#D4A017]/15 px-2.5 py-0.5 text-xs font-medium text-[#D4A017]">
+                        <span className="rounded-full bg-[#6D28D9]/15 px-2.5 py-0.5 text-xs font-medium text-[#6D28D9]">
                           Current
                         </span>
                       )}
                       <span className="text-sm text-[#8B7355]">{job.dates}</span>
                     </div>
-                    <h3 className="mt-2 font-display text-lg font-semibold text-[#F4E4C1] sm:text-xl">
+                    <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E] sm:text-xl">
                       {job.title}
                     </h3>
                     <p className="text-[#0D9488]">{job.company}</p>
@@ -208,8 +218,8 @@ export default function PortfolioPage() {
                     {job.bullets.length > 0 && (
                       <ul className="mt-4 space-y-2">
                         {job.bullets.map((bullet, i) => (
-                          <li key={i} className="flex gap-2 text-sm text-[#C4A882]">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4A017]" />
+                          <li key={i} className="flex gap-2 text-sm text-[#5C3D2E]">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6D28D9]" />
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -228,23 +238,25 @@ export default function PortfolioPage() {
       {/* Education */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
-            🎓 Lore & Knowledge
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Lore & Knowledge
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">Training grounds and academies</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-5 shadow-md"
+                className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 shadow-lg"
               >
                 <p className="text-sm font-medium text-[#0D9488]">{edu.year}</p>
-                <h3 className="mt-1 font-display font-semibold text-[#F4E4C1]">
+                <h3 className="mt-1 font-display font-semibold text-[#2D1B0E]">
                   {edu.degree}
                 </h3>
-                <p className="mt-1 text-sm text-[#C4A882]">{edu.school}</p>
-                <span className="mt-2 inline-block rounded-full bg-[#D4A017]/15 px-2 py-0.5 text-xs font-medium text-[#D4A017]">
+                <p className="mt-1 text-sm text-[#5C3D2E]">{edu.school}</p>
+                <span className="mt-2 inline-block rounded-full bg-[#6D28D9]/15 px-2 py-0.5 text-xs font-medium text-[#6D28D9]">
                   {edu.honor}
                 </span>
               </div>
@@ -258,18 +270,20 @@ export default function PortfolioPage() {
       {/* Certifications */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
-            🏆 Achievements Unlocked
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Achievements Unlocked
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">Badges earned along the way</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-5 shadow-md"
+                className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 shadow-lg"
               >
-                <h3 className="font-display font-semibold text-[#F4E4C1]">
+                <h3 className="font-display font-semibold text-[#2D1B0E]">
                   {cert.name}
                 </h3>
                 <p className="mt-1 text-sm text-[#0D9488]">{cert.issuer}</p>
@@ -285,9 +299,11 @@ export default function PortfolioPage() {
       {/* Technical skills */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
-            ⚔️ Skill Tree
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Skill Tree
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">
             Abilities unlocked and talents trained
           </p>
@@ -295,7 +311,7 @@ export default function PortfolioPage() {
           <div className="mt-8 space-y-6">
             {skillCategories.map((category) => (
               <div key={category.label}>
-                <h3 className="mb-3 text-sm font-medium uppercase tracking-wider text-[#D4A017]">
+                <h3 className={`mb-3 text-sm font-medium uppercase tracking-wider ${labelColors[category.color]}`}>
                   {category.label}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -319,9 +335,11 @@ export default function PortfolioPage() {
       {/* Currently building */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
-            🔨 Currently Crafting
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Currently Crafting
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">Side quests and experiments</p>
 
           <div className="mt-8">
@@ -329,14 +347,14 @@ export default function PortfolioPage() {
               href="https://github.com/treymer/treymer.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017]/40 hover:shadow-lg"
+              className="group block rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]"
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-[#F4E4C1] transition-colors group-hover:text-[#D4A017]">
+                  <h3 className="font-display text-xl font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#991B1B]">
                     treymer.dev
                   </h3>
-                  <p className="mt-2 text-[#C4A882]">
+                  <p className="mt-2 text-[#5C3D2E]">
                     Personal site and blog built with Next.js, AWS S3/CloudFront,
                     Terraform, GitHub Actions. This site.
                   </p>
@@ -378,9 +396,11 @@ export default function PortfolioPage() {
       {/* Connect */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
-            🤝 Party Up
-          </h2>
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Party Up
+            </h2>
+          </div>
           <p className="mt-2 text-[#8B7355]">
             Looking for group — always happy to chat about SRE, leadership, or the best trails in SoCal
           </p>
@@ -390,7 +410,7 @@ export default function PortfolioPage() {
               href="https://github.com/treymer"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-3 rounded-xl border border-[#5C3D2E] bg-[#3D2314] px-8 py-4 font-semibold text-[#F4E4C1] shadow-md transition-all hover:-translate-y-0.5 hover:border-[#D4A017]/40 hover:shadow-lg"
+              className="flex flex-1 items-center justify-center gap-3 rounded-xl border border-[#8B6914] bg-[#F4E4C1] px-8 py-4 font-semibold text-[#2D1B0E] shadow-lg transition-all hover:-translate-y-0.5 hover:border-[#D4A017] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]"
             >
               <svg
                 className="h-6 w-6"
