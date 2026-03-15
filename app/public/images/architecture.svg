@@ -1,0 +1,133 @@
+<svg width="100%" viewBox="0 0 680 530" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      .th { font-size: 14px; font-weight: 600; fill: #1C1917; }
+      .ts { font-size: 12px; font-weight: 400; fill: #57534E; }
+      .arr { stroke: #78716C; stroke-width: 1; fill: none; }
+
+      /* Box fills */
+      .box-gray   { fill: #F1EFE8; stroke: #B4B2A9; }
+      .box-purple { fill: #EEEDFE; stroke: #AFA9EC; }
+      .box-amber  { fill: #FAEEDA; stroke: #EF9F27; }
+      .box-teal   { fill: #E1F5EE; stroke: #5DCAA5; }
+      .box-blue   { fill: #E6F1FB; stroke: #85B7EB; }
+      .box-green  { fill: #EAF3DE; stroke: #97C459; }
+      .box-coral  { fill: #FAECE7; stroke: #F0997B; }
+
+      /* Dark text on colored boxes */
+      .box-purple + text, .box-purple ~ text { fill: #3C3489; }
+      .th-purple { fill: #3C3489; }
+      .ts-purple { fill: #534AB7; }
+      .th-amber  { fill: #633806; }
+      .ts-amber  { fill: #854F0B; }
+      .th-teal   { fill: #085041; }
+      .ts-teal   { fill: #0F6E56; }
+      .th-blue   { fill: #0C447C; }
+      .ts-blue   { fill: #185FA5; }
+      .th-green  { fill: #27500A; }
+      .ts-green  { fill: #3B6D11; }
+      .th-coral  { fill: #712B13; }
+      .ts-coral  { fill: #993C1D; }
+      .th-gray   { fill: #444441; }
+      .ts-gray   { fill: #5F5E5A; }
+    </style>
+  </defs>
+
+  <!-- Developer -->
+  <rect class="box-gray" x="40" y="40" width="120" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-gray" x="100" y="62" text-anchor="middle" dominant-baseline="central">Developer</text>
+  <text class="ts ts-gray" x="100" y="80" text-anchor="middle" dominant-baseline="central">git push main</text>
+
+  <!-- Arrow: dev to github -->
+  <line x1="161" y1="68" x2="258" y2="68" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="210" y="60" text-anchor="middle">push</text>
+
+  <!-- GitHub Actions -->
+  <rect class="box-purple" x="260" y="40" width="160" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-purple" x="340" y="62" text-anchor="middle" dominant-baseline="central">GitHub Actions</text>
+  <text class="ts ts-purple" x="340" y="80" text-anchor="middle" dominant-baseline="central">build + deploy</text>
+
+  <!-- Arrow: github to iam -->
+  <line x1="421" y1="68" x2="498" y2="68" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="460" y="60" text-anchor="middle">assume role</text>
+
+  <!-- IAM OIDC -->
+  <rect class="box-amber" x="500" y="40" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-amber" x="570" y="62" text-anchor="middle" dominant-baseline="central">AWS IAM OIDC</text>
+  <text class="ts ts-amber" x="570" y="80" text-anchor="middle" dominant-baseline="central">keyless auth</text>
+
+  <!-- Arrow: GitHub Actions down to S3 -->
+  <path d="M310 97 L310 140 L140 140 L140 209" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="215" y="135" text-anchor="middle">s3 sync</text>
+
+  <!-- Arrow: GitHub Actions down to CloudFront -->
+  <path d="M370 97 L370 140 L340 140 L340 209" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="400" y="135" text-anchor="middle">invalidate</text>
+
+  <!-- AWS container -->
+  <rect class="box-teal" x="40" y="160" width="600" height="300" rx="12" stroke-width="0.5"/>
+  <text class="th th-teal" x="340" y="185" text-anchor="middle" dominant-baseline="central">AWS (us-west-2)</text>
+
+  <!-- S3 -->
+  <rect class="box-blue" x="70" y="210" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-blue" x="140" y="232" text-anchor="middle" dominant-baseline="central">S3 Bucket</text>
+  <text class="ts ts-blue" x="140" y="250" text-anchor="middle" dominant-baseline="central">static files (private)</text>
+
+  <!-- Arrow: S3 to CloudFront -->
+  <line x1="211" y1="238" x2="268" y2="238" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="240" y="230" text-anchor="middle">OAC</text>
+
+  <!-- CloudFront -->
+  <rect class="box-blue" x="270" y="210" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-blue" x="340" y="232" text-anchor="middle" dominant-baseline="central">CloudFront</text>
+  <text class="ts ts-blue" x="340" y="250" text-anchor="middle" dominant-baseline="central">CDN + HTTPS + OAC</text>
+
+  <!-- Arrow: ACM to CloudFront -->
+  <line x1="469" y1="238" x2="411" y2="238" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="440" y="230" text-anchor="middle">cert</text>
+
+  <!-- ACM -->
+  <rect class="box-green" x="470" y="210" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-green" x="540" y="232" text-anchor="middle" dominant-baseline="central">ACM Certificate</text>
+  <text class="ts ts-green" x="540" y="250" text-anchor="middle" dominant-baseline="central">*.treymer.dev (TLS)</text>
+
+  <!-- CloudWatch -->
+  <rect class="box-coral" x="70" y="320" width="160" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-coral" x="150" y="342" text-anchor="middle" dominant-baseline="central">CloudWatch</text>
+  <text class="ts ts-coral" x="150" y="360" text-anchor="middle" dominant-baseline="central">alarms + anomaly</text>
+
+  <!-- AWS Budgets -->
+  <rect class="box-coral" x="270" y="320" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-coral" x="340" y="342" text-anchor="middle" dominant-baseline="central">AWS Budgets</text>
+  <text class="ts ts-coral" x="340" y="360" text-anchor="middle" dominant-baseline="central">$5/mo alert</text>
+
+  <!-- SNS -->
+  <rect class="box-coral" x="450" y="320" width="160" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th th-coral" x="530" y="342" text-anchor="middle" dominant-baseline="central">SNS + Email</text>
+  <text class="ts ts-coral" x="530" y="360" text-anchor="middle" dominant-baseline="central">alert delivery</text>
+
+  <!-- Terraform banner -->
+  <rect class="box-purple" x="160" y="400" width="360" height="44" rx="8" stroke-width="0.5"/>
+  <text class="th th-purple" x="340" y="418" text-anchor="middle" dominant-baseline="central">Terraform IaC</text>
+  <text class="ts ts-purple" x="340" y="436" text-anchor="middle" dominant-baseline="central">all resources managed — state in S3</text>
+
+  <!-- Visitor -->
+  <rect class="box-gray" x="40" y="482" width="120" height="34" rx="8" stroke-width="0.5"/>
+  <text class="th th-gray" x="100" y="499" text-anchor="middle" dominant-baseline="central">Visitor</text>
+
+  <!-- Arrow: visitor to cloudflare -->
+  <line x1="161" y1="499" x2="258" y2="499" class="arr" marker-end="url(#arrow)"/>
+  <text class="ts" x="210" y="491" text-anchor="middle">treymer.dev</text>
+
+  <!-- Cloudflare DNS -->
+  <rect class="box-amber" x="260" y="482" width="160" height="34" rx="8" stroke-width="0.5"/>
+  <text class="th th-amber" x="340" y="499" text-anchor="middle" dominant-baseline="central">Cloudflare DNS</text>
+
+  <!-- Arrow: cloudflare up to cloudfront -->
+  <path d="M340 481 L340 267" class="arr" marker-end="url(#arrow)"/>
+
+</svg>
