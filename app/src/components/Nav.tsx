@@ -21,8 +21,10 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-xl font-bold tracking-tight text-stone-900 transition-colors hover:text-[#991B1B]"
+          className="group relative font-display text-xl font-bold tracking-tight text-stone-900 transition-colors hover:text-[#991B1B]"
+          title="Cloud Paladin • SRE Guild Master • Horde Warrior"
         >
+          <span className="mr-1.5 inline-block transition-transform group-hover:rotate-[20deg]">🎲</span>
           treymer<span className="text-[#991B1B]">.dev</span>
         </Link>
 

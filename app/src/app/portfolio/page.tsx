@@ -167,9 +167,9 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Experience
+            📜 Adventure Log
           </h2>
-          <p className="mt-2 text-stone-500">Career progression and focus areas</p>
+          <p className="mt-2 text-stone-500">Quests completed and dungeons cleared</p>
 
           <div className="mt-8">
             {/* Vertical line */}
@@ -222,9 +222,9 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Education
+            🎓 Lore & Knowledge
           </h2>
-          <p className="mt-2 text-stone-500">Academic background</p>
+          <p className="mt-2 text-stone-500">Training grounds and academies</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {education.map((edu, index) => (
@@ -253,9 +253,9 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Certifications
+            🏆 Achievements Unlocked
           </h2>
-          <p className="mt-2 text-stone-500">Professional credentials</p>
+          <p className="mt-2 text-stone-500">Badges earned along the way</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {certifications.map((cert, index) => (
@@ -281,10 +281,10 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Technical skills
+            ⚔️ Skill Tree
           </h2>
           <p className="mt-2 text-stone-500">
-            Tools and technologies I work with
+            Abilities unlocked and talents trained
           </p>
 
           <div className="mt-8 space-y-6">
@@ -316,9 +316,9 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Currently building
+            🔨 Currently Crafting
           </h2>
-          <p className="mt-2 text-stone-500">Side projects and experiments</p>
+          <p className="mt-2 text-stone-500">Side quests and experiments</p>
 
           <div className="mt-8">
             <Link
@@ -376,11 +376,10 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Let&apos;s connect
+            🤝 Party Up
           </h2>
           <p className="mt-2 text-stone-500">
-            Always happy to chat about SRE, leadership, or the best trails in
-            SoCal
+            Looking for group — always happy to chat about SRE, leadership, or the best trails in SoCal
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import KonamiCode from "@/components/KonamiCode";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -27,14 +28,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "treymer.dev — SRE Engineering Manager",
+    default: "treymer.dev — Engineering Leader & SRE Manager",
     template: "%s | treymer.dev",
   },
   description:
-    "SRE Engineering Manager at Walt Disney Company. Building reliable systems at scale.",
+    "Engineering Leader & SRE Manager. Building reliable systems at scale.",
   openGraph: {
     title: "treymer.dev",
-    description: "SRE Engineering Manager at Walt Disney Company",
+    description: "Engineering Leader & SRE Manager. Building reliable systems at scale.",
   },
 };
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Nav />
         <main className="min-h-[calc(100vh-8rem)] pt-16">{children}</main>
         <Footer />
+        <KonamiCode />
       </body>
     </html>
   );

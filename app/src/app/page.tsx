@@ -6,6 +6,7 @@ const aboutCards = [
   {
     title: "Engineering Leader",
     description: "10+ years in cloud, SRE, and datacenter. Building reliable systems at scale.",
+    stats: "INT +10  WIS +8",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +28,7 @@ const aboutCards = [
   {
     title: "Guitar player",
     description: "Strings, riffs, and the occasional jam session.",
+    stats: "CHA +5  DEX +4",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +51,7 @@ const aboutCards = [
   {
     title: "Mountain biker",
     description: "Single track, climbs, and the reward of the descent.",
+    stats: "STR +6  CON +7",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +74,7 @@ const aboutCards = [
   {
     title: "Husband & father",
     description: "Family first. Everything else follows.",
+    stats: "WIS +10  CHA +8",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -105,6 +109,11 @@ const accentStyles = {
     iconColor: "text-[#991B1B]",
     hoverBorder: "group-hover:border-[#991B1B]/30",
   },
+};
+
+const categoryLabels: Record<string, string> = {
+  Engineering: "⚙️ Technomancer",
+  Personal: "🎲 Side Quest",
 };
 
 function formatDate(dateStr: string) {
@@ -147,6 +156,17 @@ export default function Home() {
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-600 sm:text-xl">
             Engineering reliable systems at scale. Leading teams that ship.
             Riding trails, playing riffs, and raising a family.
+          </p>
+
+          {/* RPG stat line */}
+          <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-stone-500">
+            <span>⚔️ Lv.12 Engineer</span>
+            <span className="hidden sm:inline">•</span>
+            <span>🎸 Bard Multiclass</span>
+            <span className="hidden sm:inline">•</span>
+            <span>🚵 Ranger Subclass</span>
+            <span className="hidden sm:inline">•</span>
+            <span>🎲 Forever DM</span>
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -207,6 +227,10 @@ export default function Home() {
                   <p className="mt-2 text-sm leading-relaxed text-stone-500">
                     {card.description}
                   </p>
+                  {/* RPG stats badge */}
+                  <p className="mt-3 font-mono text-xs tracking-wide text-stone-400">
+                    {card.stats}
+                  </p>
                 </div>
               );
             })}
@@ -243,7 +267,7 @@ export default function Home() {
                           : "bg-[#6D28D9]/10 text-[#6D28D9]"
                       }`}
                     >
-                      {post.category}
+                      {categoryLabels[post.category]}
                     </span>
                     <span className="text-sm text-stone-400">
                       {formatDate(post.date)}

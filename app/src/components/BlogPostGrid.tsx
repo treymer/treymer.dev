@@ -6,6 +6,12 @@ import type { Post } from "@/lib/posts";
 
 type Filter = "All" | "Engineering" | "Personal";
 
+const categoryLabels: Record<string, string> = {
+  All: "All Quests",
+  Engineering: "⚙️ Technomancer",
+  Personal: "🎲 Side Quest",
+};
+
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
   return date.toLocaleDateString("en-US", {
@@ -40,7 +46,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
                 : "border border-stone-200 bg-white text-stone-600 shadow-sm hover:border-stone-300 hover:bg-stone-50 hover:text-stone-900"
             }`}
           >
-            {f}
+            {categoryLabels[f]}
           </button>
         ))}
       </div>
@@ -61,7 +67,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
                       : "bg-[#6D28D9]/10 text-[#6D28D9]"
                   }`}
                 >
-                  {post.category}
+                  {categoryLabels[post.category]}
                 </span>
                 <span className="text-sm text-stone-400">
                   {formatDate(post.date)}

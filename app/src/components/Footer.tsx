@@ -23,10 +23,15 @@ export default function Footer() {
         <div className="mb-8 h-px w-full bg-gradient-to-r from-transparent via-stone-200 to-transparent" />
 
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          {/* Copyright */}
-          <p className="text-sm text-stone-500">
-            © {year} Tyler Reymer
-          </p>
+          {/* Copyright and flavor */}
+          <div className="text-center sm:text-left">
+            <p className="text-sm text-stone-500">
+              © {year} Tyler Reymer
+            </p>
+            <p className="mt-1 text-xs text-stone-400">
+              In tech since 2013 • For the Horde! 🗡️
+            </p>
+          </div>
 
           {/* Social links */}
           <nav aria-label="Social links">
@@ -48,8 +53,18 @@ export default function Footer() {
           </nav>
         </div>
 
+        {/* Fun footer text */}
+        <div className="mt-6 text-center">
+          <p className="text-xs text-stone-400">
+            Made with ☕ Next.js, Terraform, and a little magic
+          </p>
+          <p className="mt-2 text-[10px] italic text-stone-300">
+            Why did the dragon invest in servers? Because it wanted to hoard all the data!
+          </p>
+        </div>
+
         {/* Decorative accent line */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#991B1B]/40 to-transparent" />
         </div>
       </div>
