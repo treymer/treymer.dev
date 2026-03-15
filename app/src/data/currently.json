@@ -1,0 +1,38 @@
+{
+  "playing": {
+    "icon": "⚔️",
+    "label": "Playing",
+    "value": "World of Warcraft — The War Within",
+    "sub": "Alliance Paladin, ilvl 620"
+  },
+  "learning": {
+    "icon": "🎸",
+    "label": "Learning",
+    "value": "Eruption — Van Halen",
+    "sub": "Still not there yet..."
+  },
+  "reading": {
+    "icon": "📚",
+    "label": "Reading",
+    "value": "The Way of Kings — Brandon Sanderson",
+    "sub": "Stormlight Archive Book 1"
+  },
+  "building": {
+    "icon": "🧱",
+    "label": "Building",
+    "value": "RX-78-2 Gundam Master Grade",
+    "sub": "Gunpla is freedom"
+  },
+  "riding": {
+    "icon": "🚵",
+    "label": "Last Trail",
+    "value": "Aliso & Wood Canyons",
+    "sub": "Laguna Beach, CA"
+  },
+  "shipping": {
+    "icon": "🚀",
+    "label": "Shipping",
+    "value": "treymer.dev",
+    "sub": "This very site — built with vibe coding"
+  }
+}

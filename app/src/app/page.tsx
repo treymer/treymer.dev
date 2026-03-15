@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import Currently from "@/components/Currently";
 
 const aboutCards = [
   {
@@ -167,6 +168,12 @@ export default function Home() {
           <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#991B1B]/60 to-transparent" />
         </div>
       </section>
+
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-6xl px-6" />
+
+      {/* Currently */}
+      <Currently />
 
       {/* Section divider */}
       <div className="section-divider mx-auto max-w-6xl px-6" />
