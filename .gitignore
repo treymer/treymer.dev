@@ -1,0 +1,16 @@
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Next.js
+app/.next/
+app/out/
+app/node_modules/
+
+# General
+.DS_Store
+*.log
+.env
+.env.local
