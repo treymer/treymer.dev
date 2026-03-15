@@ -46,7 +46,7 @@ const aboutCards = [
         <path d="m16 9 5-5" />
       </svg>
     ),
-    accent: "purple",
+    accent: "gold",
   },
   {
     title: "Mountain biker",
@@ -95,19 +95,19 @@ const aboutCards = [
 
 const accentStyles = {
   teal: {
-    iconBg: "bg-[#0D9488]/10",
+    iconBg: "bg-[#0D9488]/15",
     iconColor: "text-[#0D9488]",
-    hoverBorder: "group-hover:border-[#0D9488]/30",
+    hoverBorder: "group-hover:border-[#0D9488]/40",
   },
-  purple: {
-    iconBg: "bg-[#6D28D9]/10",
-    iconColor: "text-[#6D28D9]",
-    hoverBorder: "group-hover:border-[#6D28D9]/30",
+  gold: {
+    iconBg: "bg-[#D4A017]/15",
+    iconColor: "text-[#D4A017]",
+    hoverBorder: "group-hover:border-[#D4A017]/40",
   },
   crimson: {
-    iconBg: "bg-[#991B1B]/10",
+    iconBg: "bg-[#991B1B]/15",
     iconColor: "text-[#991B1B]",
-    hoverBorder: "group-hover:border-[#991B1B]/30",
+    hoverBorder: "group-hover:border-[#991B1B]/40",
   },
 };
 
@@ -125,6 +125,15 @@ function formatDate(dateStr: string) {
   });
 }
 
+// Section divider component with diamond
+function SectionDivider() {
+  return (
+    <div className="section-divider mx-auto max-w-6xl px-6">
+      <div className="section-divider-diamond" />
+    </div>
+  );
+}
+
 export default function Home() {
   const recentPosts = getAllPosts().slice(0, 3);
 
@@ -134,18 +143,19 @@ export default function Home() {
       <section className="relative overflow-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
         {/* Subtle geometric pattern background */}
         <div className="geo-pattern absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FAFAF7]/80 to-[#FAFAF7]" />
+        {/* Warm candlelight glow behind title */}
+        <div className="hero-glow" />
 
         <div className="relative mx-auto max-w-4xl">
           {/* Decorative top element */}
           <div className="mb-6 flex items-center gap-4">
-            <div className="h-px w-12 bg-gradient-to-r from-[#991B1B] to-transparent" />
-            <span className="rounded-full border border-[#991B1B]/20 bg-[#991B1B]/5 px-4 py-1.5 text-sm font-medium text-[#991B1B]">
+            <div className="h-px w-12 bg-gradient-to-r from-[#D4A017] to-transparent" />
+            <span className="rounded-full border border-[#D4A017]/30 bg-[#D4A017]/10 px-4 py-1.5 text-sm font-medium text-[#D4A017]">
               SRE · Leadership · Systems
             </span>
           </div>
 
-          <h1 className="font-display text-5xl font-semibold tracking-tight text-stone-900 sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="font-display text-5xl font-semibold tracking-tight text-[#F4E4C1] sm:text-6xl md:text-7xl lg:text-8xl">
             Tyler Reymer
           </h1>
 
@@ -153,13 +163,13 @@ export default function Home() {
             Engineering Leader & SRE Manager
           </p>
 
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-600 sm:text-xl">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#C4A882] sm:text-xl">
             Engineering reliable systems at scale. Leading teams that ship.
             Riding trails, playing riffs, and raising a family.
           </p>
 
           {/* RPG stat line */}
-          <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-stone-500">
+          <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#8B7355]">
             <span>⚔️ Lv.12 Engineer</span>
             <span className="hidden sm:inline">•</span>
             <span>🎸 Bard Multiclass</span>
@@ -172,39 +182,37 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/blog"
-              className="inline-flex items-center justify-center rounded-lg bg-[#991B1B] px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-[#7F1D1D] hover:shadow-lg hover:shadow-[#991B1B]/20"
+              className="btn-primary inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold shadow-md"
             >
               Read the Blog
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white px-6 py-3 font-semibold text-stone-700 shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50 hover:text-stone-900"
+              className="btn-secondary inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold"
             >
               View Portfolio
             </Link>
           </div>
 
           {/* Decorative accent line */}
-          <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#991B1B]/60 to-transparent" />
+          <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#D4A017]/60 to-transparent" />
         </div>
       </section>
 
-      {/* Section divider */}
-      <div className="section-divider mx-auto max-w-6xl px-6" />
+      <SectionDivider />
 
       {/* Currently */}
       <Currently />
 
-      {/* Section divider */}
-      <div className="section-divider mx-auto max-w-6xl px-6" />
+      <SectionDivider />
 
       {/* About snapshot */}
       <section id="about" className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl font-semibold text-stone-900 sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold text-[#D4A017] sm:text-4xl">
             Who I am
           </h2>
-          <p className="mt-2 text-stone-500">
+          <p className="mt-2 text-[#8B7355]">
             A few things that define me beyond the title
           </p>
 
@@ -214,21 +222,21 @@ export default function Home() {
               return (
                 <div
                   key={card.title}
-                  className={`group relative rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${styles.hoverBorder}`}
+                  className={`group relative rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${styles.hoverBorder}`}
                 >
                   <div
                     className={`mb-4 inline-flex rounded-lg p-2.5 ${styles.iconBg} ${styles.iconColor}`}
                   >
                     {card.icon}
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-stone-900">
+                  <h3 className="font-display text-lg font-semibold text-[#F4E4C1]">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-500">
+                  <p className="mt-2 text-sm leading-relaxed text-[#C4A882]">
                     {card.description}
                   </p>
                   {/* RPG stats badge */}
-                  <p className="mt-3 font-mono text-xs tracking-wide text-stone-400">
+                  <p className="mt-3 font-mono text-xs tracking-wide text-[#8B7355]">
                     {card.stats}
                   </p>
                 </div>
@@ -238,16 +246,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section divider */}
-      <div className="section-divider mx-auto max-w-6xl px-6" />
+      <SectionDivider />
 
       {/* Recent posts */}
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl font-semibold text-stone-900 sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold text-[#D4A017] sm:text-4xl">
             Latest Posts
           </h2>
-          <p className="mt-2 text-stone-500">
+          <p className="mt-2 text-[#8B7355]">
             Recent thoughts on engineering, leadership, and life
           </p>
 
@@ -257,26 +264,26 @@ export default function Home() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-lg"
+                  className="group block rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017]/40 hover:shadow-lg"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     <span
                       className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                         post.category === "Engineering"
-                          ? "bg-[#0D9488]/10 text-[#0D9488]"
-                          : "bg-[#6D28D9]/10 text-[#6D28D9]"
+                          ? "bg-[#0D9488]/15 text-[#0D9488]"
+                          : "bg-[#D4A017]/15 text-[#D4A017]"
                       }`}
                     >
                       {categoryLabels[post.category]}
                     </span>
-                    <span className="text-sm text-stone-400">
+                    <span className="text-sm text-[#8B7355]">
                       {formatDate(post.date)}
                     </span>
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-stone-900 transition-colors group-hover:text-[#991B1B]">
+                  <h3 className="font-display text-lg font-semibold text-[#F4E4C1] transition-colors group-hover:text-[#D4A017]">
                     {post.title}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-stone-500">
+                  <p className="mt-2 line-clamp-2 text-sm text-[#C4A882]">
                     {post.description}
                   </p>
                   <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
@@ -299,8 +306,8 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="mt-10 rounded-xl border border-dashed border-stone-300 bg-white p-12 text-center shadow-sm">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#991B1B]/10 text-[#991B1B]">
+            <div className="mt-10 rounded-xl border border-dashed border-[#5C3D2E] bg-[#3D2314] p-12 text-center shadow-sm">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A017]/15 text-[#D4A017]">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -315,12 +322,12 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <p className="text-stone-500">
+              <p className="text-[#C4A882]">
                 No posts yet. Check back soon — I&apos;m cooking something up.
               </p>
               <Link
                 href="/blog"
-                className="mt-4 inline-block text-sm font-medium text-[#991B1B] hover:underline"
+                className="mt-4 inline-block text-sm font-medium text-[#D4A017] hover:underline"
               >
                 View blog →
               </Link>

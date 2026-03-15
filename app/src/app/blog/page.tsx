@@ -14,13 +14,13 @@ export default function BlogPage() {
     <div className="px-6 pb-16 pt-8 md:pb-20 md:pt-12">
       <div className="mx-auto max-w-4xl">
         <header>
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#D4A017] sm:text-5xl">
             Blog
           </h1>
-          <p className="mt-3 text-lg text-stone-500">
+          <p className="mt-3 text-lg text-[#C4A882]">
             Thoughts on engineering, leadership, and life.
           </p>
-          <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#991B1B]/60 to-transparent" />
+          <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#D4A017]/60 to-transparent" />
         </header>
 
         <div className="mt-10">

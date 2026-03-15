@@ -6,58 +6,66 @@ export const metadata = {
     "Tyler Reymer — Engineering Leader & SRE Manager. 10+ years in cloud, SRE, and datacenter. Guitar, mountain biking, husband and father.",
 };
 
+// Section divider component with diamond
+function SectionDivider() {
+  return (
+    <div className="section-divider mx-auto max-w-3xl px-6">
+      <div className="section-divider-diamond" />
+    </div>
+  );
+}
+
 export default function AboutPage() {
   return (
     <div className="scroll-smooth">
       {/* Hero / Intro */}
       <section className="px-6 pb-12 pt-8 md:pb-16 md:pt-12">
         <div className="mx-auto max-w-3xl">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#D4A017] sm:text-5xl md:text-6xl">
             Tyler Reymer
           </h1>
           <p className="mt-3 text-xl font-medium text-[#0D9488] sm:text-2xl">
             Engineering Leader & SRE Manager
           </p>
-          <p className="mt-6 text-lg leading-relaxed text-stone-600">
+          <p className="mt-6 text-lg leading-relaxed text-[#C4A882]">
             I&apos;ve spent over a decade in cloud engineering, site reliability,
             and data center operations. These days I lead SRE teams focused on
             keeping large-scale systems running reliably. I&apos;m passionate
             about building systems that don&apos;t break, growing teams that ship
             with confidence, and the messy, human side of technology leadership.
           </p>
-          <div className="mt-8 h-px w-24 bg-gradient-to-r from-[#991B1B]/60 to-transparent" />
+          <div className="mt-8 h-px w-24 bg-gradient-to-r from-[#D4A017]/60 to-transparent" />
         </div>
       </section>
 
-      {/* Section divider */}
-      <div className="section-divider mx-auto max-w-3xl px-6" />
+      <SectionDivider />
 
       {/* Professional Background */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
             Professional background
           </h2>
-          <p className="mt-2 text-stone-500">
+          <p className="mt-2 text-[#8B7355]">
             How I got here, and what I do now
           </p>
 
           <div className="mt-8 space-y-6">
             {/* Current role */}
             <div className="relative pl-6">
-              <div className="absolute left-0 top-2 h-3 w-3 rounded-full bg-[#991B1B] ring-4 ring-[#991B1B]/20" />
-              <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md">
+              <div className="absolute left-0 top-2 h-3 w-3 rounded-full bg-[#D4A017] ring-4 ring-[#D4A017]/20" />
+              <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md">
                 <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="inline-block rounded-full bg-[#991B1B]/10 px-2.5 py-0.5 text-xs font-medium text-[#991B1B]">
+                  <span className="inline-block rounded-full bg-[#D4A017]/15 px-2.5 py-0.5 text-xs font-medium text-[#D4A017]">
                     Current
                   </span>
-                  <span className="text-sm text-stone-400">2024 — Present</span>
+                  <span className="text-sm text-[#8B7355]">2024 — Present</span>
                 </div>
-                <h3 className="mt-3 font-display text-xl font-semibold text-stone-900">
+                <h3 className="mt-3 font-display text-xl font-semibold text-[#F4E4C1]">
                   Manager, Systems Reliability Engineering
                 </h3>
                 <p className="text-[#0D9488]">Major Entertainment & Technology Company</p>
-                <p className="mt-3 text-stone-600">
+                <p className="mt-3 text-[#C4A882]">
                   Leading a globally scalable SRE team supporting business-critical
                   cloud applications including AI platforms, SAP, Tableau, and data
                   science infrastructure. Partnering with executive leadership on
@@ -68,14 +76,14 @@ export default function AboutPage() {
 
             {/* Edwards Lifesciences */}
             <div className="relative pl-6">
-              <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#991B1B]/40 bg-[#FAFAF7]" />
-              <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md">
-                <span className="text-sm text-stone-400">2022 — 2024</span>
-                <h3 className="mt-2 font-display text-lg font-semibold text-stone-900">
+              <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017]/40 bg-[#1A0F0A]" />
+              <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md">
+                <span className="text-sm text-[#8B7355]">2022 — 2024</span>
+                <h3 className="mt-2 font-display text-lg font-semibold text-[#F4E4C1]">
                   Senior Manager, Cloud & Site Reliability Engineering
                 </h3>
                 <p className="text-[#0D9488]">Edwards Lifesciences</p>
-                <p className="mt-2 text-stone-600">
+                <p className="mt-2 text-[#C4A882]">
                   Led a global engineering team responsible for AWS infrastructure,
                   SRE practices, and cloud spend optimization for complex manufacturing
                   and product applications.
@@ -85,14 +93,14 @@ export default function AboutPage() {
 
             {/* Red Hat */}
             <div className="relative pl-6">
-              <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#991B1B]/40 bg-[#FAFAF7]" />
-              <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md">
-                <span className="text-sm text-stone-400">2021 — 2022</span>
-                <h3 className="mt-2 font-display text-lg font-semibold text-stone-900">
+              <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017]/40 bg-[#1A0F0A]" />
+              <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md">
+                <span className="text-sm text-[#8B7355]">2021 — 2022</span>
+                <h3 className="mt-2 font-display text-lg font-semibold text-[#F4E4C1]">
                   Cloud Engineer / Site Reliability Engineer
                 </h3>
                 <p className="text-[#0D9488]">Red Hat</p>
-                <p className="mt-2 text-stone-600">
+                <p className="mt-2 text-[#C4A882]">
                   Architected and supported 400+ OpenShift clusters across multiple
                   clouds. Designed FedRAMP compliant AWS environments and hybrid
                   cloud infrastructure.
@@ -102,14 +110,14 @@ export default function AboutPage() {
 
             {/* Blizzard */}
             <div className="relative pl-6">
-              <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#991B1B]/40 bg-[#FAFAF7]" />
-              <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md">
-                <span className="text-sm text-stone-400">2015 — 2021</span>
-                <h3 className="mt-2 font-display text-lg font-semibold text-stone-900">
+              <div className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017]/40 bg-[#1A0F0A]" />
+              <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md">
+                <span className="text-sm text-[#8B7355]">2015 — 2021</span>
+                <h3 className="mt-2 font-display text-lg font-semibold text-[#F4E4C1]">
                   Cloud Engineer / Data Center Administrator
                 </h3>
                 <p className="text-[#0D9488]">Blizzard Entertainment</p>
-                <p className="mt-2 text-stone-600">
+                <p className="mt-2 text-[#C4A882]">
                   Hybrid cloud engineering supporting games with millions of concurrent
                   players. Architected cloud governance for GCP and AWS, and designed
                   next-generation global data centers.
@@ -120,20 +128,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section divider */}
-      <div className="section-divider mx-auto max-w-3xl px-6" />
+      <SectionDivider />
 
       {/* Hobbies & Life Outside Work */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
             Life outside work
           </h2>
-          <p className="mt-2 text-stone-500">The things that keep me grounded</p>
+          <p className="mt-2 text-[#8B7355]">The things that keep me grounded</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="inline-flex rounded-lg bg-[#6D28D9]/10 p-2.5 text-[#6D28D9]">
+            <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017]/40 hover:shadow-lg">
+              <div className="inline-flex rounded-lg bg-[#D4A017]/15 p-2.5 text-[#D4A017]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -150,17 +157,17 @@ export default function AboutPage() {
                   <path d="m16 9 5-5" />
                 </svg>
               </div>
-              <h3 className="mt-4 font-display font-semibold text-stone-900">
+              <h3 className="mt-4 font-display font-semibold text-[#F4E4C1]">
                 Guitar
               </h3>
-              <p className="mt-2 text-sm text-stone-500">
+              <p className="mt-2 text-sm text-[#C4A882]">
                 Playing, learning, and the occasional jam session. It&apos;s
                 meditative in a way that nothing else is.
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="inline-flex rounded-lg bg-[#0D9488]/10 p-2.5 text-[#0D9488]">
+            <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#0D9488]/40 hover:shadow-lg">
+              <div className="inline-flex rounded-lg bg-[#0D9488]/15 p-2.5 text-[#0D9488]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -177,17 +184,17 @@ export default function AboutPage() {
                   <path d="m12 4 3 7 5 6.5" />
                 </svg>
               </div>
-              <h3 className="mt-4 font-display font-semibold text-stone-900">
+              <h3 className="mt-4 font-display font-semibold text-[#F4E4C1]">
                 Mountain biking
               </h3>
-              <p className="mt-2 text-sm text-stone-500">
+              <p className="mt-2 text-sm text-[#C4A882]">
                 Trail riding and single track. The climbs are brutal, the
                 descents make it worth it.
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="inline-flex rounded-lg bg-[#991B1B]/10 p-2.5 text-[#991B1B]">
+            <div className="rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#991B1B]/40 hover:shadow-lg">
+              <div className="inline-flex rounded-lg bg-[#991B1B]/15 p-2.5 text-[#991B1B]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -201,17 +208,17 @@ export default function AboutPage() {
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
               </div>
-              <h3 className="mt-4 font-display font-semibold text-stone-900">
+              <h3 className="mt-4 font-display font-semibold text-[#F4E4C1]">
                 Husband & father
               </h3>
-              <p className="mt-2 text-sm text-stone-500">
+              <p className="mt-2 text-sm text-[#C4A882]">
                 Family first. Everything else — work, hobbies, side projects —
                 comes after.
               </p>
             </div>
           </div>
 
-          <p className="mt-8 text-lg leading-relaxed text-stone-600">
+          <p className="mt-8 text-lg leading-relaxed text-[#C4A882]">
             The common thread? I like getting lost in something — whether
             it&apos;s a riff, a trail, or time with my people. That same focus
             shows up in how I approach engineering and leadership: deep work,
@@ -220,16 +227,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section divider */}
-      <div className="section-divider mx-auto max-w-3xl px-6" />
+      <SectionDivider />
 
       {/* Connect */}
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-[#D4A017] sm:text-3xl">
             Let&apos;s connect
           </h2>
-          <p className="mt-2 text-stone-500">
+          <p className="mt-2 text-[#8B7355]">
             Always happy to chat about SRE, leadership, or the best trails in
             SoCal
           </p>
@@ -239,7 +245,7 @@ export default function AboutPage() {
               href="https://github.com/treymer"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-3 rounded-xl border border-stone-200 bg-white px-8 py-4 font-semibold text-stone-700 shadow-md transition-all hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-lg"
+              className="flex flex-1 items-center justify-center gap-3 rounded-xl border border-[#5C3D2E] bg-[#3D2314] px-8 py-4 font-semibold text-[#F4E4C1] shadow-md transition-all hover:-translate-y-0.5 hover:border-[#D4A017]/40 hover:shadow-lg"
             >
               <svg
                 className="h-6 w-6"
@@ -259,7 +265,7 @@ export default function AboutPage() {
               href="https://www.linkedin.com/in/tyler-reymer/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-3 rounded-xl bg-[#991B1B] px-8 py-4 font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#7F1D1D] hover:shadow-lg hover:shadow-[#991B1B]/20"
+              className="btn-primary flex flex-1 items-center justify-center gap-3 rounded-xl px-8 py-4 font-semibold shadow-md transition-all hover:-translate-y-0.5"
             >
               <svg
                 className="h-6 w-6"

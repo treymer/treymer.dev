@@ -17,18 +17,18 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-stone-200 bg-white">
+    <footer className="border-t border-[#5C3D2E] bg-[#2C1810]">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Decorative divider */}
-        <div className="mb-8 h-px w-full bg-gradient-to-r from-transparent via-stone-200 to-transparent" />
+        <div className="mb-8 h-px w-full bg-gradient-to-r from-transparent via-[#D4A017]/40 to-transparent" />
 
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           {/* Copyright and flavor */}
           <div className="text-center sm:text-left">
-            <p className="text-sm text-stone-500">
+            <p className="text-sm text-[#C4A882]">
               © {year} Tyler Reymer
             </p>
-            <p className="mt-1 text-xs text-stone-400">
+            <p className="mt-1 text-xs text-[#8B7355]">
               In tech since 2013 • For the Horde! 🗡️
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.ariaLabel}
-                    className="text-sm font-medium text-stone-500 transition-colors hover:text-[#991B1B]"
+                    className="text-sm font-medium text-[#C4A882] transition-colors hover:text-[#D4A017]"
                   >
                     {link.label}
                   </Link>
@@ -55,17 +55,17 @@ export default function Footer() {
 
         {/* Fun footer text */}
         <div className="mt-6 text-center">
-          <p className="text-xs text-stone-400">
+          <p className="text-xs text-[#8B7355]">
             Made with ☕ Next.js, Terraform, and a little magic
           </p>
-          <p className="mt-2 text-[10px] italic text-stone-300">
+          <p className="mt-2 text-[10px] italic text-[#6B5A45]">
             Why did the dragon invest in servers? Because it wanted to hoard all the data!
           </p>
         </div>
 
         {/* Decorative accent line */}
         <div className="mt-6 flex justify-center">
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#991B1B]/40 to-transparent" />
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#D4A017]/40 to-transparent" />
         </div>
       </div>
     </footer>

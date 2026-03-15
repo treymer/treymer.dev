@@ -2,37 +2,45 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Warm light theme palette */
-  --background: #FAFAF7;
-  --foreground: #1C1917;
-  --card-bg: #FFFFFF;
-  --border: #E7E5E4;
-  --border-hover: #D6D3D1;
+  /* Fantasy Tavern dark theme palette */
+  --background: #1A0F0A;
+  --background-mid: #2C1810;
+  --background-card: #3D2314;
+  --foreground: #F4E4C1;
+  --border: #5C3D2E;
+  --border-hover: #7A5040;
 
-  /* Accent colors */
+  /* Crimson red accent */
   --accent-primary: #991B1B;
   --accent-primary-hover: #7F1D1D;
-  --accent-primary-muted: rgba(153, 27, 27, 0.1);
-  --accent-primary-glow: rgba(153, 27, 27, 0.25);
+  --accent-primary-muted: rgba(153, 27, 27, 0.15);
+  --accent-primary-glow: rgba(153, 27, 27, 0.35);
 
+  /* Teal accent */
   --accent-secondary: #0D9488;
   --accent-secondary-hover: #0F766E;
-  --accent-secondary-muted: rgba(13, 148, 136, 0.1);
+  --accent-secondary-muted: rgba(13, 148, 136, 0.15);
 
+  /* Gold accent */
+  --accent-gold: #D4A017;
+  --accent-gold-hover: #B8860B;
+  --accent-gold-muted: rgba(212, 160, 23, 0.15);
+
+  /* Purple accent */
   --accent-tertiary: #6D28D9;
   --accent-tertiary-hover: #5B21B6;
-  --accent-tertiary-muted: rgba(109, 40, 217, 0.1);
+  --accent-tertiary-muted: rgba(109, 40, 217, 0.15);
 
-  /* Text hierarchy */
-  --text-primary: #1C1917;
-  --text-secondary: #57534E;
-  --text-muted: #78716C;
+  /* Text hierarchy - warm cream tones */
+  --text-primary: #F4E4C1;
+  --text-secondary: #C4A882;
+  --text-muted: #8B7355;
 
-  /* Warm shadows */
-  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
-  --shadow-md: 0 4px 12px rgba(28, 25, 23, 0.06), 0 1px 3px rgba(28, 25, 23, 0.04);
-  --shadow-lg: 0 8px 24px rgba(28, 25, 23, 0.08), 0 2px 6px rgba(28, 25, 23, 0.04);
-  --shadow-hover: 0 12px 32px rgba(28, 25, 23, 0.1), 0 4px 8px rgba(28, 25, 23, 0.06);
+  /* Dark warm shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(212, 160, 23, 0.15);
 }
 
 @theme inline {
@@ -45,11 +53,11 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text-primary);
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Subtle parchment texture overlay */
+/* Subtle wood grain texture overlay */
 body::before {
   content: "";
   position: fixed;
@@ -58,20 +66,41 @@ body::before {
   right: 0;
   bottom: 0;
   pointer-events: none;
+  z-index: -2;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 8 50 10 T100 10' stroke='%234a3728' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Cpath d='M0 5 Q30 3 60 5 T100 5' stroke='%234a3728' stroke-width='0.3' fill='none' opacity='0.2'/%3E%3Cpath d='M0 15 Q20 17 50 15 T100 15' stroke='%234a3728' stroke-width='0.4' fill='none' opacity='0.25'/%3E%3C/svg%3E");
+  background-size: 100px 20px;
+  opacity: 0.4;
+}
+
+/* Warm candlelight vignette effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
   z-index: -1;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.015;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(26, 15, 10, 0.3) 80%,
+    rgba(26, 15, 10, 0.6) 100%
+  );
 }
 
 /* Display font utility for headings and nav */
 .font-display {
   font-family: var(--font-cinzel), Georgia, serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Selection styling */
 ::selection {
-  background-color: var(--accent-primary-muted);
-  color: var(--accent-primary);
+  background-color: var(--accent-gold-muted);
+  color: var(--accent-gold);
 }
 
 /* Smooth scrolling */
@@ -79,9 +108,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Card base styles */
+/* Card base styles - dark tavern cards */
 .card {
-  background: var(--card-bg);
+  background: var(--background-card);
   border: 1px solid var(--border);
   border-radius: 0.75rem;
   box-shadow: var(--shadow-md);
@@ -91,10 +120,10 @@ html {
 .card:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
-  border-color: var(--border-hover);
+  border-color: var(--accent-gold);
 }
 
-/* Primary button glow effect */
+/* Primary button with crimson glow */
 .btn-primary {
   background: var(--accent-primary);
   color: white;
@@ -103,38 +132,106 @@ html {
 
 .btn-primary:hover {
   background: var(--accent-primary-hover);
-  box-shadow: 0 0 20px var(--accent-primary-glow);
+  box-shadow: 0 0 24px var(--accent-primary-glow), 0 0 8px var(--accent-primary-glow);
 }
 
-/* Section divider decorative element */
+/* Secondary button with gold outline */
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-gold-muted);
+  border-color: var(--accent-gold-hover);
+  box-shadow: 0 0 16px var(--accent-gold-muted);
+}
+
+/* Section divider with crossed lines and diamond */
 .section-divider {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
+  height: 48px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
 .section-divider::before {
+  left: 0;
+  right: 50%;
+  margin-right: 20px;
+  transform: rotate(-1deg);
+}
+
+.section-divider::after {
+  left: 50%;
+  right: 0;
+  margin-left: 20px;
+  transform: rotate(1deg);
+}
+
+/* Diamond center decoration */
+.section-divider-diamond {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px var(--accent-gold-muted);
+}
+
+.section-divider-diamond::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: var(--background);
 }
 
-/* Decorative geometric pattern */
+/* Decorative geometric pattern - darker version */
 .geo-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23991B1B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Code block syntax highlighting (rehype-highlight) */
+/* Hero warm glow effect */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 160, 23, 0.15) 0%,
+    rgba(153, 27, 27, 0.08) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Code block syntax highlighting - very dark */
 .prose pre.hljs,
-.prose pre code.hljs {
-  background: #1C1917;
+.prose pre code.hljs,
+.prose pre {
+  background: #0D0805 !important;
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
+  border: 1px solid var(--border);
 }
 
 .prose :not(pre) > code {
@@ -166,31 +263,87 @@ html {
   width: 100%;
 }
 
-/* Badge styles */
+/* Badge styles - dark theme */
 .badge-engineering {
   background: var(--accent-secondary-muted);
   color: var(--accent-secondary);
-  border: 1px solid transparent;
+  border: 1px solid rgba(13, 148, 136, 0.3);
 }
 
 .badge-personal {
-  background: var(--accent-tertiary-muted);
-  color: var(--accent-tertiary);
-  border: 1px solid transparent;
+  background: var(--accent-gold-muted);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 160, 23, 0.3);
 }
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
-/* Prose customization for blog posts */
+/* Prose customization for blog posts - dark tavern tome */
 .prose {
   --tw-prose-body: var(--text-primary);
-  --tw-prose-headings: var(--text-primary);
+  --tw-prose-headings: var(--accent-gold);
   --tw-prose-links: var(--accent-secondary);
   --tw-prose-bold: var(--text-primary);
   --tw-prose-quotes: var(--text-secondary);
-  --tw-prose-quote-borders: var(--accent-primary);
+  --tw-prose-quote-borders: var(--accent-gold);
+  --tw-prose-code: var(--accent-secondary);
+  --tw-prose-pre-bg: #0D0805;
+  --tw-prose-pre-code: var(--text-primary);
+  --tw-prose-hr: var(--border);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--accent-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.prose a {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  text-decoration-color: rgba(13, 148, 136, 0.4);
+  transition: all 0.2s;
+}
+
+.prose a:hover {
+  color: var(--accent-secondary-hover);
+  text-decoration-color: var(--accent-secondary);
+}
+
+.prose blockquote {
+  border-left-color: var(--accent-gold);
+  background: var(--background-card);
+  padding: 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose hr {
+  border-color: var(--border);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
 }

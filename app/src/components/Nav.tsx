@@ -17,12 +17,12 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200 bg-[#FAFAF7]/90 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#5C3D2E] bg-[#2C1810]/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="group relative inline-flex items-center font-display text-xl font-bold tracking-tight text-stone-900 transition-colors hover:text-[#991B1B]"
+          className="group relative inline-flex items-center font-display text-xl font-bold tracking-tight text-[#F4E4C1] transition-colors hover:text-[#D4A017]"
           title="Cloud Paladin • SRE Guild Master • Horde Warrior"
         >
           <Image
@@ -48,7 +48,7 @@ export default function Nav() {
                   className={`relative font-medium transition-colors ${
                     isActive
                       ? "text-[#991B1B]"
-                      : "text-stone-600 hover:text-stone-900"
+                      : "text-[#C4A882] hover:text-[#D4A017]"
                   }`}
                 >
                   {link.label}
@@ -65,22 +65,22 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-white transition-colors hover:border-stone-300 hover:bg-stone-50 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-[#5C3D2E] bg-[#3D2314] transition-colors hover:border-[#7A5040] hover:bg-[#4a2d1a] md:hidden"
           aria-expanded={mobileOpen}
           aria-label="Toggle menu"
         >
           <span
-            className={`h-0.5 w-5 bg-stone-700 transition-all ${
+            className={`h-0.5 w-5 bg-[#C4A882] transition-all ${
               mobileOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-5 bg-stone-700 transition-all ${
+            className={`h-0.5 w-5 bg-[#C4A882] transition-all ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-5 bg-stone-700 transition-all ${
+            className={`h-0.5 w-5 bg-[#C4A882] transition-all ${
               mobileOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -89,7 +89,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-stone-200 bg-white transition-all duration-300 ease-out md:hidden ${
+        className={`overflow-hidden border-t border-[#5C3D2E] bg-[#2C1810] transition-all duration-300 ease-out md:hidden ${
           mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -106,7 +106,7 @@ export default function Nav() {
                   className={`block border-l-2 py-3 pl-4 font-medium transition-colors ${
                     isActive
                       ? "border-[#991B1B] text-[#991B1B]"
-                      : "border-transparent text-stone-600 hover:border-stone-300 hover:text-stone-900"
+                      : "border-transparent text-[#C4A882] hover:border-[#D4A017] hover:text-[#D4A017]"
                   }`}
                 >
                   {link.label}

@@ -76,7 +76,7 @@ export default async function BlogPostPage({
         {/* Back button */}
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-400"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] transition-colors hover:text-[#D4A017]"
         >
           <svg
             className="h-4 w-4"
@@ -95,7 +95,7 @@ export default async function BlogPostPage({
         </Link>
 
         {/* Title */}
-        <h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-[#D4A017] sm:text-5xl">
           {post.title}
         </h1>
 
@@ -104,20 +104,22 @@ export default async function BlogPostPage({
           <span
             className={`rounded-full px-2.5 py-0.5 font-medium ${
               post.category === "Engineering"
-                ? "bg-cyan-500/20 text-cyan-400"
-                : "bg-amber-500/20 text-amber-400"
+                ? "bg-[#0D9488]/15 text-[#0D9488]"
+                : "bg-[#D4A017]/15 text-[#D4A017]"
             }`}
           >
-            {post.category}
+            {post.category === "Engineering" ? "⚙️ Technomancer" : "🎲 Side Quest"}
           </span>
-          <span className="text-zinc-500">{formatDate(post.date)}</span>
-          <span className="text-zinc-600">·</span>
-          <span className="text-zinc-500">{post.readingTime}</span>
+          <span className="text-[#8B7355]">{formatDate(post.date)}</span>
+          <span className="text-[#5C3D2E]">·</span>
+          <span className="text-[#8B7355]">{post.readingTime}</span>
         </div>
 
-        {/* MDX content with prose */}
-        <div className="prose prose-lg prose-invert prose-zinc mt-12 max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-zinc-800/80 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-cyan-300 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-white/10 prose-pre:bg-zinc-900/50">
-          {content}
+        {/* MDX content with prose - dark tavern tome styling */}
+        <div className="mt-12 rounded-xl border border-[#5C3D2E] bg-[#2C1810] p-8 shadow-lg md:p-10">
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-[#D4A017] prose-p:text-[#F4E4C1] prose-a:text-[#0D9488] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#F4E4C1] prose-code:rounded prose-code:bg-[#0D0805] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[#0D9488] prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-[#5C3D2E] prose-pre:bg-[#0D0805] prose-blockquote:border-l-[#D4A017] prose-blockquote:bg-[#3D2314] prose-blockquote:text-[#C4A882] prose-li:text-[#F4E4C1] prose-ul:text-[#F4E4C1] prose-ol:text-[#F4E4C1] prose-hr:border-[#5C3D2E]">
+            {content}
+          </div>
         </div>
       </div>
     </article>

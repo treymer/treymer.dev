@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${cinzel.variable} ${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-[#FAFAF7] font-sans text-stone-900 antialiased`}
+        className={`${cinzel.variable} ${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-[#1A0F0A] font-sans text-[#F4E4C1] antialiased`}
       >
         <Nav />
         <main className="min-h-[calc(100vh-8rem)] pt-16">{children}</main>

@@ -42,8 +42,8 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             onClick={() => setFilter(f)}
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
               filter === f
-                ? "bg-[#991B1B] text-white shadow-md"
-                : "border border-stone-200 bg-white text-stone-600 shadow-sm hover:border-stone-300 hover:bg-stone-50 hover:text-stone-900"
+                ? "bg-[#991B1B] text-white shadow-md shadow-[#991B1B]/20"
+                : "border border-[#5C3D2E] bg-[#3D2314] text-[#C4A882] hover:border-[#7A5040] hover:bg-[#4a2d1a] hover:text-[#F4E4C1]"
             }`}
           >
             {categoryLabels[f]}
@@ -57,28 +57,28 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group block rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-lg"
+              className="group block rounded-xl border border-[#5C3D2E] bg-[#3D2314] p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017]/40 hover:shadow-lg"
             >
               <div className="mb-3 flex flex-wrap items-center gap-3">
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                     post.category === "Engineering"
-                      ? "bg-[#0D9488]/10 text-[#0D9488]"
-                      : "bg-[#6D28D9]/10 text-[#6D28D9]"
+                      ? "bg-[#0D9488]/15 text-[#0D9488]"
+                      : "bg-[#D4A017]/15 text-[#D4A017]"
                   }`}
                 >
                   {categoryLabels[post.category]}
                 </span>
-                <span className="text-sm text-stone-400">
+                <span className="text-sm text-[#8B7355]">
                   {formatDate(post.date)}
                 </span>
-                <span className="text-sm text-stone-300">·</span>
-                <span className="text-sm text-stone-400">{post.readingTime}</span>
+                <span className="text-sm text-[#5C3D2E]">·</span>
+                <span className="text-sm text-[#8B7355]">{post.readingTime}</span>
               </div>
-              <h2 className="font-display text-lg font-semibold text-stone-900 transition-colors group-hover:text-[#991B1B]">
+              <h2 className="font-display text-lg font-semibold text-[#F4E4C1] transition-colors group-hover:text-[#D4A017]">
                 {post.title}
               </h2>
-              <p className="mt-2 line-clamp-2 text-sm text-stone-500">
+              <p className="mt-2 line-clamp-2 text-sm text-[#C4A882]">
                 {post.description}
               </p>
               <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
@@ -101,8 +101,8 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
           ))}
         </div>
       ) : (
-        <div className="rounded-xl border border-dashed border-stone-300 bg-white p-12 text-center shadow-sm">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#991B1B]/10 text-[#991B1B]">
+        <div className="rounded-xl border border-dashed border-[#5C3D2E] bg-[#3D2314] p-12 text-center shadow-sm">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A017]/15 text-[#D4A017]">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -117,7 +117,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
               />
             </svg>
           </div>
-          <p className="text-stone-500">
+          <p className="text-[#C4A882]">
             {filter === "All"
               ? "No posts yet. Check back soon."
               : `No ${filter} posts yet. Try another category.`}
