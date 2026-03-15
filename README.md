@@ -183,3 +183,21 @@ This is an AWS requirement for certificates used with CloudFront distributions.
 |---|---|---|
 | HTML pages | None | Blog posts update immediately after deploy |
 | `/_next/static/*` | Long term | Content-hashed, safe to cache aggressively |
+
+## Monitoring & Alerts
+
+All monitoring is managed via Terraform in `infra/monitoring.tf`.
+
+| Alert | Trigger | Channel |
+|---|---|---|
+| Monthly Budget 80% | Spend exceeds $4.00 | Email |
+| Monthly Budget 100% | Spend exceeds $5.00 | Email |
+| CloudFront 5xx Error Rate | >5% for 10 minutes | SNS → Email |
+| CloudFront Request Volume | >10,000 requests/5min | SNS → Email |
+| Cost Anomaly Detection | Unusual spend >$5 | SNS → Email |
+
+### Setting alert email
+Create `infra/terraform.tfvars` (not committed to git):
+\```
+alert_email = "your@email.com"
+\```
