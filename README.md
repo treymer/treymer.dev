@@ -1,6 +1,6 @@
 # treymer.dev
 
-Personal site and engineering blog for Trey Mer.
+Personal site and engineering blog.
 Built with Next.js, hosted on AWS S3/CloudFront, deployed via GitHub Actions, infrastructure managed with Terraform.
 
 **Live site:** [treymer.dev](https://treymer.dev)
