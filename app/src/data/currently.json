@@ -2,37 +2,37 @@
   "playing": {
     "icon": "⚔️",
     "label": "Playing",
-    "value": "World of Warcraft — The War Within",
-    "sub": "Alliance Paladin, ilvl 620"
+    "value": "World of Warcraft — Midnight",
+    "sub": "Horde Fury Warrior • For the Horde! 🗡️"
   },
   "learning": {
     "icon": "🎸",
     "label": "Learning",
-    "value": "Eruption — Van Halen",
-    "sub": "Still not there yet..."
+    "value": "Little Wing — Jimi Hendrix",
+    "sub": "One of the most beautiful guitar pieces ever written"
   },
   "reading": {
     "icon": "📚",
     "label": "Reading",
-    "value": "The Way of Kings — Brandon Sanderson",
-    "sub": "Stormlight Archive Book 1"
+    "value": "The Wheel of Time — Robert Jordan",
+    "sub": "The Eye of the World — Book 1"
   },
   "building": {
     "icon": "🧱",
     "label": "Building",
-    "value": "RX-78-2 Gundam Master Grade",
-    "sub": "Gunpla is freedom"
+    "value": "XXXG-01D Gundam Deathscythe",
+    "sub": "Wing Zero is cool but Deathscythe is cooler"
   },
   "riding": {
     "icon": "🚵",
     "label": "Last Trail",
-    "value": "Aliso & Wood Canyons",
-    "sub": "Laguna Beach, CA"
+    "value": "The Luge",
+    "sub": "Trabuco Canyon, CA — my favorite trail"
   },
   "shipping": {
     "icon": "🚀",
     "label": "Shipping",
     "value": "treymer.dev",
-    "sub": "This very site — built with vibe coding"
+    "sub": "Built with Next.js, AWS, and vibe coding"
   }
 }
