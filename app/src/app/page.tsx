@@ -3,24 +3,25 @@ import { getAllPosts } from "@/lib/posts";
 
 const aboutCards = [
   {
-    title: "SRE Manager at Disney",
-    description: "10+ years in cloud, SRE, and datacenter. Keeping the magic running.",
+    title: "Engineering Leader",
+    description: "10+ years in cloud, SRE, and datacenter. Building reliable systems at scale.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-8 w-8"
+        className="h-7 w-7"
       >
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8" />
         <path d="M12 17v4" />
       </svg>
     ),
+    accent: "teal",
   },
   {
     title: "Guitar player",
@@ -31,10 +32,10 @@ const aboutCards = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-8 w-8"
+        className="h-7 w-7"
       >
         <path d="m11.035 15.493 8.507 8.507" />
         <path d="M19 4.583 4.583 19" />
@@ -42,6 +43,7 @@ const aboutCards = [
         <path d="m16 9 5-5" />
       </svg>
     ),
+    accent: "purple",
   },
   {
     title: "Mountain biker",
@@ -52,10 +54,10 @@ const aboutCards = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-8 w-8"
+        className="h-7 w-7"
       >
         <circle cx="5.5" cy="17.5" r="3.5" />
         <circle cx="18.5" cy="17.5" r="3.5" />
@@ -63,6 +65,7 @@ const aboutCards = [
         <path d="m12 4 3 7 5 6.5" />
       </svg>
     ),
+    accent: "teal",
   },
   {
     title: "Husband & father",
@@ -73,21 +76,35 @@ const aboutCards = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-8 w-8"
+        className="h-7 w-7"
       >
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        <path d="M12 11v6" />
-        <path d="M9 14h6" />
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
       </svg>
     ),
+    accent: "crimson",
   },
 ];
+
+const accentStyles = {
+  teal: {
+    iconBg: "bg-[#0D9488]/10",
+    iconColor: "text-[#0D9488]",
+    hoverBorder: "group-hover:border-[#0D9488]/30",
+  },
+  purple: {
+    iconBg: "bg-[#6D28D9]/10",
+    iconColor: "text-[#6D28D9]",
+    hoverBorder: "group-hover:border-[#6D28D9]/30",
+  },
+  crimson: {
+    iconBg: "bg-[#991B1B]/10",
+    iconColor: "text-[#991B1B]",
+    hoverBorder: "group-hover:border-[#991B1B]/30",
+  },
+};
 
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
@@ -104,124 +121,134 @@ export default function Home() {
   return (
     <div className="scroll-smooth">
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-24 pt-12 md:pb-32 md:pt-20">
-        {/* Background gradient + grid texture */}
-        <div className="absolute inset-0 bg-linear-to-b from-cyan-500/5 via-transparent to-transparent" />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
+      <section className="relative overflow-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
+        {/* Subtle geometric pattern background */}
+        <div className="geo-pattern absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FAFAF7]/80 to-[#FAFAF7]" />
 
         <div className="relative mx-auto max-w-4xl">
-          <div className="mb-6 inline-block rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-sm font-medium text-cyan-400">
-            SRE · Leadership · Systems
+          {/* Decorative top element */}
+          <div className="mb-6 flex items-center gap-4">
+            <div className="h-px w-12 bg-gradient-to-r from-[#991B1B] to-transparent" />
+            <span className="rounded-full border border-[#991B1B]/20 bg-[#991B1B]/5 px-4 py-1.5 text-sm font-medium text-[#991B1B]">
+              SRE · Leadership · Systems
+            </span>
           </div>
 
-          <h1 className="font-display text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="font-display text-5xl font-semibold tracking-tight text-stone-900 sm:text-6xl md:text-7xl lg:text-8xl">
             Tyler Reymer
           </h1>
 
-          <p className="mt-4 text-xl font-medium text-cyan-400 sm:text-2xl md:text-3xl">
-            SRE Engineering Manager at Walt Disney Company
+          <p className="mt-4 text-xl font-medium text-[#0D9488] sm:text-2xl md:text-3xl">
+            Engineering Leader & SRE Manager
           </p>
 
-          <p className="mt-4 max-w-2xl text-lg text-zinc-400 sm:text-xl">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-600 sm:text-xl">
             Engineering reliable systems at scale. Leading teams that ship.
-            Riding trails, playing riffs, and raising a family — in that order.
+            Riding trails, playing riffs, and raising a family.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/blog"
-              className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-zinc-950 transition-all hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
+              className="inline-flex items-center justify-center rounded-lg bg-[#991B1B] px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-[#7F1D1D] hover:shadow-lg hover:shadow-[#991B1B]/20"
             >
               Read the Blog
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-cyan-400"
+              className="inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white px-6 py-3 font-semibold text-stone-700 shadow-sm transition-all hover:border-stone-400 hover:bg-stone-50 hover:text-stone-900"
             >
               View Portfolio
             </Link>
           </div>
 
           {/* Decorative accent line */}
-          <div className="mt-16 h-px w-32 bg-linear-to-r from-cyan-500/80 to-transparent" />
+          <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#991B1B]/60 to-transparent" />
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-6xl px-6" />
+
       {/* About snapshot */}
-      <section id="about" className="border-t border-white/5 px-6 py-20 md:py-28">
+      <section id="about" className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold text-stone-900 sm:text-4xl">
             Who I am
           </h2>
-          <p className="mt-2 text-zinc-400">
+          <p className="mt-2 text-stone-500">
             A few things that define me beyond the title
           </p>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {aboutCards.map((card) => (
-              <div
-                key={card.title}
-                className="group relative rounded-xl border border-white/10 bg-white/2 p-6 transition-all hover:border-cyan-500/30 hover:bg-cyan-500/5"
-              >
-                <div className="mb-4 text-cyan-400 transition-colors group-hover:text-cyan-300">
-                  {card.icon}
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {aboutCards.map((card) => {
+              const styles = accentStyles[card.accent as keyof typeof accentStyles];
+              return (
+                <div
+                  key={card.title}
+                  className={`group relative rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${styles.hoverBorder}`}
+                >
+                  <div
+                    className={`mb-4 inline-flex rounded-lg p-2.5 ${styles.iconBg} ${styles.iconColor}`}
+                  >
+                    {card.icon}
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-stone-900">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-stone-500">
+                    {card.description}
+                  </p>
                 </div>
-                <h3 className="font-display text-lg font-semibold text-white">
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                  {card.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-6xl px-6" />
+
       {/* Recent posts */}
-      <section className="border-t border-white/5 px-6 py-20 md:py-28">
+      <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold text-stone-900 sm:text-4xl">
             Latest Posts
           </h2>
-          <p className="mt-2 text-zinc-400">
+          <p className="mt-2 text-stone-500">
             Recent thoughts on engineering, leadership, and life
           </p>
 
           {recentPosts.length > 0 ? (
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {recentPosts.map((post) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-xl border border-white/10 bg-white/2 p-6 transition-all hover:border-cyan-500/30 hover:bg-cyan-500/5"
+                  className="group block rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-lg"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     <span
                       className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                         post.category === "Engineering"
-                          ? "bg-cyan-500/20 text-cyan-400"
-                          : "bg-amber-500/20 text-amber-400"
+                          ? "bg-[#0D9488]/10 text-[#0D9488]"
+                          : "bg-[#6D28D9]/10 text-[#6D28D9]"
                       }`}
                     >
                       {post.category}
                     </span>
-                    <span className="text-sm text-zinc-500">
+                    <span className="text-sm text-stone-400">
                       {formatDate(post.date)}
                     </span>
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-cyan-400">
+                  <h3 className="font-display text-lg font-semibold text-stone-900 transition-colors group-hover:text-[#991B1B]">
                     {post.title}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-zinc-400">
+                  <p className="mt-2 line-clamp-2 text-sm text-stone-500">
                     {post.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center text-sm font-medium text-cyan-400 group-hover:underline">
+                  <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
                     Read more
                     <svg
                       className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -241,13 +268,28 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="mt-12 rounded-xl border border-dashed border-white/20 bg-white/2 p-12 text-center">
-              <p className="text-zinc-500">
+            <div className="mt-10 rounded-xl border border-dashed border-stone-300 bg-white p-12 text-center shadow-sm">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#991B1B]/10 text-[#991B1B]">
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <p className="text-stone-500">
                 No posts yet. Check back soon — I&apos;m cooking something up.
               </p>
               <Link
                 href="/blog"
-                className="mt-4 inline-block text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                className="mt-4 inline-block text-sm font-medium text-[#991B1B] hover:underline"
               >
                 View blog →
               </Link>

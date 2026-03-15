@@ -17,12 +17,15 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-zinc-950">
+    <footer className="border-t border-stone-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
+        {/* Decorative divider */}
+        <div className="mb-8 h-px w-full bg-gradient-to-r from-transparent via-stone-200 to-transparent" />
+
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           {/* Copyright */}
-          <p className="text-sm text-zinc-500">
-            © {year} treymer.dev — SRE Engineering Manager at Walt Disney Company
+          <p className="text-sm text-stone-500">
+            © {year} Tyler Reymer
           </p>
 
           {/* Social links */}
@@ -35,7 +38,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.ariaLabel}
-                    className="text-sm font-medium text-zinc-500 transition-colors hover:text-cyan-400"
+                    className="text-sm font-medium text-stone-500 transition-colors hover:text-[#991B1B]"
                   >
                     {link.label}
                   </Link>
@@ -45,8 +48,10 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Decorative line */}
-        <div className="mt-8 h-px w-24 bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" />
+        {/* Decorative accent line */}
+        <div className="mt-8 flex justify-center">
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#991B1B]/40 to-transparent" />
+        </div>
       </div>
     </footer>
   );

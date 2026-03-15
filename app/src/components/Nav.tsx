@@ -16,14 +16,14 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200 bg-[#FAFAF7]/90 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-xl font-bold tracking-tight text-white transition-colors hover:text-cyan-400"
+          className="font-display text-xl font-bold tracking-tight text-stone-900 transition-colors hover:text-[#991B1B]"
         >
-          treymer<span className="text-cyan-400">.dev</span>
+          treymer<span className="text-[#991B1B]">.dev</span>
         </Link>
 
         {/* Desktop nav */}
@@ -38,13 +38,13 @@ export default function Nav() {
                   href={link.href}
                   className={`relative font-medium transition-colors ${
                     isActive
-                      ? "text-cyan-400"
-                      : "text-zinc-400 hover:text-white"
+                      ? "text-[#991B1B]"
+                      : "text-stone-600 hover:text-stone-900"
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-px bg-linear-to-r from-cyan-400 to-cyan-600" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#991B1B]" />
                   )}
                 </Link>
               </li>
@@ -56,22 +56,22 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 transition-colors hover:bg-white/10 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-white transition-colors hover:border-stone-300 hover:bg-stone-50 md:hidden"
           aria-expanded={mobileOpen}
           aria-label="Toggle menu"
         >
           <span
-            className={`h-0.5 w-5 bg-white transition-all ${
+            className={`h-0.5 w-5 bg-stone-700 transition-all ${
               mobileOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-5 bg-white transition-all ${
+            className={`h-0.5 w-5 bg-stone-700 transition-all ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-5 bg-white transition-all ${
+            className={`h-0.5 w-5 bg-stone-700 transition-all ${
               mobileOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -80,7 +80,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-white/5 transition-all duration-300 ease-out md:hidden ${
+        className={`overflow-hidden border-t border-stone-200 bg-white transition-all duration-300 ease-out md:hidden ${
           mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -96,8 +96,8 @@ export default function Nav() {
                   onClick={() => setMobileOpen(false)}
                   className={`block border-l-2 py-3 pl-4 font-medium transition-colors ${
                     isActive
-                      ? "border-cyan-400 text-cyan-400"
-                      : "border-transparent text-zinc-400 hover:text-white"
+                      ? "border-[#991B1B] text-[#991B1B]"
+                      : "border-transparent text-stone-600 hover:border-stone-300 hover:text-stone-900"
                   }`}
                 >
                   {link.label}

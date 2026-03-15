@@ -3,132 +3,294 @@ import Link from "next/link";
 export const metadata = {
   title: "Portfolio",
   description:
-    "Experience, skills, and work. SRE Engineering Manager at Walt Disney Company. Cloud, infrastructure, reliability engineering.",
+    "Experience, skills, and work. Engineering Leader & SRE Manager. Cloud, infrastructure, reliability engineering.",
 };
 
 const skillCategories = [
   {
     label: "Cloud",
-    color: "cyan",
-    skills: ["AWS", "GCP", "Cloudflare"],
+    color: "teal",
+    skills: ["AWS", "GCP", "Azure", "OpenStack"],
   },
   {
-    label: "Infrastructure",
-    color: "emerald",
-    skills: ["Terraform", "Kubernetes", "Docker"],
+    label: "Automation",
+    color: "teal",
+    skills: ["Python", "Terraform", "Ansible", "Puppet", "Golang"],
   },
   {
-    label: "Reliability",
-    color: "amber",
-    skills: ["SRE", "Incident Management", "Observability"],
+    label: "Containers",
+    color: "purple",
+    skills: ["Docker", "Kubernetes", "OpenShift", "ECS", "EKS", "GKE"],
   },
   {
-    label: "Languages",
-    color: "violet",
-    skills: ["Python", "Go", "TypeScript"],
+    label: "SRE",
+    color: "crimson",
+    skills: ["Observability", "Disaster Recovery", "Incident Response", "Monitoring", "Cybersecurity"],
   },
   {
-    label: "CI/CD",
-    color: "rose",
-    skills: ["GitHub Actions", "GitLab CI"],
+    label: "AI",
+    color: "purple",
+    skills: ["Prompt Engineering", "Claude", "ChatGPT", "Cloud AI Services"],
   },
   {
     label: "Currently Learning",
-    color: "sky",
+    color: "teal",
     skills: ["Next.js", "React", "Vibe Coding"],
   },
 ];
 
 const badgeColors: Record<string, string> = {
-  cyan: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-  emerald: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-  amber: "bg-amber-500/20 text-amber-400 border-amber-500/30",
-  violet: "bg-violet-500/20 text-violet-400 border-violet-500/30",
-  rose: "bg-rose-500/20 text-rose-400 border-rose-500/30",
-  sky: "bg-sky-500/20 text-sky-400 border-sky-500/30",
+  teal: "bg-[#0D9488]/10 text-[#0D9488] border-[#0D9488]/20",
+  crimson: "bg-[#991B1B]/10 text-[#991B1B] border-[#991B1B]/20",
+  purple: "bg-[#6D28D9]/10 text-[#6D28D9] border-[#6D28D9]/20",
 };
+
+const workHistory = [
+  {
+    current: true,
+    title: "Manager, Systems Reliability Engineering",
+    company: "Major Entertainment & Technology Company",
+    location: "Los Angeles, CA",
+    dates: "August 2024 — Present",
+    bullets: [
+      "Leading a globally scalable SRE team with focus on 1:1s, annual reviews, mentoring, goal setting, budgeting, and forecasting",
+      "Architect, deploy, monitor, and maintain dozens of globally distributed, resilient, highly available business-critical cloud applications including AI, SAP S/4HANA, Tableau, UiPath, PowerBI, Business Intelligence and Analytics, and Data Science Platforms",
+      "Partner with business segment leadership on application strategy including cloud platform, scale, budget, disaster recovery, and user activity using agile and devops methodologies",
+      "Public and private cloud computing including AWS, GCP, Azure, Kubernetes, VMware, AI, and serverless technology with infrastructure as code and CI/CD pipelines",
+      "Present to and influence executive leadership on SRE roadmaps, strategy, performance, and vendor management",
+    ],
+  },
+  {
+    current: false,
+    title: "Senior Manager, Cloud & Site Reliability Engineering",
+    company: "Edwards Lifesciences",
+    location: "Irvine, CA",
+    dates: "November 2022 — August 2024",
+    bullets: [
+      "Led and mentored an Agile global engineering team responsible for AWS cloud infrastructure, SRE, server, file shares, user productivity, and core services across dozens of globally distributed applications",
+      "Aligned the business with current cloud technology by transforming cloud practices to meet modern product demand",
+      "Built and managed vendor relationships and negotiations between software/hardware vendors and business units",
+      "Led cloud spend optimization through modernized AWS architecture while introducing SRE standards for complex manufacturing and product applications",
+      "Led team to implement infrastructure as code and configuration management supporting Linux and Windows with containerized architecture using Kubernetes and Docker",
+    ],
+  },
+  {
+    current: false,
+    title: "Cloud Engineer / Site Reliability Engineer",
+    company: "Red Hat",
+    location: "Remote",
+    dates: "January 2021 — November 2022",
+    bullets: [
+      "Engineered hybrid cloud infrastructure with automation to develop, integrate, deploy, and maintain internal private and public cloud solutions using Agile delivery",
+      "Support and development of AWS, GCP, Azure, OpenStack, and OpenShift IT infrastructure using DevOps and SRE principles with Python, Ansible, Puppet, and Terraform",
+      "Architected and supported 400+ OpenShift (Kubernetes) clusters across multiple clouds using Golang, Python, Alert Manager, Prometheus, Splunk, and Grafana",
+      "Designed FedRAMP compliant AWS environment while performing CVE analysis in response to security threats",
+    ],
+  },
+  {
+    current: false,
+    title: "Cloud Engineer / Data Center Administrator",
+    company: "Blizzard Entertainment",
+    location: "Irvine, CA",
+    dates: "May 2015 — January 2021",
+    bullets: [
+      "AWS, GCP, and OpenStack hybrid cloud engineering of globally distributed systems with automation using Terraform, Puppet, Ansible, Python, and Bash supporting games with millions of concurrent players",
+      "Architected Blizzard's cloud governance model for GCP and AWS integration supporting containerization (Kubernetes), CDN networking, and edge computing",
+      "Designed, deployed, and supported next generation global data centers hosting thousands of servers, storage, and network equipment",
+      "Deployed Blizzard's first DCIM solution for floor plans, rack layouts, network design, IPAM, environmental monitoring, power monitoring, and asset tracking",
+    ],
+  },
+  {
+    current: false,
+    title: "Lead IT Deskside Support Assistant",
+    company: "California State University, Fullerton",
+    location: "Fullerton, CA",
+    dates: "July 2013 — May 2015",
+    bullets: [],
+  },
+];
+
+const education = [
+  {
+    degree: "MBA, IT Management",
+    school: "Florida Institute of Technology",
+    year: "2022",
+    honor: "Summa Cum Laude",
+  },
+  {
+    degree: "BS Business Information Systems, Minor Computer Science",
+    school: "CSU Fullerton",
+    year: "2016",
+    honor: "Dean's List",
+  },
+  {
+    degree: "AS Social & Behavioral Science",
+    school: "Irvine Valley College",
+    year: "2013",
+    honor: "Dean's List",
+  },
+];
+
+const certifications = [
+  {
+    name: "Registered Product Owner",
+    issuer: "Scrum Inc.",
+    id: "RPO-7556942",
+  },
+  {
+    name: "Registered Scrum Master",
+    issuer: "Scrum Inc.",
+    id: "RSM-6312562",
+  },
+];
 
 export default function PortfolioPage() {
   return (
     <div className="scroll-smooth">
       {/* Page header */}
-      <section className="px-6 pb-16 pt-8 md:pb-24 md:pt-12">
+      <section className="px-6 pb-12 pt-8 md:pb-16 md:pt-12">
         <div className="mx-auto max-w-4xl">
-          <h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-stone-900 sm:text-5xl md:text-6xl">
             Portfolio
           </h1>
-          <p className="mt-3 text-lg text-zinc-400 sm:text-xl">
+          <p className="mt-3 text-lg text-stone-500 sm:text-xl">
             A summary of my experience, skills, and work
           </p>
-          <div className="mt-8 h-px w-24 bg-linear-to-r from-cyan-500/80 to-transparent" />
+          <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#991B1B]/60 to-transparent" />
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-4xl px-6" />
+
       {/* Experience timeline */}
-      <section className="border-t border-white/5 px-6 py-16 md:py-24">
+      <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
             Experience
           </h2>
-          <p className="mt-2 text-zinc-400">Career progression and focus areas</p>
+          <p className="mt-2 text-stone-500">Career progression and focus areas</p>
 
-          <div className="mt-10">
+          <div className="mt-8">
             {/* Vertical line */}
-            <div className="relative border-l-2 border-white/10 pl-6 sm:pl-8">
-              {/* Current role */}
-              <div className="relative pb-10">
-                <div className="absolute -left-[29px] top-2 h-3 w-3 rounded-full bg-cyan-500 ring-4 ring-cyan-500/20 sm:-left-[33px]" />
-                <div className="rounded-xl border border-white/10 bg-white/2 p-6">
-                  <div className="flex flex-wrap items-baseline gap-2">
-                    <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-xs font-medium text-cyan-400">
-                      Current
-                    </span>
+            <div className="relative border-l-2 border-stone-200 pl-6 sm:pl-8">
+              {workHistory.map((job, index) => (
+                <div key={index} className={`relative ${index < workHistory.length - 1 ? "pb-8" : ""}`}>
+                  <div
+                    className={`absolute -left-[29px] top-2 h-3 w-3 rounded-full sm:-left-[33px] ${
+                      job.current
+                        ? "bg-[#991B1B] ring-4 ring-[#991B1B]/20"
+                        : "border-2 border-[#991B1B]/40 bg-[#FAFAF7]"
+                    }`}
+                  />
+                  <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-md">
+                    <div className="flex flex-wrap items-baseline gap-2">
+                      {job.current && (
+                        <span className="rounded-full bg-[#991B1B]/10 px-2.5 py-0.5 text-xs font-medium text-[#991B1B]">
+                          Current
+                        </span>
+                      )}
+                      <span className="text-sm text-stone-400">{job.dates}</span>
+                    </div>
+                    <h3 className="mt-2 font-display text-lg font-semibold text-stone-900 sm:text-xl">
+                      {job.title}
+                    </h3>
+                    <p className="text-[#0D9488]">{job.company}</p>
+                    <p className="text-sm text-stone-400">{job.location}</p>
+                    {job.bullets.length > 0 && (
+                      <ul className="mt-4 space-y-2">
+                        {job.bullets.map((bullet, i) => (
+                          <li key={i} className="flex gap-2 text-sm text-stone-600">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0D9488]" />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  <h3 className="mt-3 font-display text-xl font-semibold text-white">
-                    SRE Engineering Manager
-                  </h3>
-                  <p className="text-cyan-400">Walt Disney Company</p>
-                  <p className="mt-4 text-zinc-400">
-                    Leading SRE teams supporting large scale streaming and theme
-                    park technology. Focus on cloud infrastructure, incident
-                    management, reliability engineering, and team leadership.
-                  </p>
                 </div>
-              </div>
-
-              {/* Previous roles */}
-              <div className="relative">
-                <div className="absolute -left-[29px] top-2 h-3 w-3 rounded-full border-2 border-cyan-500/50 bg-zinc-950 sm:-left-[33px]" />
-                <div className="rounded-xl border border-white/10 bg-white/2 p-6">
-                  <span className="text-sm text-zinc-500">Previously</span>
-                  <h3 className="mt-2 font-display text-lg font-semibold text-white">
-                    Cloud Engineer / SRE
-                  </h3>
-                  <p className="mt-1 text-zinc-400">
-                    Cloud engineering, data center operations, site reliability.
-                    AWS, GCP, infrastructure automation.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Technical skills */}
-      <section className="border-t border-white/5 px-6 py-16 md:py-24">
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-4xl px-6" />
+
+      {/* Education */}
+      <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
+            Education
+          </h2>
+          <p className="mt-2 text-stone-500">Academic background</p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {education.map((edu, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-stone-200 bg-white p-5 shadow-md"
+              >
+                <p className="text-sm font-medium text-[#0D9488]">{edu.year}</p>
+                <h3 className="mt-1 font-display font-semibold text-stone-900">
+                  {edu.degree}
+                </h3>
+                <p className="mt-1 text-sm text-stone-500">{edu.school}</p>
+                <span className="mt-2 inline-block rounded-full bg-[#6D28D9]/10 px-2 py-0.5 text-xs font-medium text-[#6D28D9]">
+                  {edu.honor}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-4xl px-6" />
+
+      {/* Certifications */}
+      <section className="px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
+            Certifications
+          </h2>
+          <p className="mt-2 text-stone-500">Professional credentials</p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-stone-200 bg-white p-5 shadow-md"
+              >
+                <h3 className="font-display font-semibold text-stone-900">
+                  {cert.name}
+                </h3>
+                <p className="mt-1 text-sm text-[#0D9488]">{cert.issuer}</p>
+                <p className="mt-1 text-xs text-stone-400">ID: {cert.id}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-4xl px-6" />
+
+      {/* Technical skills */}
+      <section className="px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
             Technical skills
           </h2>
-          <p className="mt-2 text-zinc-400">
+          <p className="mt-2 text-stone-500">
             Tools and technologies I work with
           </p>
 
-          <div className="mt-10 space-y-8">
+          <div className="mt-8 space-y-6">
             {skillCategories.map((category) => (
               <div key={category.label}>
-                <h3 className="mb-3 text-sm font-medium uppercase tracking-wider text-zinc-500">
+                <h3 className="mb-3 text-sm font-medium uppercase tracking-wider text-stone-400">
                   {category.label}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -147,27 +309,30 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-4xl px-6" />
+
       {/* Currently building */}
-      <section className="border-t border-white/5 px-6 py-16 md:py-24">
+      <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
             Currently building
           </h2>
-          <p className="mt-2 text-zinc-400">Side projects and experiments</p>
+          <p className="mt-2 text-stone-500">Side projects and experiments</p>
 
-          <div className="mt-10">
+          <div className="mt-8">
             <Link
               href="https://github.com/treymer/treymer.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-xl border border-white/10 bg-white/2 p-6 transition-all hover:border-cyan-500/30 hover:bg-cyan-500/5"
+              className="group block rounded-xl border border-stone-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-lg"
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-cyan-400">
+                  <h3 className="font-display text-xl font-semibold text-stone-900 transition-colors group-hover:text-[#991B1B]">
                     treymer.dev
                   </h3>
-                  <p className="mt-2 text-zinc-400">
+                  <p className="mt-2 text-stone-600">
                     Personal site and blog built with Next.js, AWS S3/CloudFront,
                     Terraform, GitHub Actions. This site.
                   </p>
@@ -175,14 +340,14 @@ export default function PortfolioPage() {
                     {["Next.js", "AWS", "Terraform", "MDX"].map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-cyan-500/20 px-2 py-0.5 text-xs font-medium text-cyan-400"
+                        className="rounded-md bg-[#0D9488]/10 px-2 py-0.5 text-xs font-medium text-[#0D9488]"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 group-hover:underline sm:shrink-0">
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-[#991B1B] sm:shrink-0">
                   View on GitHub
                   <svg
                     className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
@@ -204,23 +369,26 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="section-divider mx-auto max-w-4xl px-6" />
+
       {/* Connect */}
-      <section className="border-t border-white/5 px-6 py-16 md:py-24">
+      <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-stone-900 sm:text-3xl">
             Let&apos;s connect
           </h2>
-          <p className="mt-2 text-zinc-400">
+          <p className="mt-2 text-stone-500">
             Always happy to chat about SRE, leadership, or the best trails in
             SoCal
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
             <Link
               href="https://github.com/treymer"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/2 px-8 py-4 font-semibold text-white transition-all hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-cyan-400"
+              className="flex flex-1 items-center justify-center gap-3 rounded-xl border border-stone-200 bg-white px-8 py-4 font-semibold text-stone-700 shadow-md transition-all hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-lg"
             >
               <svg
                 className="h-6 w-6"
@@ -240,7 +408,7 @@ export default function PortfolioPage() {
               href="https://www.linkedin.com/in/tyler-reymer/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-3 rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-zinc-950 transition-all hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25"
+              className="flex flex-1 items-center justify-center gap-3 rounded-xl bg-[#991B1B] px-8 py-4 font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#7F1D1D] hover:shadow-lg hover:shadow-[#991B1B]/20"
             >
               <svg
                 className="h-6 w-6"
