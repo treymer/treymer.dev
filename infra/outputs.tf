@@ -17,3 +17,13 @@ output "acm_validation_records" {
   description = "DNS validation records to add to Cloudflare"
   value       = aws_acm_certificate.website.domain_validation_options
 }
+
+output "cloudfront_distribution_id" {
+  description = "CloudFront distribution ID"
+  value       = aws_cloudfront_distribution.website.id
+}
+
+output "cloudfront_domain_name" {
+  description = "CloudFront domain name"
+  value       = aws_cloudfront_distribution.website.domain_name
+}
