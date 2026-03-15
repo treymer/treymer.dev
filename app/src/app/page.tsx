@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import Currently from "@/components/Currently";
@@ -142,63 +143,102 @@ export default function Home() {
 
   return (
     <div className="scroll-smooth">
-      {/* Hero */}
+      {/* Hero - D&D Character Sheet Style */}
       <section className="hero-section relative overflow-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
-        {/* Purple magical ambient glow */}
-        <div className="hero-purple-glow" />
-        {/* Moonlight corner effect */}
-        <div className="hero-moonlight" />
+        {/* Background glows */}
+        {/* Left side warm glow behind text */}
+        <div
+          className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 lg:block"
+          style={{
+            width: "50%",
+            height: "120%",
+            background: "radial-gradient(ellipse at 30% 50%, rgba(212, 160, 23, 0.08) 0%, rgba(153, 27, 27, 0.05) 40%, transparent 70%)",
+          }}
+        />
+        {/* Right side purple glow behind avatar */}
+        <div
+          className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 lg:block"
+          style={{
+            width: "50%",
+            height: "120%",
+            background: "radial-gradient(ellipse at 70% 50%, rgba(109, 40, 217, 0.15) 0%, rgba(109, 40, 217, 0.05) 50%, transparent 70%)",
+          }}
+        />
 
-        <div className="relative mx-auto max-w-4xl">
-          {/* Decorative top element */}
-          <div className="mb-6 flex items-center gap-4">
-            <div className="h-px w-12 bg-gradient-to-r from-[#6D28D9] to-transparent" />
-            <span className="rounded-full border border-[#6D28D9]/30 bg-[#6D28D9]/10 px-4 py-1.5 text-sm font-medium text-[#C4A882]">
-              SRE · Leadership · Systems
-            </span>
+        <div className="relative mx-auto max-w-6xl">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12">
+            {/* Left column - Stats & Info (55%) */}
+            <div className="lg:w-[55%]">
+              {/* Decorative top element */}
+              <div className="mb-6 flex items-center gap-4">
+                <div className="h-px w-12 bg-gradient-to-r from-[#6D28D9] to-transparent" />
+                <span className="rounded-full border border-[#6D28D9]/30 bg-[#6D28D9]/10 px-4 py-1.5 text-sm font-medium text-[#C4A882]">
+                  SRE · Leadership · Systems
+                </span>
+              </div>
+
+              <h1 className="font-display text-5xl font-semibold tracking-tight text-[#F4E4C1] sm:text-6xl md:text-7xl">
+                Tyler Reymer
+              </h1>
+
+              <p className="mt-4 text-xl font-medium text-[#0D9488] sm:text-2xl md:text-3xl">
+                Engineering Leader & SRE Manager
+              </p>
+
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-[#C4A882] sm:text-xl">
+                Engineering reliable systems at scale. Leading teams that ship.
+                Riding trails, playing riffs, and raising a family.
+              </p>
+
+              {/* RPG stat line */}
+              <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#8B7355]">
+                <span>Lv.12 Engineer</span>
+                <span className="hidden sm:inline">•</span>
+                <span>Bard Multiclass</span>
+                <span className="hidden sm:inline">•</span>
+                <span>Ranger Subclass</span>
+                <span className="hidden sm:inline">•</span>
+                <span>Forever DM</span>
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/blog"
+                  className="btn-primary inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold shadow-md"
+                >
+                  Read the Blog
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="btn-secondary inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold"
+                >
+                  View Portfolio
+                </Link>
+              </div>
+
+              {/* Decorative accent line */}
+              <div className="mt-10 hidden h-px w-32 bg-gradient-to-r from-[#6D28D9]/60 to-transparent lg:block" />
+            </div>
+
+            {/* Right column - Character Portrait (45%) */}
+            <div className="relative lg:w-[45%]">
+              {/* Purple arcane glow container */}
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+                <Image
+                  src="/images/avatar.webp"
+                  alt="Tyler Reymer — Cloud Paladin, SRE Guild Master"
+                  width={600}
+                  height={800}
+                  className="h-auto max-h-[400px] w-full rounded-2xl object-cover object-top lg:max-h-[500px]"
+                  style={{
+                    boxShadow: "0 0 40px rgba(109, 40, 217, 0.3), 0 0 80px rgba(109, 40, 217, 0.15)",
+                    border: "1px solid rgba(212, 160, 23, 0.3)",
+                  }}
+                  priority
+                />
+              </div>
+            </div>
           </div>
-
-          <h1 className="font-display text-5xl font-semibold tracking-tight text-[#F4E4C1] sm:text-6xl md:text-7xl lg:text-8xl">
-            Tyler Reymer
-          </h1>
-
-          <p className="mt-4 text-xl font-medium text-[#0D9488] sm:text-2xl md:text-3xl">
-            Engineering Leader & SRE Manager
-          </p>
-
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#C4A882] sm:text-xl">
-            Engineering reliable systems at scale. Leading teams that ship.
-            Riding trails, playing riffs, and raising a family.
-          </p>
-
-          {/* RPG stat line */}
-          <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#8B7355]">
-            <span>Lv.12 Engineer</span>
-            <span className="hidden sm:inline">•</span>
-            <span>Bard Multiclass</span>
-            <span className="hidden sm:inline">•</span>
-            <span>Ranger Subclass</span>
-            <span className="hidden sm:inline">•</span>
-            <span>Forever DM</span>
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/blog"
-              className="btn-primary inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold shadow-md"
-            >
-              Read the Blog
-            </Link>
-            <Link
-              href="/portfolio"
-              className="btn-secondary inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold"
-            >
-              View Portfolio
-            </Link>
-          </div>
-
-          {/* Decorative accent line */}
-          <div className="mt-12 h-px w-32 bg-gradient-to-r from-[#6D28D9]/60 to-transparent" />
         </div>
       </section>
 
