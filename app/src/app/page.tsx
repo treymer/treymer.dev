@@ -235,16 +235,17 @@ export default function Home() {
               {/* Purple arcane glow container */}
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 <Image
-                  src="/images/avatar.webp"
+                  src="/images/avatar-optimized.webp"
                   alt="Tyler Reymer — Cloud Paladin, SRE Guild Master"
                   width={600}
-                  height={800}
+                  height={600}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority={true}
                   className="h-auto max-h-[400px] w-full rounded-2xl object-cover object-top lg:max-h-[500px]"
                   style={{
                     boxShadow: "0 0 40px rgba(109, 40, 217, 0.3), 0 0 80px rgba(109, 40, 217, 0.15)",
                     border: "1px solid rgba(212, 160, 23, 0.3)",
                   }}
-                  priority
                 />
               </div>
             </div>

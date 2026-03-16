@@ -135,9 +135,45 @@ resource "aws_cloudfront_distribution" "website" {
     }
   }
 
-  # Cache behavior for static assets - aggressive caching
+  # Cache behavior for Next.js static assets - aggressive caching
   ordered_cache_behavior {
     path_pattern           = "/_next/static/*"
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    target_origin_id       = "S3-${var.project_name}"
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6" # CachingOptimized
+  }
+
+  # Cache behavior for images - long TTL
+  ordered_cache_behavior {
+    path_pattern           = "/images/*"
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    target_origin_id       = "S3-${var.project_name}"
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6" # CachingOptimized
+  }
+
+  # Cache behavior for icons - long TTL
+  ordered_cache_behavior {
+    path_pattern           = "/icons/*"
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    target_origin_id       = "S3-${var.project_name}"
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6" # CachingOptimized
+  }
+
+  # Cache behavior for fonts - long TTL
+  ordered_cache_behavior {
+    path_pattern           = "/fonts/*"
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "S3-${var.project_name}"
