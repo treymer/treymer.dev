@@ -106,9 +106,9 @@ const aboutCards = [
 
 const accentStyles = {
   teal: {
-    iconBg: "bg-[#0D9488]/20",
-    iconColor: "text-[#0D9488]",
-    hoverBorder: "group-hover:border-[#0D9488]",
+    iconBg: "bg-[#0EA89A]/20",
+    iconColor: "text-[#0EA89A]",
+    hoverBorder: "group-hover:border-[#0EA89A]",
     hoverShadow: "group-hover:shadow-[0_0_20px_rgba(13,148,136,0.2)]",
   },
   purple: {
@@ -118,9 +118,9 @@ const accentStyles = {
     hoverShadow: "group-hover:shadow-[0_0_20px_rgba(109,40,217,0.2)]",
   },
   crimson: {
-    iconBg: "bg-[#991B1B]/20",
-    iconColor: "text-[#991B1B]",
-    hoverBorder: "group-hover:border-[#991B1B]",
+    iconBg: "bg-[#CC2222]/20",
+    iconColor: "text-[#CC2222]",
+    hoverBorder: "group-hover:border-[#CC2222]",
     hoverShadow: "group-hover:shadow-[0_0_20px_rgba(153,27,27,0.2)]",
   },
 };
@@ -191,7 +191,7 @@ export default function Home() {
                 Tyler Reymer
               </h1>
 
-              <p className="mt-4 text-xl font-medium text-[#0D9488] sm:text-2xl md:text-3xl">
+              <p className="mt-4 text-xl font-medium text-[#0EA89A] sm:text-2xl md:text-3xl">
                 Engineering Leader & SRE Manager
               </p>
 
@@ -201,7 +201,7 @@ export default function Home() {
               </p>
 
               {/* RPG stat line */}
-              <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#8B7355]">
+              <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#A08060]">
                 <span>Lv.12 Engineer</span>
                 <span className="hidden sm:inline">•</span>
                 <span>Bard Multiclass</span>
@@ -268,7 +268,7 @@ export default function Home() {
               Who I am
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">
+          <p className="mt-2 text-[#A08060]">
             A few things that define me beyond the title
           </p>
 
@@ -292,7 +292,7 @@ export default function Home() {
                     {card.description}
                   </p>
                   {/* RPG stats badge */}
-                  <p className="mt-3 font-mono text-xs tracking-wide text-[#8B7355]">
+                  <p className="mt-3 font-mono text-xs tracking-wide text-[#A08060]">
                     {card.stats}
                   </p>
                 </div>
@@ -312,7 +312,7 @@ export default function Home() {
               Latest Posts
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">
+          <p className="mt-2 text-[#A08060]">
             Recent thoughts on engineering, leadership, and life
           </p>
 
@@ -328,23 +328,23 @@ export default function Home() {
                     <span
                       className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                         post.category === "Engineering"
-                          ? "bg-[#0D9488]/15 text-[#0D9488]"
+                          ? "bg-[#0EA89A]/15 text-[#0EA89A]"
                           : "bg-[#6D28D9]/15 text-[#6D28D9]"
                       }`}
                     >
                       {categoryLabels[post.category]}
                     </span>
-                    <span className="text-sm text-[#8B7355]">
+                    <span className="text-sm text-[#A08060]">
                       {formatDate(post.date)}
                     </span>
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#991B1B]">
+                  <h3 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
                     {post.title}
                   </h3>
                   <p className="mt-2 line-clamp-2 text-sm text-[#5C3D2E]">
                     {post.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
+                  <span className="mt-4 inline-flex items-center text-sm font-medium text-[#CC2222]">
                     Read more
                     <svg
                       className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -385,7 +385,7 @@ export default function Home() {
               </p>
               <Link
                 href="/blog"
-                className="mt-4 inline-block text-sm font-medium text-[#991B1B] hover:underline"
+                className="mt-4 inline-block text-sm font-medium text-[#CC2222] hover:underline"
               >
                 View blog
               </Link>

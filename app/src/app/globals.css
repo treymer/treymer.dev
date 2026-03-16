@@ -17,13 +17,13 @@ html, body {
   --border-hover: #D4A017;
 
   /* Crimson red accent */
-  --accent-primary: #991B1B;
+  --accent-primary: #CC2222;
   --accent-primary-hover: #7F1D1D;
   --accent-primary-muted: rgba(153, 27, 27, 0.15);
   --accent-primary-glow: rgba(153, 27, 27, 0.35);
 
   /* Teal accent */
-  --accent-secondary: #0D9488;
+  --accent-secondary: #0EA89A;
   --accent-secondary-hover: #0F766E;
   --accent-secondary-muted: rgba(13, 148, 136, 0.15);
 
@@ -42,12 +42,12 @@ html, body {
   /* Text hierarchy - warm cream tones on dark backgrounds */
   --text-primary: #F4E4C1;
   --text-secondary: #C4A882;
-  --text-muted: #8B7355;
+  --text-muted: #A08060;
 
   /* Text for parchment cards - dark warm tones */
   --text-on-parchment: #2D1B0E;
   --text-on-parchment-secondary: #5C3D2E;
-  --text-on-parchment-muted: #8B7355;
+  --text-on-parchment-muted: #A08060;
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);

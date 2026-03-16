@@ -31,7 +31,7 @@ export default function Footer() {
             <p className="text-sm text-[#C4A882]">
               © {year} Tyler Reymer
             </p>
-            <p className="mt-1 text-xs text-[#8B7355]">
+            <p className="mt-1 text-xs text-[#A08060]">
               In tech since 2013 • For the Horde!
             </p>
           </div>
@@ -58,10 +58,10 @@ export default function Footer() {
 
         {/* Fun footer text */}
         <div className="mt-6 text-center">
-          <p className="text-xs text-[#8B7355]">
+          <p className="text-xs text-[#A08060]">
             Made with Next.js, Terraform, and a little magic
           </p>
-          <p className="mt-2 text-[10px] italic text-[#6B5A45]">
+          <p className="mt-2 text-[10px] italic text-[#9A8870]">
             Why did the dragon invest in servers? Because it wanted to hoard all the data!
           </p>
         </div>

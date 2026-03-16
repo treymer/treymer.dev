@@ -62,7 +62,7 @@ export default function KonamiCode() {
         <p className="mt-1 text-sm text-[#5C3D2E]">
           You found the secret code! +1000 XP
         </p>
-        <div className="mt-4 text-xs text-[#8B7355]">
+        <div className="mt-4 text-xs text-[#A08060]">
           Click anywhere to dismiss
         </div>
       </div>

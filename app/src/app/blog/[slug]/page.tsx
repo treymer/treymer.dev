@@ -97,7 +97,7 @@ export default async function BlogPostPage({
         {/* Back button */}
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] transition-colors hover:text-[#D4A017]"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#A08060] transition-colors hover:text-[#D4A017]"
         >
           <svg
             className="h-4 w-4"
@@ -125,20 +125,20 @@ export default async function BlogPostPage({
           <span
             className={`rounded-full px-2.5 py-0.5 font-medium ${
               post.category === "Engineering"
-                ? "bg-[#0D9488]/15 text-[#0D9488]"
+                ? "bg-[#0EA89A]/15 text-[#0EA89A]"
                 : "bg-[#6D28D9]/15 text-[#6D28D9]"
             }`}
           >
             {post.category === "Engineering" ? "⚙️ Technomancer" : "🎲 Side Quest"}
           </span>
-          <span className="text-[#8B7355]">{formatDate(post.date)}</span>
+          <span className="text-[#A08060]">{formatDate(post.date)}</span>
           <span className="text-[#5C3D2E]">·</span>
-          <span className="text-[#8B7355]">{post.readingTime}</span>
+          <span className="text-[#A08060]">{post.readingTime}</span>
         </div>
 
         {/* MDX content with prose - parchment scroll styling */}
         <div className="mt-12 rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-8 shadow-lg md:p-10">
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-[#2D1B0E] prose-p:text-[#5C3D2E] prose-a:text-[#0D9488] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#2D1B0E] prose-code:rounded prose-code:bg-[#2D1B0E]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[#0D9488] prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-[#8B6914] prose-pre:bg-[#2D1B0E] prose-blockquote:border-l-[#6D28D9] prose-blockquote:bg-[#6D28D9]/5 prose-blockquote:text-[#5C3D2E] prose-li:text-[#5C3D2E] prose-ul:text-[#5C3D2E] prose-ol:text-[#5C3D2E] prose-hr:border-[#8B6914]">
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-[#2D1B0E] prose-p:text-[#5C3D2E] prose-a:text-[#0EA89A] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#2D1B0E] prose-code:rounded prose-code:bg-[#2D1B0E]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[#0EA89A] prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-[#8B6914] prose-pre:bg-[#2D1B0E] prose-blockquote:border-l-[#6D28D9] prose-blockquote:bg-[#6D28D9]/5 prose-blockquote:text-[#5C3D2E] prose-li:text-[#5C3D2E] prose-ul:text-[#5C3D2E] prose-ol:text-[#5C3D2E] prose-hr:border-[#8B6914]">
             {content}
           </div>
         </div>

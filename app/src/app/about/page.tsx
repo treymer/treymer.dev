@@ -51,7 +51,7 @@ export default function AboutPage() {
           <h1 className="font-display text-4xl font-semibold tracking-tight text-[#F4E4C1] sm:text-5xl md:text-6xl">
             Tyler Reymer
           </h1>
-          <p className="mt-3 text-xl font-medium text-[#0D9488] sm:text-2xl">
+          <p className="mt-3 text-xl font-medium text-[#0EA89A] sm:text-2xl">
             Engineering Leader & SRE Manager
           </p>
           <p className="mt-6 text-lg leading-relaxed text-[#C4A882]">
@@ -75,7 +75,7 @@ export default function AboutPage() {
               Professional background
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">
+          <p className="mt-2 text-[#A08060]">
             How I got here, and what I do now
           </p>
 
@@ -91,12 +91,12 @@ export default function AboutPage() {
                   <span className="inline-block rounded-full bg-[#6D28D9]/15 px-2.5 py-0.5 text-xs font-medium text-[#6D28D9]">
                     Current
                   </span>
-                  <span className="text-sm text-[#8B7355]">2024 — Present</span>
+                  <span className="text-sm text-[#A08060]">2024 — Present</span>
                 </div>
                 <h3 className="mt-3 font-display text-xl font-semibold text-[#2D1B0E]">
                   Manager, Systems Reliability Engineering
                 </h3>
-                <p className="text-[#0D9488]">Major Entertainment & Technology Company</p>
+                <p className="text-[#0EA89A]">Major Entertainment & Technology Company</p>
                 <p className="mt-3 text-[#5C3D2E]">
                   Leading a globally scalable SRE team supporting business-critical
                   cloud applications including AI platforms, SAP, Tableau, and data
@@ -113,11 +113,11 @@ export default function AboutPage() {
                 style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.3)" }}
               />
               <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-                <span className="text-sm text-[#8B7355]">2022 — 2024</span>
+                <span className="text-sm text-[#A08060]">2022 — 2024</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E]">
                   Senior Manager, Cloud & Site Reliability Engineering
                 </h3>
-                <p className="text-[#0D9488]">Edwards Lifesciences</p>
+                <p className="text-[#0EA89A]">Edwards Lifesciences</p>
                 <p className="mt-2 text-[#5C3D2E]">
                   Led a global engineering team responsible for AWS infrastructure,
                   SRE practices, and cloud spend optimization for complex manufacturing
@@ -133,11 +133,11 @@ export default function AboutPage() {
                 style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.3)" }}
               />
               <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-                <span className="text-sm text-[#8B7355]">2021 — 2022</span>
+                <span className="text-sm text-[#A08060]">2021 — 2022</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E]">
                   Cloud Engineer / Site Reliability Engineer
                 </h3>
-                <p className="text-[#0D9488]">Red Hat</p>
+                <p className="text-[#0EA89A]">Red Hat</p>
                 <p className="mt-2 text-[#5C3D2E]">
                   Architected and supported 400+ OpenShift clusters across multiple
                   clouds. Designed FedRAMP compliant AWS environments and hybrid
@@ -153,11 +153,11 @@ export default function AboutPage() {
                 style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.3)" }}
               />
               <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-                <span className="text-sm text-[#8B7355]">2015 — 2021</span>
+                <span className="text-sm text-[#A08060]">2015 — 2021</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E]">
                   Cloud Engineer / Data Center Administrator
                 </h3>
-                <p className="text-[#0D9488]">Blizzard Entertainment</p>
+                <p className="text-[#0EA89A]">Blizzard Entertainment</p>
                 <p className="mt-2 text-[#5C3D2E]">
                   Hybrid cloud engineering supporting games with millions of concurrent
                   players. Architected cloud governance for GCP and AWS, and designed
@@ -179,7 +179,7 @@ export default function AboutPage() {
               Life outside work
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">The things that keep me grounded</p>
+          <p className="mt-2 text-[#A08060]">The things that keep me grounded</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#6D28D9] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]">
@@ -209,8 +209,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#0D9488] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(13,148,136,0.15)]">
-              <div className="inline-flex rounded-lg bg-[#0D9488]/20 p-2.5 text-[#0D9488]">
+            <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#0EA89A] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(13,148,136,0.15)]">
+              <div className="inline-flex rounded-lg bg-[#0EA89A]/20 p-2.5 text-[#0EA89A]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -236,8 +236,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#991B1B] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(153,27,27,0.15)]">
-              <div className="inline-flex rounded-lg bg-[#991B1B]/20 p-2.5 text-[#991B1B]">
+            <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#CC2222] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(153,27,27,0.15)]">
+              <div className="inline-flex rounded-lg bg-[#CC2222]/20 p-2.5 text-[#CC2222]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -280,7 +280,7 @@ export default function AboutPage() {
               Let&apos;s connect
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">
+          <p className="mt-2 text-[#A08060]">
             Always happy to chat about SRE, leadership, or the best trails in
             SoCal
           </p>

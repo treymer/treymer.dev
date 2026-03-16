@@ -32,7 +32,7 @@ export default function Nav() {
             height={20}
             className="mr-1.5 transition-transform group-hover:rotate-[20deg]"
           />
-          treymer<span className="text-[#991B1B]">.dev</span>
+          treymer<span className="text-[#CC2222]">.dev</span>
         </Link>
 
         {/* Desktop nav */}
@@ -47,7 +47,7 @@ export default function Nav() {
                   href={link.href}
                   className={`relative font-medium transition-all ${
                     isActive
-                      ? "text-[#991B1B]"
+                      ? "text-[#CC2222]"
                       : "text-[#C4A882] hover:text-[#D4A017]"
                   }`}
                   style={isActive ? { textShadow: "0 0 12px rgba(109, 40, 217, 0.5)" } : undefined}
@@ -55,7 +55,7 @@ export default function Nav() {
                   {link.label}
                   {isActive && (
                     <span
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#991B1B]"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#CC2222]"
                       style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.6)" }}
                     />
                   )}
@@ -109,7 +109,7 @@ export default function Nav() {
                   onClick={() => setMobileOpen(false)}
                   className={`block border-l-2 py-3 pl-4 font-medium transition-all ${
                     isActive
-                      ? "border-[#991B1B] text-[#991B1B]"
+                      ? "border-[#CC2222] text-[#CC2222]"
                       : "border-transparent text-[#C4A882] hover:border-[#D4A017] hover:text-[#D4A017]"
                   }`}
                   style={isActive ? { textShadow: "0 0 12px rgba(109, 40, 217, 0.5)" } : undefined}

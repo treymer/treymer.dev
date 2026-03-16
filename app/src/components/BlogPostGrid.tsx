@@ -42,7 +42,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             onClick={() => setFilter(f)}
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
               filter === f
-                ? "bg-[#991B1B] text-white shadow-md shadow-[#991B1B]/20"
+                ? "bg-[#CC2222] text-white shadow-md shadow-[#CC2222]/20"
                 : "border border-[#8B6914] bg-[#F4E4C1] text-[#5C3D2E] hover:border-[#D4A017] hover:bg-[#F4E4C1] hover:text-[#2D1B0E]"
             }`}
           >
@@ -63,25 +63,25 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                     post.category === "Engineering"
-                      ? "bg-[#0D9488]/15 text-[#0D9488]"
+                      ? "bg-[#0EA89A]/15 text-[#0EA89A]"
                       : "bg-[#6D28D9]/15 text-[#6D28D9]"
                   }`}
                 >
                   {categoryLabels[post.category]}
                 </span>
-                <span className="text-sm text-[#8B7355]">
+                <span className="text-sm text-[#A08060]">
                   {formatDate(post.date)}
                 </span>
-                <span className="text-sm text-[#8B7355]">·</span>
-                <span className="text-sm text-[#8B7355]">{post.readingTime}</span>
+                <span className="text-sm text-[#A08060]">·</span>
+                <span className="text-sm text-[#A08060]">{post.readingTime}</span>
               </div>
-              <h2 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#991B1B]">
+              <h2 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
                 {post.title}
               </h2>
               <p className="mt-2 line-clamp-2 text-sm text-[#5C3D2E]">
                 {post.description}
               </p>
-              <span className="mt-4 inline-flex items-center text-sm font-medium text-[#991B1B]">
+              <span className="mt-4 inline-flex items-center text-sm font-medium text-[#CC2222]">
                 Read more
                 <svg
                   className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"

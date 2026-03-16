@@ -25,7 +25,7 @@ export default function Currently() {
             Currently
           </h2>
         </div>
-        <p className="mt-2 text-[#8B7355]">What I&apos;m up to right now</p>
+        <p className="mt-2 text-[#A08060]">What I&apos;m up to right now</p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (

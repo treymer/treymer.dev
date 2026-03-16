@@ -66,14 +66,14 @@ const skillCategories = [
 ];
 
 const badgeColors: Record<string, string> = {
-  teal: "bg-[#0D9488]/15 text-[#0D9488] border-[#0D9488]/30",
-  crimson: "bg-[#991B1B]/15 text-[#991B1B] border-[#991B1B]/30",
+  teal: "bg-[#0EA89A]/15 text-[#0EA89A] border-[#0EA89A]/30",
+  crimson: "bg-[#CC2222]/15 text-[#CC2222] border-[#CC2222]/30",
   purple: "bg-[#6D28D9]/15 text-[#6D28D9] border-[#6D28D9]/30",
 };
 
 const labelColors: Record<string, string> = {
-  teal: "text-[#0D9488]",
-  crimson: "text-[#991B1B]",
+  teal: "text-[#0EA89A]",
+  crimson: "text-[#CC2222]",
   purple: "text-[#6D28D9]",
 };
 
@@ -212,7 +212,7 @@ export default function PortfolioPage() {
               Adventure Log
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">Quests completed and dungeons cleared</p>
+          <p className="mt-2 text-[#A08060]">Quests completed and dungeons cleared</p>
 
           <div className="mt-8">
             {/* Vertical line */}
@@ -234,13 +234,13 @@ export default function PortfolioPage() {
                           Current
                         </span>
                       )}
-                      <span className="text-sm text-[#8B7355]">{job.dates}</span>
+                      <span className="text-sm text-[#A08060]">{job.dates}</span>
                     </div>
                     <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E] sm:text-xl">
                       {job.title}
                     </h3>
-                    <p className="text-[#0D9488]">{job.company}</p>
-                    <p className="text-sm text-[#8B7355]">{job.location}</p>
+                    <p className="text-[#0EA89A]">{job.company}</p>
+                    <p className="text-sm text-[#A08060]">{job.location}</p>
                     {job.bullets.length > 0 && (
                       <ul className="mt-4 space-y-2">
                         {job.bullets.map((bullet, i) => (
@@ -269,7 +269,7 @@ export default function PortfolioPage() {
               Lore & Knowledge
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">Training grounds and academies</p>
+          <p className="mt-2 text-[#A08060]">Training grounds and academies</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {education.map((edu, index) => (
@@ -277,7 +277,7 @@ export default function PortfolioPage() {
                 key={index}
                 className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 shadow-lg"
               >
-                <p className="text-sm font-medium text-[#0D9488]">{edu.year}</p>
+                <p className="text-sm font-medium text-[#0EA89A]">{edu.year}</p>
                 <h3 className="mt-1 font-display font-semibold text-[#2D1B0E]">
                   {edu.degree}
                 </h3>
@@ -301,7 +301,7 @@ export default function PortfolioPage() {
               Achievements Unlocked
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">Badges earned along the way</p>
+          <p className="mt-2 text-[#A08060]">Badges earned along the way</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {certifications.map((cert, index) => (
@@ -312,8 +312,8 @@ export default function PortfolioPage() {
                 <h3 className="font-display font-semibold text-[#2D1B0E]">
                   {cert.name}
                 </h3>
-                <p className="mt-1 text-sm text-[#0D9488]">{cert.issuer}</p>
-                <p className="mt-1 text-xs text-[#8B7355]">ID: {cert.id}</p>
+                <p className="mt-1 text-sm text-[#0EA89A]">{cert.issuer}</p>
+                <p className="mt-1 text-xs text-[#A08060]">ID: {cert.id}</p>
               </div>
             ))}
           </div>
@@ -330,7 +330,7 @@ export default function PortfolioPage() {
               Skill Tree
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">
+          <p className="mt-2 text-[#A08060]">
             Abilities unlocked and talents trained
           </p>
 
@@ -366,7 +366,7 @@ export default function PortfolioPage() {
               Currently Crafting
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">Side quests and experiments</p>
+          <p className="mt-2 text-[#A08060]">Side quests and experiments</p>
 
           <div className="mt-8">
             <Link
@@ -377,7 +377,7 @@ export default function PortfolioPage() {
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#991B1B]">
+                  <h3 className="font-display text-xl font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
                     treymer.dev
                   </h3>
                   <p className="mt-2 text-[#5C3D2E]">
@@ -388,14 +388,14 @@ export default function PortfolioPage() {
                     {["Next.js", "AWS", "Terraform", "MDX"].map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-[#0D9488]/15 px-2 py-0.5 text-xs font-medium text-[#0D9488]"
+                        className="rounded-md bg-[#0EA89A]/15 px-2 py-0.5 text-xs font-medium text-[#0EA89A]"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-[#991B1B] sm:shrink-0">
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-[#CC2222] sm:shrink-0">
                   View on GitHub
                   <svg
                     className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
@@ -427,7 +427,7 @@ export default function PortfolioPage() {
               Party Up
             </h2>
           </div>
-          <p className="mt-2 text-[#8B7355]">
+          <p className="mt-2 text-[#A08060]">
             Looking for group — always happy to chat about SRE, leadership, or the best trails in SoCal
           </p>
 
