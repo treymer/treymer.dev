@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import Currently from "@/components/Currently";
+
+export const metadata: Metadata = {
+  title: "treymer.dev — Tyler Reymer",
+  description:
+    "SRE Engineering Leader, cloud architect, guitarist, mountain biker, and dungeon master. Writing about engineering, leadership, and life.",
+  alternates: {
+    canonical: "https://treymer.dev",
+  },
+};
 
 const aboutCards = [
   {
@@ -142,7 +152,7 @@ export default function Home() {
   const recentPosts = getAllPosts().slice(0, 3);
 
   return (
-    <div className="scroll-smooth">
+    <div className="scroll-smooth overflow-x-hidden">
       {/* Hero - D&D Character Sheet Style */}
       <section className="hero-section relative overflow-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
         {/* Background glows */}

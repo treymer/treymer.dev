@@ -29,6 +29,27 @@ export async function generateMetadata({
       openGraph: {
         title: post.title,
         description: post.description,
+        url: `https://treymer.dev/blog/${slug}`,
+        type: "article",
+        publishedTime: post.date,
+        authors: ["Tyler Reymer"],
+        images: [
+          {
+            url: "https://treymer.dev/images/avatar.webp",
+            width: 600,
+            height: 800,
+            alt: post.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+        images: ["https://treymer.dev/images/avatar.webp"],
+      },
+      alternates: {
+        canonical: `https://treymer.dev/blog/${slug}`,
       },
     };
   } catch {
@@ -71,7 +92,7 @@ export default async function BlogPostPage({
   });
 
   return (
-    <article className="px-6 pb-20 pt-8 md:pb-28 md:pt-12">
+    <article className="overflow-x-hidden px-6 pb-20 pt-8 md:pb-28 md:pt-12">
       <div className="mx-auto max-w-3xl">
         {/* Back button */}
         <Link

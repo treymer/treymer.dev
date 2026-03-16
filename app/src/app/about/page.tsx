@@ -1,9 +1,35 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About",
   description:
-    "Tyler Reymer — Engineering Leader & SRE Manager. 10+ years in cloud, SRE, and datacenter. Guitar, mountain biking, husband and father.",
+    "Learn about Tyler Reymer — SRE Engineering Leader with 12+ years in cloud, infrastructure, and reliability engineering. Guitar player, mountain biker, dungeon master.",
+  openGraph: {
+    title: "About Tyler Reymer",
+    description:
+      "Learn about Tyler Reymer — SRE Engineering Leader with 12+ years in cloud, infrastructure, and reliability engineering. Guitar player, mountain biker, dungeon master.",
+    url: "https://treymer.dev/about",
+    type: "profile",
+    images: [
+      {
+        url: "https://treymer.dev/images/avatar.webp",
+        width: 600,
+        height: 800,
+        alt: "Tyler Reymer — Cloud Paladin, SRE Guild Master",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Tyler Reymer",
+    description:
+      "Learn about Tyler Reymer — SRE Engineering Leader with 12+ years in cloud, infrastructure, and reliability engineering.",
+    images: ["https://treymer.dev/images/avatar.webp"],
+  },
+  alternates: {
+    canonical: "https://treymer.dev/about",
+  },
 };
 
 // Section divider component with diamond
@@ -17,7 +43,7 @@ function SectionDivider() {
 
 export default function AboutPage() {
   return (
-    <div className="scroll-smooth">
+    <div className="scroll-smooth overflow-x-hidden">
       {/* Hero / Intro */}
       <section className="hero-section relative px-6 pb-12 pt-8 md:pb-16 md:pt-12">
         <div className="hero-purple-glow" />

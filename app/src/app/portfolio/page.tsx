@@ -1,9 +1,35 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Experience, skills, and work. Engineering Leader & SRE Manager. Cloud, infrastructure, reliability engineering.",
+    "Tyler Reymer's professional experience, technical skills, and projects. 12+ years in SRE, cloud architecture, and engineering leadership at companies like Blizzard, Red Hat, and Edwards Lifesciences.",
+  openGraph: {
+    title: "Portfolio | treymer.dev",
+    description:
+      "Tyler Reymer's professional experience, technical skills, and projects. 12+ years in SRE, cloud architecture, and engineering leadership.",
+    url: "https://treymer.dev/portfolio",
+    type: "website",
+    images: [
+      {
+        url: "https://treymer.dev/images/avatar.webp",
+        width: 600,
+        height: 800,
+        alt: "Tyler Reymer — Cloud Paladin, SRE Guild Master",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | treymer.dev",
+    description:
+      "Tyler Reymer's professional experience, technical skills, and projects. 12+ years in SRE, cloud architecture, and engineering leadership.",
+    images: ["https://treymer.dev/images/avatar.webp"],
+  },
+  alternates: {
+    canonical: "https://treymer.dev/portfolio",
+  },
 };
 
 const skillCategories = [
@@ -161,7 +187,7 @@ function SectionDivider() {
 
 export default function PortfolioPage() {
   return (
-    <div className="scroll-smooth">
+    <div className="scroll-smooth overflow-x-hidden">
       {/* Page header */}
       <section className="hero-section relative px-6 pb-12 pt-8 md:pb-16 md:pt-12">
         <div className="hero-purple-glow" />
