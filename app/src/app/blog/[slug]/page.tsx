@@ -35,9 +35,9 @@ export async function generateMetadata({
         authors: ["Tyler Reymer"],
         images: [
           {
-            url: "https://treymer.dev/images/avatar.webp",
-            width: 600,
-            height: 800,
+            url: "https://treymer.dev/images/og-image.png",
+            width: 1200,
+            height: 630,
             alt: post.title,
           },
         ],
@@ -46,7 +46,7 @@ export async function generateMetadata({
         card: "summary_large_image",
         title: post.title,
         description: post.description,
-        images: ["https://treymer.dev/images/avatar.webp"],
+        images: ["https://treymer.dev/images/og-image.png"],
       },
       alternates: {
         canonical: `https://treymer.dev/blog/${slug}`,

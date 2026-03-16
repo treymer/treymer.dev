@@ -69,10 +69,10 @@ export const metadata: Metadata = {
       "SRE Engineering Leader, cloud architect, guitarist, mountain biker, and dungeon master. Writing about engineering, leadership, and life.",
     images: [
       {
-        url: "https://treymer.dev/images/avatar.webp",
-        width: 600,
-        height: 800,
-        alt: "Tyler Reymer — Cloud Paladin, SRE Guild Master",
+        url: "https://treymer.dev/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "treymer.dev — Tyler Reymer",
       },
     ],
   },
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     title: "treymer.dev — Tyler Reymer",
     description:
       "SRE Engineering Leader, cloud architect, guitarist, mountain biker, and dungeon master. Writing about engineering, leadership, and life.",
-    images: ["https://treymer.dev/images/avatar.webp"],
+    images: ["https://treymer.dev/images/og-image.png"],
     creator: "@treymer",
   },
   alternates: {
