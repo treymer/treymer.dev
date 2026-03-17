@@ -88,6 +88,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://treymer.dev",
   },
+  verification: {
+    google: "8o7cnHZ0vaqiZ3ePA353FgRhT29NkcAz0jrss7K8i4M",
+  },
 };
 
 export default function RootLayout({
