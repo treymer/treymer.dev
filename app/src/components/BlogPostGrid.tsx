@@ -43,7 +43,8 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
         const categoryLabelMatch = categoryLabels[post.category]
           .toLowerCase()
           .includes(query);
-        return titleMatch || descriptionMatch || categoryMatch || categoryLabelMatch;
+        const contentMatch = post.searchContent.toLowerCase().includes(query);
+        return titleMatch || descriptionMatch || categoryMatch || categoryLabelMatch || contentMatch;
       });
     }
 

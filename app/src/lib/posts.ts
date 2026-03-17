@@ -13,7 +13,38 @@ export type Post = {
   category: "Engineering" | "Personal";
   published: boolean;
   readingTime: string;
+  searchContent: string;
 };
+
+function stripMarkdown(content: string): string {
+  return content
+    // Remove code blocks
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`[^`]+`/g, " ")
+    // Remove MDX/JSX components
+    .replace(/<[^>]+>/g, " ")
+    // Remove headers
+    .replace(/^#{1,6}\s+/gm, "")
+    // Remove bold/italic
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/_([^_]+)_/g, "$1")
+    // Remove links but keep text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    // Remove images
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1")
+    // Remove blockquotes
+    .replace(/^>\s+/gm, "")
+    // Remove horizontal rules
+    .replace(/^[-*_]{3,}$/gm, "")
+    // Remove list markers
+    .replace(/^[\s]*[-*+]\s+/gm, "")
+    .replace(/^[\s]*\d+\.\s+/gm, "")
+    // Collapse whitespace
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 export function getAllPosts(): Post[] {
   if (!fs.existsSync(postsDirectory)) return [];
@@ -37,6 +68,7 @@ export function getAllPosts(): Post[] {
         category: data.category,
         published: data.published ?? true,
         readingTime: stats.text,
+        searchContent: stripMarkdown(content),
       } as Post;
     })
     .filter((post) => post.published)
