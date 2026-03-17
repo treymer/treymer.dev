@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1209;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d0a05;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="uiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a2d0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a2108;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1a4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1035;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="audioGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a3a2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#062419;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ciGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10101e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="580" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#c9a84c" font-size="20" font-weight="700" letter-spacing="2" filter="url(#glow)">CADENCE — Architecture</text>
+  <text x="450" y="54" text-anchor="middle" fill="#7a6a4a" font-size="11">Android Music Toolkit · Kotlin 2.0 · Jetpack Compose</text>
+
+  <!-- ═══ UI LAYER ═══ -->
+  <rect x="40" y="72" width="820" height="140" rx="10" fill="url(#uiGrad)" stroke="#c9a84c" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="60" y="93" fill="#c9a84c" font-size="12" font-weight="700" letter-spacing="1.5">UI LAYER</text>
+  <text x="60" y="108" fill="#9a7a3a" font-size="10">Jetpack Compose · Navigation · Canvas API</text>
+
+  <!-- Nav bar hint -->
+  <rect x="56" y="116" width="772" height="2" fill="#c9a84c" fill-opacity="0.2" rx="1"/>
+
+  <!-- Screen boxes -->
+  <!-- Home -->
+  <rect x="60" y="124" width="128" height="72" rx="8" fill="#5a3a10" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="124" y="148" text-anchor="middle" fill="#f0d090" font-size="11" font-weight="600">Home</text>
+  <text x="124" y="163" text-anchor="middle" fill="#9a7a3a" font-size="9">Nav hub</text>
+  <text x="124" y="178" text-anchor="middle" fill="#7a6030" font-size="8">AppMode selector</text>
+
+  <!-- Tuner -->
+  <rect x="204" y="124" width="128" height="72" rx="8" fill="#5a3a10" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="268" y="145" text-anchor="middle" fill="#f0d090" font-size="11" font-weight="600">Tuner</text>
+  <text x="268" y="160" text-anchor="middle" fill="#9a7a3a" font-size="9">Canvas gauge</text>
+  <text x="268" y="175" text-anchor="middle" fill="#7a6030" font-size="8">Note · Cents · Color</text>
+  <text x="268" y="188" text-anchor="middle" fill="#5a4a20" font-size="8">Green/Amber/Red</text>
+
+  <!-- Key Finder -->
+  <rect x="348" y="124" width="128" height="72" rx="8" fill="#5a3a10" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="412" y="145" text-anchor="middle" fill="#f0d090" font-size="11" font-weight="600">Key Finder</text>
+  <text x="412" y="160" text-anchor="middle" fill="#9a7a3a" font-size="9">3-note detection</text>
+  <text x="412" y="175" text-anchor="middle" fill="#7a6030" font-size="8">Major / Minor keys</text>
+  <text x="412" y="188" text-anchor="middle" fill="#5a4a20" font-size="8">Scale matching</text>
+
+  <!-- Metronome -->
+  <rect x="492" y="124" width="128" height="72" rx="8" fill="#5a3a10" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="556" y="145" text-anchor="middle" fill="#f0d090" font-size="11" font-weight="600">Metronome</text>
+  <text x="556" y="160" text-anchor="middle" fill="#9a7a3a" font-size="9">40–240 BPM</text>
+  <text x="556" y="175" text-anchor="middle" fill="#7a6030" font-size="8">Slider + ±1/±10</text>
+  <text x="556" y="188" text-anchor="middle" fill="#5a4a20" font-size="8">Drift compensated</text>
+
+  <!-- Chord Suggester -->
+  <rect x="636" y="124" width="204" height="72" rx="8" fill="#5a3a10" stroke="#c9a84c" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="738" y="145" text-anchor="middle" fill="#f0d090" font-size="11" font-weight="600">Chord Suggester</text>
+  <text x="738" y="160" text-anchor="middle" fill="#9a7a3a" font-size="9">Genre · Key · Tonality</text>
+  <text x="738" y="175" text-anchor="middle" fill="#7a6030" font-size="8">Progressions · Scales · Arpeggios</text>
+  <text x="738" y="188" text-anchor="middle" fill="#5a4a20" font-size="8">Rock · Blues · Jazz · Funk · Metal</text>
+
+  <!-- ═══ STATE LAYER ═══ -->
+  <rect x="40" y="238" width="820" height="110" rx="10" fill="url(#stateGrad)" stroke="#9b7fd4" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="60" y="258" fill="#9b7fd4" font-size="12" font-weight="700" letter-spacing="1.5">STATE LAYER</text>
+  <text x="60" y="273" fill="#6a4a9a" font-size="10">MainActivity · State hoisting · Coroutines</text>
+
+  <!-- State boxes -->
+  <rect x="60" y="280" width="180" height="56" rx="6" fill="#3a2060" stroke="#9b7fd4" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="150" y="297" text-anchor="middle" fill="#c0a0f0" font-size="10" font-weight="600">AppMode enum</text>
+  <text x="150" y="312" text-anchor="middle" fill="#7a5aaa" font-size="8">HOME · TUNER · KEYFINDER</text>
+  <text x="150" y="325" text-anchor="middle" fill="#5a3a8a" font-size="8">METRONOME · SUGGESTER</text>
+
+  <rect x="260" y="280" width="200" height="56" rx="6" fill="#3a2060" stroke="#9b7fd4" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="360" y="297" text-anchor="middle" fill="#c0a0f0" font-size="10" font-weight="600">Tuner State</text>
+  <text x="360" y="312" text-anchor="middle" fill="#7a5aaa" font-size="8">note · centsDeviation</text>
+  <text x="360" y="325" text-anchor="middle" fill="#5a3a8a" font-size="8">isListening · uiState</text>
+
+  <rect x="480" y="280" width="200" height="56" rx="6" fill="#3a2060" stroke="#9b7fd4" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="580" y="297" text-anchor="middle" fill="#c0a0f0" font-size="10" font-weight="600">Metro State</text>
+  <text x="580" y="312" text-anchor="middle" fill="#7a5aaa" font-size="8">bpm · isPlaying · isBeat</text>
+  <text x="580" y="325" text-anchor="middle" fill="#5a3a8a" font-size="8">Dispatchers.Default</text>
+
+  <rect x="700" y="280" width="140" height="56" rx="6" fill="#3a2060" stroke="#9b7fd4" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="770" y="297" text-anchor="middle" fill="#c0a0f0" font-size="10" font-weight="600">Suggester State</text>
+  <text x="770" y="312" text-anchor="middle" fill="#7a5aaa" font-size="8">genre · key · tonality</text>
+  <text x="770" y="325" text-anchor="middle" fill="#5a3a8a" font-size="8">selectedTab</text>
+
+  <!-- ═══ AUDIO LAYER ═══ -->
+  <rect x="40" y="358" width="530" height="110" rx="10" fill="url(#audioGrad)" stroke="#4ac9a0" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="60" y="378" fill="#4ac9a0" font-size="12" font-weight="700" letter-spacing="1.5">AUDIO LAYER</text>
+  <text x="60" y="393" fill="#2a7a60" font-size="10">On-device · No network · No tracking</text>
+
+  <!-- Microphone -->
+  <rect x="56" y="400" width="110" height="56" rx="6" fill="#0a4a38" stroke="#4ac9a0" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="111" y="420" text-anchor="middle" fill="#80e8c8" font-size="10" font-weight="600">Microphone</text>
+  <text x="111" y="435" text-anchor="middle" fill="#2a8a60" font-size="9">AudioRecord API</text>
+  <text x="111" y="450" text-anchor="middle" fill="#1a6040" font-size="8">PCM 44.1kHz</text>
+
+  <!-- TarsosDSP -->
+  <rect x="190" y="400" width="160" height="56" rx="6" fill="#0a4a38" stroke="#4ac9a0" stroke-width="1.5" stroke-opacity="0.8"/>
+  <text x="270" y="420" text-anchor="middle" fill="#80e8c8" font-size="10" font-weight="600">TarsosDSP</text>
+  <text x="270" y="435" text-anchor="middle" fill="#2a8a60" font-size="9">YIN pitch detection</text>
+  <text x="270" y="450" text-anchor="middle" fill="#1a6040" font-size="8">Note · Frequency · Cents</text>
+
+  <!-- AudioTrack -->
+  <rect x="374" y="400" width="180" height="56" rx="6" fill="#0a4a38" stroke="#4ac9a0" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="464" y="420" text-anchor="middle" fill="#80e8c8" font-size="10" font-weight="600">AudioTrack</text>
+  <text x="464" y="435" text-anchor="middle" fill="#2a8a60" font-size="9">PCM click synthesis</text>
+  <text x="464" y="450" text-anchor="middle" fill="#1a6040" font-size="8">MODE_STATIC · Drift compensated</text>
+
+  <!-- ═══ CI/CD LAYER ═══ -->
+  <rect x="590" y="358" width="270" height="110" rx="10" fill="url(#ciGrad)" stroke="#6080c0" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="610" y="378" fill="#8090d0" font-size="12" font-weight="700" letter-spacing="1.5">CI/CD</text>
+  <text x="610" y="393" fill="#4050a0" font-size="10">GitHub Actions</text>
+
+  <!-- CI steps -->
+  <rect x="606" y="400" width="90" height="56" rx="6" fill="#1a1a3a" stroke="#6080c0" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="651" y="420" text-anchor="middle" fill="#a0b0e0" font-size="9" font-weight="600">Unit Tests</text>
+  <text x="651" y="436" text-anchor="middle" fill="#4060a0" font-size="8">JUnit · Kotlin</text>
+  <text x="651" y="450" text-anchor="middle" fill="#304080" font-size="8">on PR / push</text>
+
+  <rect x="710" y="400" width="90" height="56" rx="6" fill="#1a1a3a" stroke="#6080c0" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="755" y="420" text-anchor="middle" fill="#a0b0e0" font-size="9" font-weight="600">Signed AAB</text>
+  <text x="755" y="436" text-anchor="middle" fill="#4060a0" font-size="8">GH Release</text>
+  <text x="755" y="450" text-anchor="middle" fill="#304080" font-size="8">Play Store</text>
+
+  <!-- ═══ ARROWS ═══ -->
+  <!-- UI → State (down arrows) -->
+  <line x1="450" y1="212" x2="450" y2="238" stroke="#c9a84c" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <polygon points="450,238 446,230 454,230" fill="#c9a84c" fill-opacity="0.5"/>
+  <text x="460" y="228" fill="#7a6030" font-size="9">state hoisting</text>
+
+  <!-- State → Audio (down arrows) -->
+  <line x1="270" y1="348" x2="270" y2="358" stroke="#9b7fd4" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <polygon points="270,358 266,352 274,352" fill="#9b7fd4" fill-opacity="0.5"/>
+
+  <line x1="464" y1="348" x2="464" y2="358" stroke="#9b7fd4" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <polygon points="464,358 460,352 468,352" fill="#9b7fd4" fill-opacity="0.5"/>
+
+  <!-- Mic → TarsosDSP -->
+  <line x1="166" y1="428" x2="190" y2="428" stroke="#4ac9a0" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polygon points="190,428 182,424 182,432" fill="#4ac9a0" fill-opacity="0.7"/>
+
+  <!-- CI steps arrow -->
+  <line x1="696" y1="428" x2="710" y2="428" stroke="#6080c0" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polygon points="710,428 702,424 702,432" fill="#6080c0" fill-opacity="0.7"/>
+
+  <!-- State → CI -->
+  <line x1="725" y1="348" x2="725" y2="358" stroke="#9b7fd4" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <polygon points="725,358 721,352 729,352" fill="#9b7fd4" fill-opacity="0.4"/>
+
+  <!-- ═══ LEGEND ═══ -->
+  <rect x="40" y="490" width="820" height="72" rx="8" fill="#0f0b04" stroke="#3a2d10" stroke-width="1"/>
+  <text x="60" y="510" fill="#7a6a4a" font-size="10" font-weight="700" letter-spacing="1">STACK</text>
+  <text x="60" y="528" fill="#5a4a2a" font-size="10">Kotlin 2.0</text>
+  <text x="155" y="528" fill="#5a4a2a" font-size="10">Jetpack Compose</text>
+  <text x="290" y="528" fill="#5a4a2a" font-size="10">TarsosDSP (YIN)</text>
+  <text x="420" y="528" fill="#5a4a2a" font-size="10">AudioTrack PCM</text>
+  <text x="540" y="528" fill="#5a4a2a" font-size="10">Coroutines</text>
+  <text x="630" y="528" fill="#5a4a2a" font-size="10">GitHub Actions</text>
+  <text x="740" y="528" fill="#5a4a2a" font-size="10">Google Play</text>
+  <text x="60" y="548" fill="#3a2a12" font-size="9">No ads · No account · No network access · All audio processing on-device · Offline capable</text>
+</svg>

@@ -4,6 +4,8 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
+import rehypeExternalLinks from "rehype-external-links";
+import ImageZoom from "@/components/ImageZoom";
 import {
   getAllPosts,
   getPostBySlug,
@@ -85,10 +87,10 @@ export default async function BlogPostPage({
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeHighlight, rehypeSlug],
+        rehypePlugins: [rehypeHighlight, rehypeSlug, [rehypeExternalLinks, { target: "_blank", rel: ["noopener", "noreferrer"] }]],
       },
     },
-    components: {},
+    components: { img: ImageZoom },
   });
 
   return (

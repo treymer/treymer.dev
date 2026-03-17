@@ -1,0 +1,85 @@
+---
+title: "I Built My Own Guitar App Because I Was Tired of Ads"
+date: "2026-03-17"
+description: "How I vibe coded Cadence — a chromatic tuner, key finder, metronome, and chord suggester for Android — as an SRE manager learning guitar, with zero ads and zero tracking."
+category: Engineering
+tags: [android, kotlin, mobile, guitar, vibe-coding]
+---
+
+I'm a few years into my guitar journey now. I've worked through [JustinGuitar](https://www.justinguitar.com), finished the [Blues Immersion course](https://www.justinguitar.com/programs/blues-immersion), started taking in-person lessons, and I'm currently diving deep into Jazz. If you want the full story, [I wrote about it here](/blog/guitar-journey).
+
+Along the way, I kept running into the same problem: every music utility app I tried was either covered in ads, required an account, phoned home constantly, or all three. I just wanted to tune my guitar without watching a 30-second ad first.
+
+So I built my own.
+
+![Cadence app icon](/images/cadence/icon.png)
+
+## What is Cadence?
+
+Cadence is a music toolkit for guitarists and musicians. It has four tools:
+
+**Chromatic Tuner** — A Snark-style semicircle gauge built with the Android Canvas API. Real-time pitch detection with color-coded feedback: green when you're in tune, amber when you're close, red when you're off. Plays a note, sees the frequency, tells you where you are in cents.
+
+![Tuner screen](/images/cadence/screen-tuner.jpg)
+
+**Key Finder** — Play three notes into your microphone and Cadence identifies every matching major and minor key. Genuinely useful when you're learning a song by ear and can't figure out what key it's in. I use this constantly when noodling along to records.
+
+![Key finder screen](/images/cadence/screen-keyfinder.jpg)
+
+**Metronome** — Clean and accurate, 40 to 240 BPM. Slider plus ±1/±10 buttons for precision. The click is synthesized via Android AudioTrack with drift compensation so it doesn't wander over long sessions — something a lot of metronome apps get wrong.
+
+![Metronome screen](/images/cadence/screen-metronome.jpg)
+
+**Chord & Scale Suggester** — Pick a genre (Rock, Blues, Jazz, Funk, or Metal), a key, and Major or Minor. Get curated chord progressions, scales, and arpeggios with links to chord diagrams. This one is basically a practice companion — great for jamming or learning theory in context.
+
+![Chord suggester - blues](/images/cadence/screen-suggester-blues.jpg)
+![Chord suggester - jazz](/images/cadence/screen-suggester-jazz.jpg)
+![Chord suggester - scales](/images/cadence/screen-suggester-scales.jpg)
+![Chord suggester - arpeggios](/images/cadence/screen-suggester-arpeggios.jpg)
+
+No account required. No ads. No tracking. All audio processing happens on your device. Works completely offline.
+
+## Why I built it
+
+Honestly? Frustration. Every tuner app I tried had banner ads across the bottom that got in the way of actually reading the tuner. Metronome apps with subscription paywalls for basic BPM ranges. Key detector apps that wanted microphone access *and* network access — why does a key finder need the internet?
+
+I wanted tools that just worked, looked good, and stayed out of my way.
+
+I'm also an SRE Engineering Manager who's been leaning hard into AI-assisted development — what people are calling vibe coding. I'd just finished building [treymer.dev](/), and I wanted to push further and try something I'd never done before: a real Android app.
+
+## Building it as a first Android app
+
+I had no Kotlin experience. I'd never touched Jetpack Compose. I'd never shipped anything to the Google Play Store.
+
+I had Claude Code, Cursor, and a problem I actually wanted to solve.
+
+The stack I landed on: Kotlin 2.0 with Jetpack Compose for the UI, TarsosDSP for pitch detection (it implements the YIN algorithm, which is what Snark-style tuners use), and Android AudioTrack for synthesizing the metronome click directly in PCM — no audio files, no dependencies, just math producing sound.
+
+The architecture is deliberately simple: a single Activity that owns all the state, passed down to composable screens via state hoisting. An AppMode enum drives navigation. Coroutines handle the metronome timing with drift compensation so the click stays locked over long practice sessions.
+
+Here's a look at how it all fits together:
+
+![Cadence architecture diagram](/images/cadence-architecture.svg)
+*UI layer talking to state layer, audio processing on-device, CI/CD shipping to Play Store.*
+
+The Canvas API work for the tuner gauge was the most satisfying part to build. Drawing a semicircle, calculating the needle angle from cents deviation, getting the color zones right — it's the kind of thing that feels impossible until it suddenly works and you can't stop playing with it.
+
+The metronome drift compensation was the trickiest. Android's AudioTrack in MODE_STATIC is sample-accurate, but the timing loop that triggers each click can drift if you're not careful. I used coroutines with `Dispatchers.Default` and compensated for wall clock drift on each beat. The result is a click that holds steady even at 200 BPM through a long practice session.
+
+## The design
+
+I gave it the same fantasy tavern aesthetic as this site — deep browns, gold accents, warm amber, a touch of purple. It felt right. Both projects came from the same place, and it was fun to make them feel like they belong together.
+
+![Cadence home screen](/images/cadence/screen-home.jpg)
+
+## Where it is now
+
+Cadence is currently in testing on the Google Play Store. It's not publicly listed yet — I'm still polishing, fixing edge cases, and making sure the pitch detection is solid across a range of instruments and acoustic environments.
+
+It's been a genuinely fun project. Building a tool I actually use every time I pick up my guitar hits differently than building something hypothetical. When the tuner gauge needle swings to center and goes green, that's my code working in service of something I actually care about.
+
+If you're a musician and want to try it out, check back — I'll post when it's publicly available. In the meantime, the source code is on <a href="https://github.com/treymer/cadence" target="_blank" rel="noopener noreferrer">GitHub</a>.
+
+---
+
+*Want to follow the guitar journey that led to this? Read [From Clarinet Kid to Jazz Chaser](/blog/guitar-journey).*
