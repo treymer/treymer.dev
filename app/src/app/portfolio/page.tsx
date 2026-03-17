@@ -81,7 +81,7 @@ const workHistory = [
   {
     current: true,
     title: "Manager, Systems Reliability Engineering",
-    company: "Major Entertainment & Technology Company",
+    company: "The Walt Disney Company",
     location: "Los Angeles, CA",
     dates: "August 2024 — Present",
     bullets: [

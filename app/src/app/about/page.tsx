@@ -96,7 +96,7 @@ export default function AboutPage() {
                 <h3 className="mt-3 font-display text-xl font-semibold text-[#2D1B0E]">
                   Manager, Systems Reliability Engineering
                 </h3>
-                <p className="text-[#0EA89A]">Major Entertainment & Technology Company</p>
+                <p className="text-[#0EA89A]">The Walt Disney Company</p>
                 <p className="mt-3 text-[#5C3D2E]">
                   Leading a globally scalable SRE team supporting business-critical
                   cloud applications including AI platforms, SAP, Tableau, and data
