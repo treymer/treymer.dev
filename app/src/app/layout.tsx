@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, DM_Sans, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import KonamiCode from "@/components/KonamiCode";
@@ -104,6 +105,12 @@ export default function RootLayout({
         <main className="min-h-[calc(100vh-8rem)] pt-16">{children}</main>
         <Footer />
         <KonamiCode />
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "4ac77f702da84210a24690f14e4b9237"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
