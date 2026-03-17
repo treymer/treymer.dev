@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import type { Post } from "@/lib/posts";
 
 type Filter = "All" | "Engineering" | "Personal";
@@ -23,16 +23,88 @@ function formatDate(dateStr: string) {
 
 export default function BlogPostGrid({ posts }: { posts: Post[] }) {
   const [filter, setFilter] = useState<Filter>("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredPosts =
-    filter === "All"
-      ? posts
-      : posts.filter((post) => post.category === filter);
+  const filteredPosts = useMemo(() => {
+    let results = posts;
+
+    // Filter by category
+    if (filter !== "All") {
+      results = results.filter((post) => post.category === filter);
+    }
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      results = results.filter((post) => {
+        const titleMatch = post.title.toLowerCase().includes(query);
+        const descriptionMatch = post.description.toLowerCase().includes(query);
+        const categoryMatch = post.category.toLowerCase().includes(query);
+        const categoryLabelMatch = categoryLabels[post.category]
+          .toLowerCase()
+          .includes(query);
+        return titleMatch || descriptionMatch || categoryMatch || categoryLabelMatch;
+      });
+    }
+
+    return results;
+  }, [posts, filter, searchQuery]);
 
   const filters: Filter[] = ["All", "Engineering", "Personal"];
 
+  const hasSearchQuery = searchQuery.trim().length > 0;
+
   return (
     <div>
+      {/* Search input */}
+      <div className="mb-6">
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+            <svg
+              className="h-5 w-5 text-[#A08060]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            placeholder="Search the archives..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full rounded-xl border border-[#8B6914] bg-[#3D2314] py-3 pl-12 pr-4 text-[#F4E4C1] placeholder-[#A08060] transition-all focus:border-[#D4A017] focus:outline-none focus:ring-2 focus:ring-[#D4A017]/20"
+          />
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={() => setSearchQuery("")}
+              className="absolute inset-y-0 right-0 flex items-center pr-4 text-[#A08060] hover:text-[#D4A017]"
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
+
       {/* Category filter */}
       <div className="mb-10 flex flex-wrap gap-2">
         {filters.map((f) => (
@@ -118,10 +190,24 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             </svg>
           </div>
           <p className="text-[#5C3D2E]">
-            {filter === "All"
-              ? "No posts yet. Check back soon."
-              : `No ${filter} posts yet. Try another category.`}
+            {hasSearchQuery
+              ? "No scrolls found matching your search. Try different keywords."
+              : filter === "All"
+                ? "No posts yet. Check back soon."
+                : `No ${categoryLabels[filter]} quests yet. Try another category.`}
           </p>
+          {hasSearchQuery && (
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery("");
+                setFilter("All");
+              }}
+              className="mt-4 text-sm font-medium text-[#CC2222] hover:underline"
+            >
+              Clear search
+            </button>
+          )}
         </div>
       )}
     </div>
