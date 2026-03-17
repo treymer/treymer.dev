@@ -176,6 +176,16 @@ const certifications = [
   },
 ];
 
+const shippedTitles = [
+  { title: "WarCraft III: Reforged", year: "2020", role: "Data Center Engineering" },
+  { title: "World of WarCraft: Battle for Azeroth", year: "2018", role: "Data Center Engineering" },
+  { title: "StarCraft: Remastered", year: "2017", role: "Data Center Management" },
+  { title: "StarCraft II: Nova Covert Ops", year: "2016", role: "Data Center Management" },
+  { title: "World of WarCraft: Legion", year: "2016", role: "Data Center Management" },
+  { title: "Overwatch", year: "2016", role: "Infrastructure" },
+  { title: "StarCraft II: Legacy of the Void", year: "2015", role: "Infrastructure" },
+];
+
 // Section divider component with diamond
 function SectionDivider() {
   return (
@@ -189,9 +199,8 @@ export default function PortfolioPage() {
   return (
     <div className="scroll-smooth overflow-x-hidden">
       {/* Page header */}
-      <section className="hero-section relative px-6 pb-12 pt-8 md:pb-16 md:pt-12">
-        <div className="hero-purple-glow" />
-        <div className="mx-auto max-w-4xl relative">
+      <section className="px-6 pb-12 pt-8 md:pb-16 md:pt-12">
+        <div className="mx-auto max-w-4xl">
           <h1 className="font-display text-4xl font-semibold tracking-tight text-[#F4E4C1] sm:text-5xl md:text-6xl">
             Portfolio
           </h1>
@@ -316,6 +325,59 @@ export default function PortfolioPage() {
                 <p className="mt-1 text-xs text-[#A08060]">ID: {cert.id}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Shipped Titles */}
+      <section className="px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-4xl">
+          <div className="title-purple-glow inline-block">
+            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+              Shipped Titles
+            </h2>
+          </div>
+          <p className="mt-2 text-[#A08060]">Games I helped bring to life at Blizzard Entertainment</p>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {shippedTitles.map((game, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-4 shadow-lg"
+              >
+                <p className="text-xs font-medium text-[#6D28D9]">{game.year}</p>
+                <h3 className="mt-1 font-display font-semibold text-[#2D1B0E]">
+                  {game.title}
+                </h3>
+                <p className="mt-1 text-sm text-[#5C3D2E]">{game.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center">
+            <Link
+              href="https://www.mobygames.com/person/767808/tyler-reymer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#0EA89A] transition-colors hover:text-[#D4A017]"
+            >
+              View full credits on MobyGames
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
