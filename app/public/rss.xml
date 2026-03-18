@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>treymer.dev</title>
+    <link>https://treymer.dev</link>
+    <description>Engineering, leadership, and life — by Tyler Reymer</description>
+    <language>en-us</language>
+    <atom:link href="https://treymer.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 18 Mar 2026 18:55:48 GMT</lastBuildDate>
+    
+  <item>
+    <title><![CDATA[From Clarinet Kid to Jazz Chaser: My Guitar Journey]]></title>
+    <link>https://treymer.dev/blog/guitar-journey/</link>
+    <guid isPermaLink="true">https://treymer.dev/blog/guitar-journey/</guid>
+    <description><![CDATA[How a pandemic, YouTube teachers, and a stubborn dream turned me from a lapsed clarinet player into a jazz-obsessed guitarist.]]></description>
+    <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+    <category>Personal</category>
+  </item>
+  <item>
+    <title><![CDATA[I Vibe Coded My Personal Site as an SRE Manager — Here's What I Learned]]></title>
+    <link>https://treymer.dev/blog/vibe-coding-sre-manager/</link>
+    <guid isPermaLink="true">https://treymer.dev/blog/vibe-coding-sre-manager/</guid>
+    <description><![CDATA[As an SRE manager I don't write much code anymore. So I built this entire site using AI-assisted development and learned more than I expected.]]></description>
+    <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+    <category>Engineering</category>
+  </item>
+  <item>
+    <title><![CDATA[I Built My Own Guitar App Because I Was Tired of Ads]]></title>
+    <link>https://treymer.dev/blog/cadence-app/</link>
+    <guid isPermaLink="true">https://treymer.dev/blog/cadence-app/</guid>
+    <description><![CDATA[How I vibe coded Cadence — a chromatic tuner, key finder, metronome, and chord suggester for Android — as an SRE manager learning guitar, with zero ads and zero tracking.]]></description>
+    <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+    <category>Engineering</category>
+  </item>
+  </channel>
+</rss>
