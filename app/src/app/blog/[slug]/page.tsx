@@ -7,9 +7,11 @@ import rehypeSlug from "rehype-slug";
 import rehypeExternalLinks from "rehype-external-links";
 import ImageZoom from "@/components/ImageZoom";
 import ShareButtons from "@/components/ShareButtons";
+import TableOfContents from "@/components/TableOfContents";
 import {
   getAllPosts,
   getPostBySlug,
+  extractHeadings,
   type Post,
 } from "@/lib/posts";
 
@@ -85,6 +87,7 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const headings = extractHeadings(post.content);
   const allPosts = getAllPosts();
   const currentIndex = allPosts.findIndex((p) => p.slug === slug);
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
@@ -148,6 +151,8 @@ export default async function BlogPostPage({
           <span className="text-[#5C3D2E]">·</span>
           <span className="text-[#A08060]">{post.readingTime}</span>
         </div>
+
+        <TableOfContents headings={headings} />
 
         {/* MDX content with prose - parchment scroll styling */}
         <div className="mt-12 rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-8 shadow-lg md:p-10">

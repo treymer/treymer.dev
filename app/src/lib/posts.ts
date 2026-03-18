@@ -5,6 +5,12 @@ import readingTime from "reading-time";
 
 const postsDirectory = path.join(process.cwd(), "src/content/blog");
 
+export type Heading = {
+  depth: number;
+  text: string;
+  slug: string;
+};
+
 export type Post = {
   slug: string;
   title: string;
@@ -14,7 +20,30 @@ export type Post = {
   published: boolean;
   readingTime: string;
   searchContent: string;
+  tags: string[];
 };
+
+export function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function extractHeadings(content: string): Heading[] {
+  const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+  const headings: Heading[] = [];
+  let match;
+  while ((match = headingRegex.exec(content)) !== null) {
+    headings.push({
+      depth: match[1].length,
+      text: match[2].trim(),
+      slug: slugifyHeading(match[2].trim()),
+    });
+  }
+  return headings;
+}
 
 function stripMarkdown(content: string): string {
   return content
@@ -69,6 +98,7 @@ export function getAllPosts(): Post[] {
         published: data.published ?? true,
         readingTime: stats.text,
         searchContent: stripMarkdown(content),
+        tags: data.tags ?? [],
       } as Post;
     })
     .filter((post) => post.published)

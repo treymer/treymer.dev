@@ -24,6 +24,13 @@ function formatDate(dateStr: string) {
 export default function BlogPostGrid({ posts }: { posts: Post[] }) {
   const [filter, setFilter] = useState<Filter>("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+
+  const allTags = useMemo(() => {
+    const tagSet = new Set<string>();
+    posts.forEach((post) => post.tags?.forEach((t) => tagSet.add(t)));
+    return Array.from(tagSet).sort();
+  }, [posts]);
 
   const filteredPosts = useMemo(() => {
     let results = posts;
@@ -31,6 +38,11 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
     // Filter by category
     if (filter !== "All") {
       results = results.filter((post) => post.category === filter);
+    }
+
+    // Filter by tag
+    if (activeTag) {
+      results = results.filter((post) => post.tags?.includes(activeTag));
     }
 
     // Filter by search query
@@ -49,7 +61,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
     }
 
     return results;
-  }, [posts, filter, searchQuery]);
+  }, [posts, filter, activeTag, searchQuery]);
 
   const filters: Filter[] = ["All", "Engineering", "Personal"];
 
@@ -107,7 +119,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
       </div>
 
       {/* Category filter */}
-      <div className="mb-10 flex flex-wrap gap-2">
+      <div className="mb-4 flex flex-wrap gap-2">
         {filters.map((f) => (
           <button
             key={f}
@@ -123,6 +135,26 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
           </button>
         ))}
       </div>
+
+      {/* Tag filter */}
+      {allTags.length > 0 && (
+        <div className="mb-10 flex flex-wrap gap-2">
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              type="button"
+              onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+              className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                activeTag === tag
+                  ? "bg-[#6D28D9] text-white"
+                  : "border border-[#6D28D9]/30 bg-[#6D28D9]/10 text-[#6D28D9] hover:bg-[#6D28D9]/20"
+              }`}
+            >
+              #{tag}
+            </button>
+          ))}
+        </div>
+      )}
 
       {filteredPosts.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2">
@@ -154,6 +186,18 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
               <p className="mt-2 line-clamp-2 text-sm text-[#5C3D2E]">
                 {post.description}
               </p>
+              {post.tags && post.tags.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[#6D28D9]/20 bg-[#6D28D9]/10 px-2 py-0.5 text-xs text-[#6D28D9]"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
               <span className="mt-4 inline-flex items-center text-sm font-medium text-[#CC2222]">
                 Read more
                 <svg

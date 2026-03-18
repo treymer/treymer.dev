@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import KonamiCode from "@/components/KonamiCode";
 import ScrollToTop from "@/components/ScrollToTop";
+import BackToTop from "@/components/BackToTop";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -111,6 +112,7 @@ export default function RootLayout({
         <main className="min-h-[calc(100vh-8rem)] pt-16">{children}</main>
         <Footer />
         <KonamiCode />
+        <BackToTop />
         <Script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
