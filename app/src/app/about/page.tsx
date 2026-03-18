@@ -48,13 +48,13 @@ export default function AboutPage() {
       <section className="hero-section relative px-6 pb-12 pt-8 md:pb-16 md:pt-12">
         <div className="hero-purple-glow" />
         <div className="mx-auto max-w-3xl relative">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#F4E4C1] sm:text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-5xl md:text-6xl">
             Tyler Reymer
           </h1>
           <p className="mt-3 text-xl font-medium text-[#0EA89A] sm:text-2xl">
             Engineering Leader & SRE Manager
           </p>
-          <p className="mt-6 text-lg leading-relaxed text-[#C4A882]">
+          <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
             I&apos;ve spent over a decade in cloud engineering, site reliability,
             and data center operations. These days I lead SRE teams focused on
             keeping large-scale systems running reliably. I&apos;m passionate
@@ -71,11 +71,11 @@ export default function AboutPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Professional background
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">
+          <p className="mt-2 text-[var(--text-muted)]">
             How I got here, and what I do now
           </p>
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   <span className="inline-block rounded-full bg-[#6D28D9]/15 px-2.5 py-0.5 text-xs font-medium text-[#6D28D9]">
                     Current
                   </span>
-                  <span className="text-sm text-[#A08060]">2024 — Present</span>
+                  <span className="text-sm text-[var(--text-muted)]">2024 — Present</span>
                 </div>
                 <h3 className="mt-3 font-display text-xl font-semibold text-[#2D1B0E]">
                   Manager, Systems Reliability Engineering
@@ -109,11 +109,11 @@ export default function AboutPage() {
             {/* Edwards Lifesciences */}
             <div className="relative pl-6">
               <div
-                className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017] bg-[#2D1B0E]"
+                className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017] bg-[var(--background)]"
                 style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.3)" }}
               />
               <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-                <span className="text-sm text-[#A08060]">2022 — 2024</span>
+                <span className="text-sm text-[var(--text-muted)]">2022 — 2024</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E]">
                   Senior Manager, Cloud & Site Reliability Engineering
                 </h3>
@@ -129,11 +129,11 @@ export default function AboutPage() {
             {/* Red Hat */}
             <div className="relative pl-6">
               <div
-                className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017] bg-[#2D1B0E]"
+                className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017] bg-[var(--background)]"
                 style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.3)" }}
               />
               <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-                <span className="text-sm text-[#A08060]">2021 — 2022</span>
+                <span className="text-sm text-[var(--text-muted)]">2021 — 2022</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E]">
                   Cloud Engineer / Site Reliability Engineer
                 </h3>
@@ -149,11 +149,11 @@ export default function AboutPage() {
             {/* Blizzard */}
             <div className="relative pl-6">
               <div
-                className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017] bg-[#2D1B0E]"
+                className="absolute left-0 top-2 h-3 w-3 rounded-full border-2 border-[#D4A017] bg-[var(--background)]"
                 style={{ boxShadow: "0 0 8px rgba(109, 40, 217, 0.3)" }}
               />
               <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-                <span className="text-sm text-[#A08060]">2015 — 2021</span>
+                <span className="text-sm text-[var(--text-muted)]">2015 — 2021</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E]">
                   Cloud Engineer / Data Center Administrator
                 </h3>
@@ -175,11 +175,11 @@ export default function AboutPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Life outside work
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">The things that keep me grounded</p>
+          <p className="mt-2 text-[var(--text-muted)]">The things that keep me grounded</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#6D28D9] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]">
@@ -261,7 +261,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <p className="mt-8 text-lg leading-relaxed text-[#C4A882]">
+          <p className="mt-8 text-lg leading-relaxed text-[var(--text-secondary)]">
             The common thread? I like getting lost in something — whether
             it&apos;s a riff, a trail, or time with my people. That same focus
             shows up in how I approach engineering and leadership: deep work,
@@ -276,11 +276,11 @@ export default function AboutPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Let&apos;s connect
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">
+          <p className="mt-2 text-[var(--text-muted)]">
             Always happy to chat about SRE, leadership, or the best trails in
             SoCal
           </p>

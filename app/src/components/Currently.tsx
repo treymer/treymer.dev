@@ -21,11 +21,11 @@ export default function Currently() {
     <section className="px-6 py-16 md:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="title-purple-glow inline-block">
-          <h2 className="font-display text-3xl font-semibold text-[#F4E4C1] sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold text-[var(--text-primary)] sm:text-4xl">
             Currently
           </h2>
         </div>
-        <p className="mt-2 text-[#A08060]">What I&apos;m up to right now</p>
+        <p className="mt-2 text-[var(--text-muted)]">What I&apos;m up to right now</p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (

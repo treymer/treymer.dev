@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,12 +19,12 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#5C3D2E] bg-[#3D2314]/95 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--background-mid)]/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="group relative inline-flex items-center font-display text-xl font-bold tracking-tight text-[#F4E4C1] transition-colors hover:text-[#D4A017]"
+          className="group relative inline-flex items-center font-display text-xl font-bold tracking-tight text-[var(--text-primary)] transition-colors hover:text-[#D4A017]"
           title="Cloud Paladin • SRE Guild Master • Horde Warrior"
         >
           <Image
@@ -49,7 +50,7 @@ export default function Nav() {
                   className={`relative font-medium transition-all ${
                     isActive
                       ? "text-[#CC2222]"
-                      : "text-[#C4A882] hover:text-[#D4A017]"
+                      : "text-[var(--text-secondary)] hover:text-[#D4A017]"
                   }`}
                   style={isActive ? { textShadow: "0 0 12px rgba(109, 40, 217, 0.5)" } : undefined}
                 >
@@ -66,35 +67,26 @@ export default function Nav() {
           })}
         </ul>
 
-        {/* Hamburger */}
-        <button
-          type="button"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-[#5C3D2E] bg-[#2D1B0E] transition-colors hover:border-[#D4A017] hover:bg-[#3D2314] md:hidden"
-          aria-expanded={mobileOpen}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`h-0.5 w-5 bg-[#C4A882] transition-all ${
-              mobileOpen ? "translate-y-2 rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-0.5 w-5 bg-[#C4A882] transition-all ${
-              mobileOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`h-0.5 w-5 bg-[#C4A882] transition-all ${
-              mobileOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
-          />
-        </button>
+        {/* Theme toggle + Hamburger */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--background)] transition-colors hover:border-[#D4A017] hover:bg-[var(--background-mid)] md:hidden"
+            aria-expanded={mobileOpen}
+            aria-label="Toggle menu"
+          >
+            <span className={`h-0.5 w-5 bg-[var(--text-secondary)] transition-all ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
+            <span className={`h-0.5 w-5 bg-[var(--text-secondary)] transition-all ${mobileOpen ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 w-5 bg-[var(--text-secondary)] transition-all ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-[#5C3D2E] bg-[#3D2314] transition-all duration-300 ease-out md:hidden ${
+        className={`overflow-hidden border-t border-[var(--border)] bg-[var(--background-mid)] transition-all duration-300 ease-out md:hidden ${
           mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -111,7 +103,7 @@ export default function Nav() {
                   className={`block border-l-2 py-3 pl-4 font-medium transition-all ${
                     isActive
                       ? "border-[#CC2222] text-[#CC2222]"
-                      : "border-transparent text-[#C4A882] hover:border-[#D4A017] hover:text-[#D4A017]"
+                      : "border-transparent text-[var(--text-secondary)] hover:border-[#D4A017] hover:text-[#D4A017]"
                   }`}
                   style={isActive ? { textShadow: "0 0 12px rgba(109, 40, 217, 0.5)" } : undefined}
                 >

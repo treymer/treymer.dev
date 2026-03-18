@@ -5,7 +5,7 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <div className="mt-8 rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
-      <p className="font-display text-sm font-semibold uppercase tracking-wide text-[#A08060]">
+      <p className="font-display text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
         Contents
       </p>
       <ul className="mt-3 space-y-1.5">

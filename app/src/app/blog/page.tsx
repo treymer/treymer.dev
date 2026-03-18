@@ -40,10 +40,10 @@ export default function BlogPage() {
     <div className="overflow-x-hidden px-6 pb-16 pt-8 md:pb-20 md:pt-12">
       <div className="mx-auto max-w-4xl">
         <header>
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#F4E4C1] sm:text-5xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-5xl">
             Blog
           </h1>
-          <p className="mt-3 text-lg text-[#C4A882]">
+          <p className="mt-3 text-lg text-[var(--text-secondary)]">
             Thoughts on engineering, leadership, and life.
           </p>
           <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#6D28D9]/60 to-transparent" />

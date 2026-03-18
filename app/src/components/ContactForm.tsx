@@ -128,7 +128,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="mb-2 block text-sm font-medium text-[#C4A882]"
+          className="mb-2 block text-sm font-medium text-[var(--text-secondary)]"
         >
           Name <span className="text-[#CC2222]">*</span>
         </label>
@@ -138,7 +138,7 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full rounded-xl border bg-[#3D2314] py-3 px-4 text-[#F4E4C1] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
+          className={`w-full rounded-xl border bg-[var(--background-mid)] py-3 px-4 text-[var(--text-primary)] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
             errors.name
               ? "border-[#CC2222] focus:border-[#CC2222] focus:ring-[#CC2222]/20"
               : "border-[#8B6914] focus:border-[#D4A017] focus:ring-[#D4A017]/20"
@@ -154,7 +154,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="mb-2 block text-sm font-medium text-[#C4A882]"
+          className="mb-2 block text-sm font-medium text-[var(--text-secondary)]"
         >
           Email <span className="text-[#CC2222]">*</span>
         </label>
@@ -164,7 +164,7 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full rounded-xl border bg-[#3D2314] py-3 px-4 text-[#F4E4C1] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
+          className={`w-full rounded-xl border bg-[var(--background-mid)] py-3 px-4 text-[var(--text-primary)] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
             errors.email
               ? "border-[#CC2222] focus:border-[#CC2222] focus:ring-[#CC2222]/20"
               : "border-[#8B6914] focus:border-[#D4A017] focus:ring-[#D4A017]/20"
@@ -180,7 +180,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="subject"
-          className="mb-2 block text-sm font-medium text-[#C4A882]"
+          className="mb-2 block text-sm font-medium text-[var(--text-secondary)]"
         >
           Subject <span className="text-[#CC2222]">*</span>
         </label>
@@ -190,7 +190,7 @@ export default function ContactForm() {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className={`w-full rounded-xl border bg-[#3D2314] py-3 px-4 text-[#F4E4C1] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
+          className={`w-full rounded-xl border bg-[var(--background-mid)] py-3 px-4 text-[var(--text-primary)] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
             errors.subject
               ? "border-[#CC2222] focus:border-[#CC2222] focus:ring-[#CC2222]/20"
               : "border-[#8B6914] focus:border-[#D4A017] focus:ring-[#D4A017]/20"
@@ -206,7 +206,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-2 block text-sm font-medium text-[#C4A882]"
+          className="mb-2 block text-sm font-medium text-[var(--text-secondary)]"
         >
           Message <span className="text-[#CC2222]">*</span>
         </label>
@@ -216,7 +216,7 @@ export default function ContactForm() {
           rows={6}
           value={formData.message}
           onChange={handleChange}
-          className={`w-full resize-none rounded-xl border bg-[#3D2314] py-3 px-4 text-[#F4E4C1] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
+          className={`w-full resize-none rounded-xl border bg-[var(--background-mid)] py-3 px-4 text-[var(--text-primary)] placeholder-[#A08060] transition-all focus:outline-none focus:ring-2 ${
             errors.message
               ? "border-[#CC2222] focus:border-[#CC2222] focus:ring-[#CC2222]/20"
               : "border-[#8B6914] focus:border-[#D4A017] focus:ring-[#D4A017]/20"

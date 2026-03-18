@@ -74,7 +74,7 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
             <svg
-              className="h-5 w-5 text-[#A08060]"
+              className="h-5 w-5 text-[var(--text-muted)]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -92,13 +92,13 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
             placeholder="Search the archives..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-xl border border-[#8B6914] bg-[#3D2314] py-3 pl-12 pr-4 text-[#F4E4C1] placeholder-[#A08060] transition-all focus:border-[#D4A017] focus:outline-none focus:ring-2 focus:ring-[#D4A017]/20"
+            className="w-full rounded-xl border border-[#8B6914] bg-[var(--background-mid)] py-3 pl-12 pr-4 text-[var(--text-primary)] placeholder-[#A08060] transition-all focus:border-[#D4A017] focus:outline-none focus:ring-2 focus:ring-[#D4A017]/20"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="absolute inset-y-0 right-0 flex items-center pr-4 text-[#A08060] hover:text-[#D4A017]"
+              className="absolute inset-y-0 right-0 flex items-center pr-4 text-[var(--text-muted)] hover:text-[#D4A017]"
             >
               <svg
                 className="h-5 w-5"
@@ -174,11 +174,11 @@ export default function BlogPostGrid({ posts }: { posts: Post[] }) {
                 >
                   {categoryLabels[post.category]}
                 </span>
-                <span className="text-sm text-[#A08060]">
+                <span className="text-sm text-[var(--text-muted)]">
                   {formatDate(post.date)}
                 </span>
-                <span className="text-sm text-[#A08060]">·</span>
-                <span className="text-sm text-[#A08060]">{post.readingTime}</span>
+                <span className="text-sm text-[var(--text-muted)]">·</span>
+                <span className="text-sm text-[var(--text-muted)]">{post.readingTime}</span>
               </div>
               <h2 className="font-display text-lg font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
                 {post.title}

@@ -182,12 +182,12 @@ export default function Home() {
               {/* Decorative top element */}
               <div className="mb-6 flex items-center gap-4">
                 <div className="h-px w-12 bg-gradient-to-r from-[#6D28D9] to-transparent" />
-                <span className="rounded-full border border-[#6D28D9]/30 bg-[#6D28D9]/10 px-4 py-1.5 text-sm font-medium text-[#C4A882]">
+                <span className="rounded-full border border-[#6D28D9]/30 bg-[#6D28D9]/10 px-4 py-1.5 text-sm font-medium text-[var(--text-secondary)]">
                   SRE · Leadership · Systems
                 </span>
               </div>
 
-              <h1 className="font-display text-5xl font-semibold tracking-tight text-[#F4E4C1] sm:text-6xl md:text-7xl">
+              <h1 className="font-display text-5xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-6xl md:text-7xl">
                 Tyler Reymer
               </h1>
 
@@ -195,13 +195,13 @@ export default function Home() {
                 Engineering Leader & SRE Manager
               </p>
 
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-[#C4A882] sm:text-xl">
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
                 Engineering reliable systems at scale. Leading teams that ship.
                 Riding trails, playing riffs, and raising a family.
               </p>
 
               {/* RPG stat line */}
-              <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#A08060]">
+              <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--text-muted)]">
                 <span>Lv.12 Engineer</span>
                 <span className="hidden sm:inline">•</span>
                 <span>Bard Multiclass</span>
@@ -264,11 +264,11 @@ export default function Home() {
       <section id="about" className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-3xl font-semibold text-[#F4E4C1] sm:text-4xl">
+            <h2 className="font-display text-3xl font-semibold text-[var(--text-primary)] sm:text-4xl">
               Who I am
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">
+          <p className="mt-2 text-[var(--text-muted)]">
             A few things that define me beyond the title
           </p>
 
@@ -292,7 +292,7 @@ export default function Home() {
                     {card.description}
                   </p>
                   {/* RPG stats badge */}
-                  <p className="mt-3 font-mono text-xs tracking-wide text-[#A08060]">
+                  <p className="mt-3 font-mono text-xs tracking-wide text-[var(--text-muted)]">
                     {card.stats}
                   </p>
                 </div>
@@ -308,11 +308,11 @@ export default function Home() {
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-3xl font-semibold text-[#F4E4C1] sm:text-4xl">
+            <h2 className="font-display text-3xl font-semibold text-[var(--text-primary)] sm:text-4xl">
               Latest Posts
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">
+          <p className="mt-2 text-[var(--text-muted)]">
             Recent thoughts on engineering, leadership, and life
           </p>
 
@@ -335,7 +335,7 @@ export default function Home() {
                     >
                       {categoryLabels[post.category]}
                     </span>
-                    <span className="text-sm text-[#A08060]">
+                    <span className="text-sm text-[var(--text-muted)]">
                       {formatDate(post.date)}
                     </span>
                   </div>

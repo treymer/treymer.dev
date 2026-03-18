@@ -57,6 +57,16 @@ html, body {
   --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-purple-muted);
 }
 
+/* Light mode overrides */
+html.light {
+  --background: #FBF6EC;
+  --background-mid: #F0E5CE;
+  --text-primary: #2D1B0E;
+  --text-secondary: #6B4F37;
+  --text-muted: #7A5C3C;
+  --border: #8B6914;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

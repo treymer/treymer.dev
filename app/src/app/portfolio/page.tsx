@@ -201,10 +201,10 @@ export default function PortfolioPage() {
       {/* Page header */}
       <section className="px-6 pb-12 pt-8 md:pb-16 md:pt-12">
         <div className="mx-auto max-w-4xl">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-[#F4E4C1] sm:text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-5xl md:text-6xl">
             Portfolio
           </h1>
-          <p className="mt-3 text-lg text-[#C4A882] sm:text-xl">
+          <p className="mt-3 text-lg text-[var(--text-secondary)] sm:text-xl">
             A summary of my experience, skills, and work
           </p>
           <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#6D28D9]/60 to-transparent" />
@@ -217,22 +217,22 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Adventure Log
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">Quests completed and dungeons cleared</p>
+          <p className="mt-2 text-[var(--text-muted)]">Quests completed and dungeons cleared</p>
 
           <div className="mt-8">
             {/* Vertical line */}
-            <div className="relative border-l-2 border-[#5C3D2E] pl-6 sm:pl-8">
+            <div className="relative border-l-2 border-[var(--border)] pl-6 sm:pl-8">
               {workHistory.map((job, index) => (
                 <div key={index} className={`relative ${index < workHistory.length - 1 ? "pb-8" : ""}`}>
                   <div
                     className={`absolute -left-[29px] top-2 h-3 w-3 rounded-full sm:-left-[33px] ${
                       job.current
                         ? "bg-[#D4A017]"
-                        : "border-2 border-[#D4A017] bg-[#2D1B0E]"
+                        : "border-2 border-[#D4A017] bg-[var(--background)]"
                     }`}
                     style={{ boxShadow: job.current ? "0 0 12px rgba(109, 40, 217, 0.5), 0 0 4px rgba(212, 160, 23, 0.5)" : "0 0 8px rgba(109, 40, 217, 0.3)" }}
                   />
@@ -243,13 +243,13 @@ export default function PortfolioPage() {
                           Current
                         </span>
                       )}
-                      <span className="text-sm text-[#A08060]">{job.dates}</span>
+                      <span className="text-sm text-[var(--text-muted)]">{job.dates}</span>
                     </div>
                     <h3 className="mt-2 font-display text-lg font-semibold text-[#2D1B0E] sm:text-xl">
                       {job.title}
                     </h3>
                     <p className="text-[#0EA89A]">{job.company}</p>
-                    <p className="text-sm text-[#A08060]">{job.location}</p>
+                    <p className="text-sm text-[var(--text-muted)]">{job.location}</p>
                     {job.bullets.length > 0 && (
                       <ul className="mt-4 space-y-2">
                         {job.bullets.map((bullet, i) => (
@@ -274,11 +274,11 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Lore & Knowledge
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">Training grounds and academies</p>
+          <p className="mt-2 text-[var(--text-muted)]">Training grounds and academies</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {education.map((edu, index) => (
@@ -306,11 +306,11 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Achievements Unlocked
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">Badges earned along the way</p>
+          <p className="mt-2 text-[var(--text-muted)]">Badges earned along the way</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {certifications.map((cert, index) => (
@@ -322,7 +322,7 @@ export default function PortfolioPage() {
                   {cert.name}
                 </h3>
                 <p className="mt-1 text-sm text-[#0EA89A]">{cert.issuer}</p>
-                <p className="mt-1 text-xs text-[#A08060]">ID: {cert.id}</p>
+                <p className="mt-1 text-xs text-[var(--text-muted)]">ID: {cert.id}</p>
               </div>
             ))}
           </div>
@@ -335,11 +335,11 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Shipped Titles
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">Games I helped bring to life at Blizzard Entertainment</p>
+          <p className="mt-2 text-[var(--text-muted)]">Games I helped bring to life at Blizzard Entertainment</p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {shippedTitles.map((game, index) => (
@@ -388,11 +388,11 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Skill Tree
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">
+          <p className="mt-2 text-[var(--text-muted)]">
             Abilities unlocked and talents trained
           </p>
 
@@ -424,11 +424,11 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Currently Crafting
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">Side quests and experiments</p>
+          <p className="mt-2 text-[var(--text-muted)]">Side quests and experiments</p>
 
           <div className="mt-8 flex flex-col gap-4">
             <Link
@@ -530,11 +530,11 @@ export default function PortfolioPage() {
       <section className="px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="title-purple-glow inline-block">
-            <h2 className="font-display text-2xl font-semibold text-[#F4E4C1] sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] sm:text-3xl">
               Party Up
             </h2>
           </div>
-          <p className="mt-2 text-[#A08060]">
+          <p className="mt-2 text-[var(--text-muted)]">
             Looking for group — always happy to chat about SRE, leadership, or the best trails in SoCal
           </p>
 

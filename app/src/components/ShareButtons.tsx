@@ -20,7 +20,7 @@ export default function ShareButtons({
 
   return (
     <div className="mt-8 flex items-center gap-4">
-      <span className="text-sm font-medium text-[#A08060]">Share</span>
+      <span className="text-sm font-medium text-[var(--text-muted)]">Share</span>
       <button
         type="button"
         onClick={copyLink}

@@ -17,7 +17,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#5C3D2E] bg-[#3D2314]">
+    <footer className="border-t border-[var(--border)] bg-[var(--background-mid)]">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Decorative divider with purple glow */}
         <div
@@ -28,10 +28,10 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           {/* Copyright and flavor */}
           <div className="text-center sm:text-left">
-            <p className="text-sm text-[#C4A882]">
+            <p className="text-sm text-[var(--text-secondary)]">
               © {year} Tyler Reymer
             </p>
-            <p className="mt-1 text-xs text-[#A08060]">
+            <p className="mt-1 text-xs text-[var(--text-muted)]">
               In tech since 2013 • For the Horde!
             </p>
           </div>
@@ -46,7 +46,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.ariaLabel}
-                    className="text-sm font-medium text-[#C4A882] transition-colors hover:text-[#D4A017]"
+                    className="text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[#D4A017]"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
 
         {/* Fun footer text */}
         <div className="mt-6 text-center">
-          <p className="text-xs text-[#A08060]">
+          <p className="text-xs text-[var(--text-muted)]">
             Made with Next.js, Terraform, and a little magic
           </p>
           <p className="mt-2 text-[10px] italic text-[#9A8870]">

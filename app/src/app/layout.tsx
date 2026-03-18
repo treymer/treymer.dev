@@ -104,8 +104,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light');})();` }} />
+      </head>
       <body
-        className={`${cinzel.variable} ${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-[#2D1B0E] font-sans text-[#F4E4C1] antialiased`}
+        className={`${cinzel.variable} ${dmSans.variable} ${jetbrainsMono.variable} min-h-screen bg-[var(--background)] font-sans text-[var(--text-primary)] antialiased`}
       >
         <ScrollToTop />
         <Nav />

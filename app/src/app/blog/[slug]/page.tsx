@@ -113,7 +113,7 @@ export default async function BlogPostPage({
         {/* Back button */}
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#A08060] transition-colors hover:text-[#D4A017]"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[#D4A017]"
         >
           <svg
             className="h-4 w-4"
@@ -132,7 +132,7 @@ export default async function BlogPostPage({
         </Link>
 
         {/* Title */}
-        <h1 className="font-display text-4xl font-bold tracking-tight text-[#F4E4C1] sm:text-5xl">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
           {post.title}
         </h1>
 
@@ -147,9 +147,9 @@ export default async function BlogPostPage({
           >
             {post.category === "Engineering" ? "⚙️ Technomancer" : "🎲 Side Quest"}
           </span>
-          <span className="text-[#A08060]">{formatDate(post.date)}</span>
+          <span className="text-[var(--text-muted)]">{formatDate(post.date)}</span>
           <span className="text-[#5C3D2E]">·</span>
-          <span className="text-[#A08060]">{post.readingTime}</span>
+          <span className="text-[var(--text-muted)]">{post.readingTime}</span>
         </div>
 
         <TableOfContents headings={headings} />
@@ -171,7 +171,7 @@ export default async function BlogPostPage({
                 href={`/blog/${prevPost.slug}`}
                 className="group rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-[#D4A017]"
               >
-                <span className="text-xs font-medium uppercase tracking-wide text-[#A08060]">
+                <span className="text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">
                   ← Previous
                 </span>
                 <p className="mt-1 font-display font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
@@ -186,7 +186,7 @@ export default async function BlogPostPage({
                 href={`/blog/${nextPost.slug}`}
                 className="group rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 text-right shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-[#D4A017]"
               >
-                <span className="text-xs font-medium uppercase tracking-wide text-[#A08060]">
+                <span className="text-xs font-medium uppercase tracking-wide text-[var(--text-muted)]">
                   Next →
                 </span>
                 <p className="mt-1 font-display font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
