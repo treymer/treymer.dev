@@ -6,11 +6,14 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeExternalLinks from "rehype-external-links";
 import ImageZoom from "@/components/ImageZoom";
+import ShareButtons from "@/components/ShareButtons";
 import {
   getAllPosts,
   getPostBySlug,
   type Post,
 } from "@/lib/posts";
+
+const siteUrl = "https://treymer.dev";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -82,6 +85,14 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const allPosts = getAllPosts();
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
+  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+
+  const postUrl = `${siteUrl}/blog/${slug}`;
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`;
+
   const { content } = await compileMDX({
     source: post.content,
     options: {
@@ -144,6 +155,44 @@ export default async function BlogPostPage({
             {content}
           </div>
         </div>
+
+        <ShareButtons url={postUrl} linkedInUrl={linkedInUrl} />
+
+        {/* Prev / Next navigation */}
+        {(prevPost || nextPost) && (
+          <nav className="mt-8 grid gap-4 sm:grid-cols-2">
+            {prevPost ? (
+              <Link
+                href={`/blog/${prevPost.slug}`}
+                className="group rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-[#D4A017]"
+              >
+                <span className="text-xs font-medium uppercase tracking-wide text-[#A08060]">
+                  ← Previous
+                </span>
+                <p className="mt-1 font-display font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
+                  {prevPost.title}
+                </p>
+              </Link>
+            ) : (
+              <div />
+            )}
+            {nextPost ? (
+              <Link
+                href={`/blog/${nextPost.slug}`}
+                className="group rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-5 text-right shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-[#D4A017]"
+              >
+                <span className="text-xs font-medium uppercase tracking-wide text-[#A08060]">
+                  Next →
+                </span>
+                <p className="mt-1 font-display font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
+                  {nextPost.title}
+                </p>
+              </Link>
+            ) : (
+              <div />
+            )}
+          </nav>
+        )}
       </div>
     </article>
   );

@@ -32,7 +32,7 @@
   "shipping": {
     "icon": "🚀",
     "label": "Shipping",
-    "value": "treymer.dev",
-    "sub": "Built with Next.js, AWS, and vibe coding"
+    "value": "Cadence — Guitar Toolkit",
+    "sub": "Android app for guitar players. Tuner, metronome, key finder & more."
   }
 }

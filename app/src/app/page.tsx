@@ -317,7 +317,8 @@ export default function Home() {
           </p>
 
           {recentPosts.length > 0 ? (
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {recentPosts.map((post) => (
                 <Link
                   key={post.slug}
@@ -362,6 +363,18 @@ export default function Home() {
                   </span>
                 </Link>
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#CC2222] hover:underline"
+              >
+                View all posts
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
             </div>
           ) : (
             <div className="mt-10 rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-12 text-center shadow-lg">

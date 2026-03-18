@@ -61,7 +61,7 @@ const skillCategories = [
   {
     label: "Currently Learning",
     color: "teal",
-    skills: ["Next.js", "React", "Vibe Coding"],
+    skills: ["Next.js", "React", "Vibe Coding", "Kotlin", "Jetpack Compose", "Android SDK", "TarsosDSP"],
   },
 ];
 
@@ -430,7 +430,52 @@ export default function PortfolioPage() {
           </div>
           <p className="mt-2 text-[#A08060]">Side quests and experiments</p>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col gap-4">
+            <Link
+              href="https://github.com/treymer/cadence"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]"
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="font-display text-xl font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
+                    Cadence — Guitar Toolkit
+                  </h3>
+                  <p className="mt-2 text-[#5C3D2E]">
+                    Android app for guitar players. Chromatic tuner, metronome,
+                    key finder, and chord &amp; scale suggester. Built because I
+                    was tired of ad-riddled alternatives.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["Android", "Kotlin", "Jetpack Compose", "TarsosDSP"].map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md bg-[#0EA89A]/15 px-2 py-0.5 text-xs font-medium text-[#0EA89A]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-[#CC2222] sm:shrink-0">
+                  View on GitHub
+                  <svg
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </Link>
             <Link
               href="https://github.com/treymer/treymer.dev"
               target="_blank"

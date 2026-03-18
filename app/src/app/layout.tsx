@@ -87,6 +87,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://treymer.dev",
+    types: {
+      "application/rss+xml": "https://treymer.dev/rss.xml",
+    },
   },
   verification: {
     google: "8o7cnHZ0vaqiZ3ePA353FgRhT29NkcAz0jrss7K8i4M",
