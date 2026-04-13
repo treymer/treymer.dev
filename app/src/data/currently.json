@@ -33,6 +33,7 @@
     "icon": "🚀",
     "label": "Shipping",
     "value": "Cadence — Guitar Toolkit",
-    "sub": "Android app for guitar players. Tuner, metronome, key finder & more."
+    "sub": "Android app for guitar players. Tuner, metronome, key finder & more.",
+    "href": "https://play.google.com/store/apps/details?id=dev.treymer.cadence"
   }
 }

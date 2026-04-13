@@ -431,15 +431,10 @@ export default function PortfolioPage() {
           <p className="mt-2 text-[var(--text-muted)]">Side quests and experiments</p>
 
           <div className="mt-8 flex flex-col gap-4">
-            <Link
-              href="https://github.com/treymer/cadence"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A017] hover:shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(109,40,217,0.15)]"
-            >
+            <div className="rounded-xl border border-[#8B6914] bg-[#F4E4C1] p-6 shadow-lg">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-[#2D1B0E] transition-colors group-hover:text-[#CC2222]">
+                  <h3 className="font-display text-xl font-semibold text-[#2D1B0E]">
                     Cadence — Guitar Toolkit
                   </h3>
                   <p className="mt-2 text-[#5C3D2E]">
@@ -458,24 +453,52 @@ export default function PortfolioPage() {
                     ))}
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-[#CC2222] sm:shrink-0">
-                  View on GitHub
-                  <svg
-                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <div className="flex shrink-0 flex-col gap-2 sm:items-end">
+                  <Link
+                    href="https://play.google.com/store/apps/details?id=dev.treymer.cadence"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#0EA89A] hover:underline"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </span>
+                    Google Play
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="https://github.com/treymer/cadence"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#CC2222] hover:underline"
+                  >
+                    GitHub
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
-            </Link>
+            </div>
             <Link
               href="https://github.com/treymer/treymer.dev"
               target="_blank"
