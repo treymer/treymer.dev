@@ -148,6 +148,12 @@ export default async function BlogPostPage({
             {post.category === "Engineering" ? "⚙️ Technomancer" : "🎲 Side Quest"}
           </span>
           <span className="text-[var(--text-muted)]">{formatDate(post.date)}</span>
+          {post.updatedDate && (
+            <>
+              <span className="text-[#5C3D2E]">·</span>
+              <span className="text-[var(--text-muted)]">Updated {formatDate(post.updatedDate)}</span>
+            </>
+          )}
           <span className="text-[#5C3D2E]">·</span>
           <span className="text-[var(--text-muted)]">{post.readingTime}</span>
         </div>

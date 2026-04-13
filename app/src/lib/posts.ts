@@ -15,6 +15,7 @@ export type Post = {
   slug: string;
   title: string;
   date: string;
+  updatedDate?: string;
   description: string;
   category: "Engineering" | "Personal";
   published: boolean;
@@ -93,6 +94,7 @@ export function getAllPosts(): Post[] {
         slug,
         title: data.title,
         date: data.date,
+        updatedDate: data.updatedDate,
         description: data.description,
         category: data.category,
         published: data.published ?? true,
@@ -117,6 +119,7 @@ export function getPostBySlug(slug: string) {
     slug,
     title: data.title,
     date: data.date,
+    updatedDate: data.updatedDate,
     description: data.description,
     category: data.category,
     published: data.published ?? true,
